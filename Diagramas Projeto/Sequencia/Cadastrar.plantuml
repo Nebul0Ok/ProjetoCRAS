@@ -1,0 +1,35 @@
+@startuml Cadastrar
+
+skinparam actorStyle awesome
+
+actor Usuario
+boundary TelaCadastro
+control ControleCadastro
+entity entidade_usuario
+
+Usuario -> TelaCadastro : Dados de Cadastro
+TelaCadastro --> ControleCadastro : DadosDeCadastro
+ControleCadastro --> entidade_usuario : RealizarCadastro()
+entidade_usuario --> ControleCadastro
+
+alt Cadastro Valido
+    ControleCadastro --> ControleCadastro : CadastrarUsuario
+
+    |||
+    note right Usuario : Cadastra o Usuario no sistema se ninguem tiver os mesmos dados que ele
+    |||
+
+else Cadastro Invalido
+
+    ControleCadastro -> TelaCadastro : MsgFalhaCadastro
+    ControleCadastro -> ControleCadastro : ZerarCaixaDados
+
+    |||
+    note right Usuario : Avisa o usuario que não deu e zera as caixas
+    |||
+
+end
+
+hide footbox
+
+@enduml

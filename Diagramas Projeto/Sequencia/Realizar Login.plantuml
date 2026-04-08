@@ -1,0 +1,32 @@
+@startuml Realizar Login
+
+skinparam actorStyle awesome
+
+actor Usuario
+boundary TelaLogin
+control ControleLogin
+entity entidade_Usuario
+
+Usuario -> TelaLogin : DadosLogin
+TelaLogin -> ControleLogin : DadosLogin
+ControleLogin -> entidade_Usuario : DadosDeLogin
+entidade_Usuario --> ControleLogin : ResultadoQuery
+
+alt Usuario achado
+
+    ControleLogin --> TelaLogin : MsgUsuarioEncontrado
+    Usuario --> TelaLogin : ClickBtnConfirma
+    TelaLogin --> ControleLogin : LoadHome
+    
+
+
+else Usuario não encontrado
+
+    ControleLogin --> TelaLogin : MsgUsuarioNaoEncontrado
+    ControleLogin --> ControleLogin : ResetCredentials
+
+end
+
+hide footbox
+
+@enduml

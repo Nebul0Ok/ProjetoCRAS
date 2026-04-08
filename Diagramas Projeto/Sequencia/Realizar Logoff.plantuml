@@ -1,0 +1,19 @@
+@startuml Realizar Logoff
+
+skinparam actorStyle awesome
+
+actor Usuario
+boundary TelaLogin
+control ControleLogin
+entity entidade_Usuario
+
+Usuario -> TelaLogin : ClickBotaoDeslogar
+TelaLogin -> ControleLogin : Deslogar
+ControleLogin -> entidade_Usuario : Deslogar
+entidade_Usuario --> ControleLogin : ApagarSecao
+ControleLogin --> ControleLogin : LoadHomeScreen
+
+
+hide footbox
+
+@enduml

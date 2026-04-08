@@ -1,0 +1,53 @@
+@startuml Verifica Duplicidade
+
+skinparam actorStyle awesome
+
+Actor Administrador
+control TriggerDuplicidade
+entity Item
+entity Local
+entity Tipo_de_Item
+
+Administrador -> TriggerDuplicidade : Novo Cadastro
+TriggerDuplicidade -> TriggerDuplicidade : VerificaTipoObjeto
+
+alt Item
+    TriggerDuplicidade -> Item : VerificaDuplicata
+    Item -> TriggerDuplicidade
+
+
+    opt Item não existe
+
+        TriggerDuplicidade -> TriggerDuplicidade : Devolve false
+
+    end
+
+else Local
+    TriggerDuplicidade -> Local : VerificaDuplicata
+    Local -> TriggerDuplicidade
+
+    opt Local não existe
+
+        TriggerDuplicidade -> TriggerDuplicidade : Devolve false
+
+    end
+
+else Tipo de Item
+    TriggerDuplicidade -> Tipo_de_Item : VerificaDuplicata
+    Tipo_de_Item -> TriggerDuplicidade
+
+    opt Tipo de item não existe
+
+        TriggerDuplicidade -> TriggerDuplicidade : Devolve false
+
+    end
+
+    |||
+    note right Administrador : Processo para validar se não há um item semelhante já cadastrado
+    |||
+
+end
+
+hide footbox
+
+@enduml

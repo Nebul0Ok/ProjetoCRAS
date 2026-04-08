@@ -1,0 +1,33 @@
+@startuml Cadastrar Tipo de Item
+
+skinparam actorStyle awesome
+
+actor Administrador
+boundary TelaCadastrarTipoDeItem
+control ControleCadastroDeTipoDeItem
+entity TipoDeItem
+
+Administrador -> TelaCadastrarTipoDeItem : DadosDeTipoDeItem
+TelaCadastrarTipoDeItem -> ControleCadastroDeTipoDeItem : DadosDeTipoDeItem
+ControleCadastroDeTipoDeItem -> TipoDeItem : CriarTipoDeItem
+TipoDeItem -> ControleCadastroDeTipoDeItem
+
+opt Conseguiu criar TipoDeItem
+
+    ref over ControleCadastroDeTipoDeItem: Verificar Duplicidade
+
+    opt Duplicata == false
+        ControleCadastroDeTipoDeItem -> ControleCadastroDeTipoDeItem : SalvarTipoDeItem
+    
+        |||
+        note right Administrador : Só registra na lista se der pra criar o objeto
+        |||
+
+    end
+
+    
+end
+
+hide footbox
+
+@enduml

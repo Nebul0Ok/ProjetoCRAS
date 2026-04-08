@@ -1,0 +1,39 @@
+@startuml Caso de Uso
+left to right direction
+skinparam PackageStyle rect
+
+    actor Usuario
+    actor Administrador
+    actor Funcionario
+
+    rectangle Usuario_Funcoes{
+        Usuario -- (Realizar Login)
+        Usuario -- (Realizar Logoff)
+    }
+
+    rectangle Administrador_Funcoes{
+        Administrador -- (Cadastrar item)
+        Administrador -- (Cadastrar funcionario)
+        Administrador -- (Cadastrar local)
+        Administrador -- (Cadastrar tipo de item)
+        Administrador -- (Cadastrar data de vencimento de item)
+        Administrador -- (Cadastrar recebimento de item)
+        Administrador -- (Editar dados de itens)
+        Administrador -- (Editar dados de tipo de item)
+        Administrador -- (Editar local de item)
+        Administrador -- (Editar data de vencimento de item)
+        Administrador -- (Editar quantidade de item no estoque)
+        Administrador -- (Editar dados de funcionarios)
+        Administrador -- (Deletar item)
+        Administrador -- (Deletar tipo de item)
+        Administrador -- (Deletar funcionario)
+        Administrador -- (Deletar item no estoque)
+    }
+
+    rectangle Funcionario_Funcoes{
+        Funcionario -- (Requisita um item)
+        Funcionario -- (Verifica o estoque)
+        Funcionario -- (Cancela a requisição)
+    }
+
+@enduml

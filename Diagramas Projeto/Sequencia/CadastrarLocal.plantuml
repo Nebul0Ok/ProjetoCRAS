@@ -1,0 +1,33 @@
+@startuml Cadastrar Local
+
+skinparam actorStyle awesome
+
+actor Administrador
+boundary TelaCadastrarLocal
+control ControleCadastroDeLocal
+entity Local
+
+Administrador -> TelaCadastrarLocal : DadosDeLocal
+TelaCadastrarLocal -> ControleCadastroDeLocal : DadosDeLocal
+ControleCadastroDeLocal -> Local : CriarItem
+Local -> ControleCadastroDeLocal
+
+opt Conseguiu criar Local
+
+    ref over ControleCadastroDeLocal: Verificar Duplicidade
+
+    opt Duplicata == false
+        ControleCadastroDeLocal -> ControleCadastroDeLocal : SalvarLocal
+    
+        |||
+        note right Administrador : Só registra na lista se der pra criar o objeto
+        |||
+
+    end
+
+    
+end
+
+hide footbox
+
+@enduml

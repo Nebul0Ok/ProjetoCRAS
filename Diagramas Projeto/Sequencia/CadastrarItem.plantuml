@@ -1,0 +1,33 @@
+@startuml Cadastrar Item
+
+skinparam actorStyle awesome
+
+actor Administrador
+boundary TelaCadastrarItem
+control ControleCadastroDeItem
+entity Item
+
+Administrador -> TelaCadastrarItem : DadosDeItem
+TelaCadastrarItem -> ControleCadastroDeItem : DadosDeItem
+ControleCadastroDeItem -> Item : CriarItem
+Item -> ControleCadastroDeItem :
+
+opt Conseguiu criar item
+
+    ref over ControleCadastroDeItem: Verificar Duplicidade
+
+    opt Duplicata == false
+        ControleCadastroDeItem -> ControleCadastroDeItem : SalvarItem
+    
+        |||
+        note right Administrador : Só registra na lista se der pra criar o objeto
+        |||
+
+    end
+
+    
+end
+
+hide footbox
+
+@enduml

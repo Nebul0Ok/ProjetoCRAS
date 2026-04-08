@@ -1,0 +1,97 @@
+@startuml Classe
+
+    class Usuario{
+        +String Nome
+        +String HashSenha
+        +String Email
+
+        +void cadastrarUsuario()
+    }
+
+    class Administrador{
+        -Integer Id
+        -List LogRecentChanges
+
+        +List VerLog()
+        +List VerID()
+    }
+
+    class GerenciadorAdmin{
+        +void CadastrarItem()
+        +void CadastrarFuncionario()
+        +void CadastrarTipoItem()
+        +void CadastrarArmario()
+
+        +void AtualizarItem()
+        +void AtualizarFuncionario()
+        +void AtualizarTipoItem()
+        +void AtualizarArmario()
+        +void AtualizarEstoque()
+
+        +void DeletarItem()
+        +void DeletarFuncionario()
+        +void DeletarTipoItem()
+        +void DeletarArmario()
+    }
+
+
+    class Funcionario{
+        -Integer Id
+        -List ItensRequisitados
+
+        +void RequisitarItem()
+        +void CancelarRequisicao()
+        +void ListarRequisicoes()
+    }
+
+    class Item{
+        -String Nome
+        -String Tipo
+        -Dictionary<string, TipoItem> Tipo
+
+        +void AdicionarTipo()
+        +void RemoverTipo()
+        +void ListarTipos()
+    }
+    
+    class TipoItem{
+        -String Nome
+        -Int Quantidade
+        -DateTime Validade
+    }
+
+    class Armario{
+        -String Detalhes
+        -String Localizacao
+        -Bool Cheio
+        -List<Item> ItensGuardados
+
+        +void AdicionarItemArmario()
+        +void RemoverItemArmario()
+        +void ListarItemArmario()
+        +void MudarEstadoVazio(bool NovoEstado)
+    }
+
+    class Historico{
+        +Dictionary<DateTime, Ocorrencia>
+
+        +void ListarHistorico()
+    }
+
+    class Ocorrencia{
+        +String Detalhe
+        +String Usuario
+    }
+
+    Administrador --|> Usuario
+    Funcionario --|> Usuario
+
+    TipoItem --* Item
+
+    Item -- Armario
+
+    Administrador --> GerenciadorAdmin
+
+    Ocorrencia --* Historico
+
+@enduml
