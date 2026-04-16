@@ -17,7 +17,7 @@ namespace ProjetoCRAS.Models
         public string? Medida { get; set; }
 
         public TipoDeItem(Item _item, int IDTipo, string NomeTipo, int QuantidadeTipoEstoque){
-            _item = new Item();
+            //_item = new Item();
             this.IDTipo = IDTipo;
             this.NomeTipo = NomeTipo;
             DataCadastroTipo = DateTime.Now;
@@ -26,7 +26,7 @@ namespace ProjetoCRAS.Models
 
         public TipoDeItem(Item _item, int IDTipo, string NomeTipo, int QuantidadeTipoEstoque, int QuantidadeTipoProduto, string Medida)
         {
-            _item = new Item();
+            //_item = new Item();
             this.IDTipo = IDTipo;
             this.NomeTipo = NomeTipo;
             DataCadastroTipo = DateTime.Now;

@@ -1,0 +1,250 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Projetos\\ProjetoCRAS\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|e:\\projetos\\projetocras\\projetocras\\views\\telahome.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|solutionrelative:projetocras\\views\\telahome.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|e:\\projetos\\projetocras\\projetocras\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|solutionrelative:projetocras\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|e:\\projetos\\projetocras\\projetocras\\views\\telahome.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|solutionrelative:projetocras\\views\\telahome.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|e:\\projetos\\projetocras\\projetocras\\views\\telaitens.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|solutionrelative:projetocras\\views\\telaitens.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|e:\\projetos\\projetocras\\projetocras\\views\\telahistorico.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|solutionrelative:projetocras\\views\\telahistorico.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|e:\\projetos\\projetocras\\projetocras\\views\\telaestoque.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|solutionrelative:projetocras\\views\\telaestoque.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|e:\\projetos\\projetocras\\projetocras\\views\\teladeposito.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|solutionrelative:projetocras\\views\\teladeposito.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|e:\\projetos\\projetocras\\projetocras\\source\\icones.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|solutionrelative:projetocras\\source\\icones.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|e:\\projetos\\projetocras\\projetocras\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|solutionrelative:projetocras\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|e:\\projetos\\projetocras\\projetocras\\models\\tipodeitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|solutionrelative:projetocras\\models\\tipodeitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|e:\\projetos\\projetocras\\projetocras\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|solutionrelative:projetocras\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|e:\\projetos\\projetocras\\projetocras\\models\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|solutionrelative:projetocras\\models\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|e:\\projetos\\projetocras\\projetocras\\models\\historico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|solutionrelative:projetocras\\models\\historico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|e:\\projetos\\projetocras\\projetocras\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|solutionrelative:projetocras\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TelaHistorico.xaml",
+              "DocumentMoniker": "E:\\Projetos\\ProjetoCRAS\\ProjetoCRAS\\Views\\TelaHistorico.xaml",
+              "RelativeDocumentMoniker": "ProjetoCRAS\\Views\\TelaHistorico.xaml",
+              "ToolTip": "E:\\Projetos\\ProjetoCRAS\\ProjetoCRAS\\Views\\TelaHistorico.xaml",
+              "RelativeToolTip": "ProjetoCRAS\\Views\\TelaHistorico.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-16T00:16:39.058Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TelaItens.xaml",
+              "DocumentMoniker": "E:\\Projetos\\ProjetoCRAS\\ProjetoCRAS\\Views\\TelaItens.xaml",
+              "RelativeDocumentMoniker": "ProjetoCRAS\\Views\\TelaItens.xaml",
+              "ToolTip": "E:\\Projetos\\ProjetoCRAS\\ProjetoCRAS\\Views\\TelaItens.xaml",
+              "RelativeToolTip": "ProjetoCRAS\\Views\\TelaItens.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-16T00:16:25.361Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TelaEstoque.xaml",
+              "DocumentMoniker": "E:\\Projetos\\ProjetoCRAS\\ProjetoCRAS\\Views\\TelaEstoque.xaml",
+              "RelativeDocumentMoniker": "ProjetoCRAS\\Views\\TelaEstoque.xaml",
+              "ToolTip": "E:\\Projetos\\ProjetoCRAS\\ProjetoCRAS\\Views\\TelaEstoque.xaml",
+              "RelativeToolTip": "ProjetoCRAS\\Views\\TelaEstoque.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-16T00:16:05.557Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TelaDeposito.xaml",
+              "DocumentMoniker": "E:\\Projetos\\ProjetoCRAS\\ProjetoCRAS\\Views\\TelaDeposito.xaml",
+              "RelativeDocumentMoniker": "ProjetoCRAS\\Views\\TelaDeposito.xaml",
+              "ToolTip": "E:\\Projetos\\ProjetoCRAS\\ProjetoCRAS\\Views\\TelaDeposito.xaml",
+              "RelativeToolTip": "ProjetoCRAS\\Views\\TelaDeposito.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-16T00:15:39.403Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TelaHome.xaml.cs",
+              "DocumentMoniker": "E:\\Projetos\\ProjetoCRAS\\ProjetoCRAS\\Views\\TelaHome.xaml.cs",
+              "RelativeDocumentMoniker": "ProjetoCRAS\\Views\\TelaHome.xaml.cs",
+              "ToolTip": "E:\\Projetos\\ProjetoCRAS\\ProjetoCRAS\\Views\\TelaHome.xaml.cs",
+              "RelativeToolTip": "ProjetoCRAS\\Views\\TelaHome.xaml.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAqwCoAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-16T00:11:56.564Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "App.xaml",
+              "DocumentMoniker": "E:\\Projetos\\ProjetoCRAS\\ProjetoCRAS\\App.xaml",
+              "RelativeDocumentMoniker": "ProjetoCRAS\\App.xaml",
+              "ToolTip": "E:\\Projetos\\ProjetoCRAS\\ProjetoCRAS\\App.xaml",
+              "RelativeToolTip": "ProjetoCRAS\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-15T23:06:35.661Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Icones.xaml",
+              "DocumentMoniker": "E:\\Projetos\\ProjetoCRAS\\ProjetoCRAS\\Source\\Icones.xaml",
+              "RelativeDocumentMoniker": "ProjetoCRAS\\Source\\Icones.xaml",
+              "ToolTip": "E:\\Projetos\\ProjetoCRAS\\ProjetoCRAS\\Source\\Icones.xaml",
+              "RelativeToolTip": "ProjetoCRAS\\Source\\Icones.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-15T23:05:10.231Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TelaHome.xaml",
+              "DocumentMoniker": "E:\\Projetos\\ProjetoCRAS\\ProjetoCRAS\\Views\\TelaHome.xaml",
+              "RelativeDocumentMoniker": "ProjetoCRAS\\Views\\TelaHome.xaml",
+              "ToolTip": "E:\\Projetos\\ProjetoCRAS\\ProjetoCRAS\\Views\\TelaHome.xaml",
+              "RelativeToolTip": "ProjetoCRAS\\Views\\TelaHome.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-15T22:26:03.283Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "E:\\Projetos\\ProjetoCRAS\\ProjetoCRAS\\Models\\Usuario.cs",
+              "RelativeDocumentMoniker": "ProjetoCRAS\\Models\\Usuario.cs",
+              "ToolTip": "E:\\Projetos\\ProjetoCRAS\\ProjetoCRAS\\Models\\Usuario.cs",
+              "RelativeToolTip": "ProjetoCRAS\\Models\\Usuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-15T22:26:03.439Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Historico.cs",
+              "DocumentMoniker": "E:\\Projetos\\ProjetoCRAS\\ProjetoCRAS\\Models\\Historico.cs",
+              "RelativeDocumentMoniker": "ProjetoCRAS\\Models\\Historico.cs",
+              "ToolTip": "E:\\Projetos\\ProjetoCRAS\\ProjetoCRAS\\Models\\Historico.cs",
+              "RelativeToolTip": "ProjetoCRAS\\Models\\Historico.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-15T22:26:03.448Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "TipoDeItem.cs",
+              "DocumentMoniker": "E:\\Projetos\\ProjetoCRAS\\ProjetoCRAS\\Models\\TipoDeItem.cs",
+              "RelativeDocumentMoniker": "ProjetoCRAS\\Models\\TipoDeItem.cs",
+              "ToolTip": "E:\\Projetos\\ProjetoCRAS\\ProjetoCRAS\\Models\\TipoDeItem.cs",
+              "RelativeToolTip": "ProjetoCRAS\\Models\\TipoDeItem.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAxwAoAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-15T22:26:03.457Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Item.cs",
+              "DocumentMoniker": "E:\\Projetos\\ProjetoCRAS\\ProjetoCRAS\\Models\\Item.cs",
+              "RelativeDocumentMoniker": "ProjetoCRAS\\Models\\Item.cs",
+              "ToolTip": "E:\\Projetos\\ProjetoCRAS\\ProjetoCRAS\\Models\\Item.cs",
+              "RelativeToolTip": "ProjetoCRAS\\Models\\Item.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAA1wBMAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-15T22:26:03.463Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "E:\\Projetos\\ProjetoCRAS\\ProjetoCRAS\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "ProjetoCRAS\\MainWindow.xaml",
+              "ToolTip": "E:\\Projetos\\ProjetoCRAS\\ProjetoCRAS\\MainWindow.xaml",
+              "RelativeToolTip": "ProjetoCRAS\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-15T22:26:03.472Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "E:\\Projetos\\ProjetoCRAS\\ProjetoCRAS\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "ProjetoCRAS\\MainWindow.xaml.cs",
+              "ToolTip": "E:\\Projetos\\ProjetoCRAS\\ProjetoCRAS\\MainWindow.xaml.cs",
+              "RelativeToolTip": "ProjetoCRAS\\MainWindow.xaml.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAIwCoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-15T22:26:03.478Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

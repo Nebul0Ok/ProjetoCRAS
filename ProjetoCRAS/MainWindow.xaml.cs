@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using ProjetoCRAS.Views;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,6 +20,24 @@ namespace ProjetoCRAS
         public MainWindow()
         {
             InitializeComponent();
+            MainFrame.Navigate(new Uri("Views/TelaHome.xaml", UriKind.Relative));
         }
+
+        public void CarregarTelaDeposito(){
+            MainFrame.Navigate(new Uri("Views/TelaDeposito.xaml", UriKind.Relative));    
+        }
+
+        public void CarregarTelaItens(){
+            MainFrame.Navigate(new Uri("Views/TelaItens.xaml", UriKind.Relative));    
+        }
+
+        public void CarregarTelaEstoque(){
+            MainFrame.Navigate(new Uri("Views/TelaEstoque.xaml", UriKind.Relative));    
+        }
+
+        public void CarregarTelaHistorico(){
+            MainFrame.Navigate(new Uri("Views/TelaHistorico.xaml", UriKind.Relative));    
+        }
+
     }
 }

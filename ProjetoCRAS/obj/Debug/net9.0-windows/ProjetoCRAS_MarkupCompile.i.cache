@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\aluno\source\repos\ProjetoCRAS\ProjetoCRAS\obj\Debug\net9.0-windows\
+E:\Projetos\ProjetoCRAS\ProjetoCRAS\obj\Debug\net9.0-windows\
 ProjetoCRAS
 none
 false
 TRACE;DEBUG;NET;NET9_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NET9_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
-C:\Users\aluno\source\repos\ProjetoCRAS\ProjetoCRAS\App.xaml
-11407045341
+E:\Projetos\ProjetoCRAS\ProjetoCRAS\App.xaml
+7-2105944960
+1-877112361
+15-335129645
+200754226803
+MainWindow.xaml;Source\Icones.xaml;Views\TelaDeposito.xaml;Views\TelaEstoque.xaml;Views\TelaHistorico.xaml;Views\TelaHome.xaml;Views\TelaItens.xaml;
 
-10-1186322662
-2001928194731
-MainWindow.xaml;
-
-False
+True
 
