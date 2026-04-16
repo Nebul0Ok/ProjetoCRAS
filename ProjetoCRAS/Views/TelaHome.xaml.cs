@@ -43,5 +43,14 @@ namespace ProjetoCRAS.Views
         private void BtnHistorico_Click(object sender, RoutedEventArgs e) {
             main.CarregarTelaHistorico();
         }
+
+        private void BtnMenuLateral_Click(object sender, RoutedEventArgs e)
+        {
+            ContentMenuLateral.Content = new MenuLateral(this);
+        }
+
+        public void RemoveMenuLateral() {
+            ContentMenuLateral.Content = null;
+        }
     }
 }

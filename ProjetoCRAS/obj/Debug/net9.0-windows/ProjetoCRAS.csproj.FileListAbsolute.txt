@@ -56,3 +56,40 @@ E:\Projetos\ProjetoCRAS\ProjetoCRAS\obj\Debug\net9.0-windows\Views\TelaDeposito.
 E:\Projetos\ProjetoCRAS\ProjetoCRAS\obj\Debug\net9.0-windows\Views\TelaEstoque.baml
 E:\Projetos\ProjetoCRAS\ProjetoCRAS\obj\Debug\net9.0-windows\Views\TelaHistorico.baml
 E:\Projetos\ProjetoCRAS\ProjetoCRAS\obj\Debug\net9.0-windows\Views\TelaItens.baml
+C:\Users\aluno\Documents\Projeto 3 semestre\ProjetoCRAS\ProjetoCRAS\bin\Debug\net9.0-windows\Source\Cras_Logo.png
+C:\Users\aluno\Documents\Projeto 3 semestre\ProjetoCRAS\ProjetoCRAS\bin\Debug\net9.0-windows\ProjetoCRAS.exe
+C:\Users\aluno\Documents\Projeto 3 semestre\ProjetoCRAS\ProjetoCRAS\bin\Debug\net9.0-windows\ProjetoCRAS.deps.json
+C:\Users\aluno\Documents\Projeto 3 semestre\ProjetoCRAS\ProjetoCRAS\bin\Debug\net9.0-windows\ProjetoCRAS.runtimeconfig.json
+C:\Users\aluno\Documents\Projeto 3 semestre\ProjetoCRAS\ProjetoCRAS\bin\Debug\net9.0-windows\ProjetoCRAS.dll
+C:\Users\aluno\Documents\Projeto 3 semestre\ProjetoCRAS\ProjetoCRAS\bin\Debug\net9.0-windows\ProjetoCRAS.pdb
+C:\Users\aluno\Documents\Projeto 3 semestre\ProjetoCRAS\ProjetoCRAS\obj\Debug\net9.0-windows\Source\Icones.baml
+C:\Users\aluno\Documents\Projeto 3 semestre\ProjetoCRAS\ProjetoCRAS\obj\Debug\net9.0-windows\MainWindow.g.cs
+C:\Users\aluno\Documents\Projeto 3 semestre\ProjetoCRAS\ProjetoCRAS\obj\Debug\net9.0-windows\Views\TelaDeposito.g.cs
+C:\Users\aluno\Documents\Projeto 3 semestre\ProjetoCRAS\ProjetoCRAS\obj\Debug\net9.0-windows\Views\TelaEstoque.g.cs
+C:\Users\aluno\Documents\Projeto 3 semestre\ProjetoCRAS\ProjetoCRAS\obj\Debug\net9.0-windows\Views\TelaHistorico.g.cs
+C:\Users\aluno\Documents\Projeto 3 semestre\ProjetoCRAS\ProjetoCRAS\obj\Debug\net9.0-windows\Views\TelaHome.g.cs
+C:\Users\aluno\Documents\Projeto 3 semestre\ProjetoCRAS\ProjetoCRAS\obj\Debug\net9.0-windows\Views\TelaItens.g.cs
+C:\Users\aluno\Documents\Projeto 3 semestre\ProjetoCRAS\ProjetoCRAS\obj\Debug\net9.0-windows\App.g.cs
+C:\Users\aluno\Documents\Projeto 3 semestre\ProjetoCRAS\ProjetoCRAS\obj\Debug\net9.0-windows\ProjetoCRAS_Content.g.cs
+C:\Users\aluno\Documents\Projeto 3 semestre\ProjetoCRAS\ProjetoCRAS\obj\Debug\net9.0-windows\ProjetoCRAS_MarkupCompile.cache
+C:\Users\aluno\Documents\Projeto 3 semestre\ProjetoCRAS\ProjetoCRAS\obj\Debug\net9.0-windows\ProjetoCRAS_MarkupCompile.lref
+C:\Users\aluno\Documents\Projeto 3 semestre\ProjetoCRAS\ProjetoCRAS\obj\Debug\net9.0-windows\App.baml
+C:\Users\aluno\Documents\Projeto 3 semestre\ProjetoCRAS\ProjetoCRAS\obj\Debug\net9.0-windows\MainWindow.baml
+C:\Users\aluno\Documents\Projeto 3 semestre\ProjetoCRAS\ProjetoCRAS\obj\Debug\net9.0-windows\Views\TelaDeposito.baml
+C:\Users\aluno\Documents\Projeto 3 semestre\ProjetoCRAS\ProjetoCRAS\obj\Debug\net9.0-windows\Views\TelaEstoque.baml
+C:\Users\aluno\Documents\Projeto 3 semestre\ProjetoCRAS\ProjetoCRAS\obj\Debug\net9.0-windows\Views\TelaHistorico.baml
+C:\Users\aluno\Documents\Projeto 3 semestre\ProjetoCRAS\ProjetoCRAS\obj\Debug\net9.0-windows\Views\TelaHome.baml
+C:\Users\aluno\Documents\Projeto 3 semestre\ProjetoCRAS\ProjetoCRAS\obj\Debug\net9.0-windows\Views\TelaItens.baml
+C:\Users\aluno\Documents\Projeto 3 semestre\ProjetoCRAS\ProjetoCRAS\obj\Debug\net9.0-windows\ProjetoCRAS.g.resources
+C:\Users\aluno\Documents\Projeto 3 semestre\ProjetoCRAS\ProjetoCRAS\obj\Debug\net9.0-windows\ProjetoCRAS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\aluno\Documents\Projeto 3 semestre\ProjetoCRAS\ProjetoCRAS\obj\Debug\net9.0-windows\ProjetoCRAS.AssemblyInfoInputs.cache
+C:\Users\aluno\Documents\Projeto 3 semestre\ProjetoCRAS\ProjetoCRAS\obj\Debug\net9.0-windows\ProjetoCRAS.AssemblyInfo.cs
+C:\Users\aluno\Documents\Projeto 3 semestre\ProjetoCRAS\ProjetoCRAS\obj\Debug\net9.0-windows\ProjetoCRAS.csproj.CoreCompileInputs.cache
+C:\Users\aluno\Documents\Projeto 3 semestre\ProjetoCRAS\ProjetoCRAS\obj\Debug\net9.0-windows\ProjetoCRAS.sourcelink.json
+C:\Users\aluno\Documents\Projeto 3 semestre\ProjetoCRAS\ProjetoCRAS\obj\Debug\net9.0-windows\ProjetoCRAS.dll
+C:\Users\aluno\Documents\Projeto 3 semestre\ProjetoCRAS\ProjetoCRAS\obj\Debug\net9.0-windows\refint\ProjetoCRAS.dll
+C:\Users\aluno\Documents\Projeto 3 semestre\ProjetoCRAS\ProjetoCRAS\obj\Debug\net9.0-windows\ProjetoCRAS.pdb
+C:\Users\aluno\Documents\Projeto 3 semestre\ProjetoCRAS\ProjetoCRAS\obj\Debug\net9.0-windows\ProjetoCRAS.genruntimeconfig.cache
+C:\Users\aluno\Documents\Projeto 3 semestre\ProjetoCRAS\ProjetoCRAS\obj\Debug\net9.0-windows\ref\ProjetoCRAS.dll
+C:\Users\aluno\Documents\Projeto 3 semestre\ProjetoCRAS\ProjetoCRAS\obj\Debug\net9.0-windows\Views\MenuLateral.g.cs
+C:\Users\aluno\Documents\Projeto 3 semestre\ProjetoCRAS\ProjetoCRAS\obj\Debug\net9.0-windows\Views\MenuLateral.baml

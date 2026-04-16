@@ -53,7 +53,7 @@ namespace ProjetoCRAS.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ProjetoCRAS;component/views/telahistorico.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ProjetoCRAS;V1.0.0.0;component/views/telahistorico.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\TelaHistorico.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

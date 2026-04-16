@@ -1,34 +1,46 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\aluno\\Desktop\\ProjetoCRAS\\ProjetoCRAS\\",
+  "WorkspaceRootPath": "C:\\Users\\aluno\\Documents\\Projeto 3 semestre\\ProjetoCRAS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|c:\\users\\aluno\\desktop\\projetocras\\projetocras\\projetocras\\views\\telahome.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|c:\\users\\aluno\\documents\\projeto 3 semestre\\projetocras\\projetocras\\views\\telahome.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|solutionrelative:projetocras\\views\\telahome.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|c:\\users\\aluno\\desktop\\projetocras\\projetocras\\projetocras\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|solutionrelative:projetocras\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|c:\\users\\aluno\\documents\\projeto 3 semestre\\projetocras\\projetocras\\views\\menulateral.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|solutionrelative:projetocras\\views\\menulateral.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|c:\\users\\aluno\\desktop\\projetocras\\projetocras\\projetocras\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|c:\\users\\aluno\\documents\\projeto 3 semestre\\projetocras\\projetocras\\views\\telahome.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|solutionrelative:projetocras\\views\\telahome.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|c:\\users\\aluno\\documents\\projeto 3 semestre\\projetocras\\projetocras\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|solutionrelative:projetocras\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|c:\\users\\aluno\\desktop\\projetocras\\projetocras\\projetocras\\models\\tipodeitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|c:\\users\\aluno\\documents\\projeto 3 semestre\\projetocras\\projetocras\\views\\menulateral.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|solutionrelative:projetocras\\views\\menulateral.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|c:\\users\\aluno\\documents\\projeto 3 semestre\\projetocras\\projetocras\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|solutionrelative:projetocras\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|c:\\users\\aluno\\documents\\projeto 3 semestre\\projetocras\\projetocras\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|solutionrelative:projetocras\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|c:\\users\\aluno\\documents\\projeto 3 semestre\\projetocras\\projetocras\\models\\tipodeitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|solutionrelative:projetocras\\models\\tipodeitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|c:\\users\\aluno\\desktop\\projetocras\\projetocras\\projetocras\\models\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|c:\\users\\aluno\\documents\\projeto 3 semestre\\projetocras\\projetocras\\models\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|solutionrelative:projetocras\\models\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|c:\\users\\aluno\\desktop\\projetocras\\projetocras\\projetocras\\models\\historico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|c:\\users\\aluno\\documents\\projeto 3 semestre\\projetocras\\projetocras\\models\\historico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|solutionrelative:projetocras\\models\\historico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|c:\\users\\aluno\\desktop\\projetocras\\projetocras\\projetocras\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{76593EDF-9667-4E67-B371-5E5C55FE5350}|ProjetoCRAS\\ProjetoCRAS.csproj|solutionrelative:projetocras\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,15 +50,53 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MenuLateral.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\aluno\\Documents\\Projeto 3 semestre\\ProjetoCRAS\\ProjetoCRAS\\Views\\MenuLateral.xaml.cs",
+              "RelativeDocumentMoniker": "ProjetoCRAS\\Views\\MenuLateral.xaml.cs",
+              "ToolTip": "C:\\Users\\aluno\\Documents\\Projeto 3 semestre\\ProjetoCRAS\\ProjetoCRAS\\Views\\MenuLateral.xaml.cs",
+              "RelativeToolTip": "ProjetoCRAS\\Views\\MenuLateral.xaml.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAB4AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-16T11:08:30.132Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TelaHome.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\aluno\\Documents\\Projeto 3 semestre\\ProjetoCRAS\\ProjetoCRAS\\Views\\TelaHome.xaml.cs",
+              "RelativeDocumentMoniker": "ProjetoCRAS\\Views\\TelaHome.xaml.cs",
+              "ToolTip": "C:\\Users\\aluno\\Documents\\Projeto 3 semestre\\ProjetoCRAS\\ProjetoCRAS\\Views\\TelaHome.xaml.cs",
+              "RelativeToolTip": "ProjetoCRAS\\Views\\TelaHome.xaml.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAowDMAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-16T10:37:18.212Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MenuLateral.xaml",
+              "DocumentMoniker": "C:\\Users\\aluno\\Documents\\Projeto 3 semestre\\ProjetoCRAS\\ProjetoCRAS\\Views\\MenuLateral.xaml",
+              "RelativeDocumentMoniker": "ProjetoCRAS\\Views\\MenuLateral.xaml",
+              "ToolTip": "C:\\Users\\aluno\\Documents\\Projeto 3 semestre\\ProjetoCRAS\\ProjetoCRAS\\Views\\MenuLateral.xaml",
+              "RelativeToolTip": "ProjetoCRAS\\Views\\MenuLateral.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-16T10:35:44.343Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "TelaHome.xaml",
-              "DocumentMoniker": "C:\\Users\\aluno\\Desktop\\ProjetoCRAS\\ProjetoCRAS\\ProjetoCRAS\\Views\\TelaHome.xaml",
+              "DocumentMoniker": "C:\\Users\\aluno\\Documents\\Projeto 3 semestre\\ProjetoCRAS\\ProjetoCRAS\\Views\\TelaHome.xaml",
               "RelativeDocumentMoniker": "ProjetoCRAS\\Views\\TelaHome.xaml",
-              "ToolTip": "C:\\Users\\aluno\\Desktop\\ProjetoCRAS\\ProjetoCRAS\\ProjetoCRAS\\Views\\TelaHome.xaml",
+              "ToolTip": "C:\\Users\\aluno\\Documents\\Projeto 3 semestre\\ProjetoCRAS\\ProjetoCRAS\\Views\\TelaHome.xaml",
               "RelativeToolTip": "ProjetoCRAS\\Views\\TelaHome.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2026-04-15T13:11:59.389Z",
@@ -54,23 +104,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Users\\aluno\\Desktop\\ProjetoCRAS\\ProjetoCRAS\\ProjetoCRAS\\Models\\Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\aluno\\Documents\\Projeto 3 semestre\\ProjetoCRAS\\ProjetoCRAS\\Models\\Usuario.cs",
               "RelativeDocumentMoniker": "ProjetoCRAS\\Models\\Usuario.cs",
-              "ToolTip": "C:\\Users\\aluno\\Desktop\\ProjetoCRAS\\ProjetoCRAS\\ProjetoCRAS\\Models\\Usuario.cs",
+              "ToolTip": "C:\\Users\\aluno\\Documents\\Projeto 3 semestre\\ProjetoCRAS\\ProjetoCRAS\\Models\\Usuario.cs",
               "RelativeToolTip": "ProjetoCRAS\\Models\\Usuario.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-26T10:51:08.977Z"
+              "WhenOpened": "2026-03-26T10:51:08.977Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "Historico.cs",
-              "DocumentMoniker": "C:\\Users\\aluno\\Desktop\\ProjetoCRAS\\ProjetoCRAS\\ProjetoCRAS\\Models\\Historico.cs",
+              "DocumentMoniker": "C:\\Users\\aluno\\Documents\\Projeto 3 semestre\\ProjetoCRAS\\ProjetoCRAS\\Models\\Historico.cs",
               "RelativeDocumentMoniker": "ProjetoCRAS\\Models\\Historico.cs",
-              "ToolTip": "C:\\Users\\aluno\\Desktop\\ProjetoCRAS\\ProjetoCRAS\\ProjetoCRAS\\Models\\Historico.cs",
+              "ToolTip": "C:\\Users\\aluno\\Documents\\Projeto 3 semestre\\ProjetoCRAS\\ProjetoCRAS\\Models\\Historico.cs",
               "RelativeToolTip": "ProjetoCRAS\\Models\\Historico.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -78,37 +129,35 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "TipoDeItem.cs",
-              "DocumentMoniker": "C:\\Users\\aluno\\Desktop\\ProjetoCRAS\\ProjetoCRAS\\ProjetoCRAS\\Models\\TipoDeItem.cs",
+              "DocumentMoniker": "C:\\Users\\aluno\\Documents\\Projeto 3 semestre\\ProjetoCRAS\\ProjetoCRAS\\Models\\TipoDeItem.cs",
               "RelativeDocumentMoniker": "ProjetoCRAS\\Models\\TipoDeItem.cs",
-              "ToolTip": "C:\\Users\\aluno\\Desktop\\ProjetoCRAS\\ProjetoCRAS\\ProjetoCRAS\\Models\\TipoDeItem.cs",
+              "ToolTip": "C:\\Users\\aluno\\Documents\\Projeto 3 semestre\\ProjetoCRAS\\ProjetoCRAS\\Models\\TipoDeItem.cs",
               "RelativeToolTip": "ProjetoCRAS\\Models\\TipoDeItem.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAAwBwAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-26T10:19:25.35Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-26T10:19:25.35Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "Item.cs",
-              "DocumentMoniker": "C:\\Users\\aluno\\Desktop\\ProjetoCRAS\\ProjetoCRAS\\ProjetoCRAS\\Models\\Item.cs",
+              "DocumentMoniker": "C:\\Users\\aluno\\Documents\\Projeto 3 semestre\\ProjetoCRAS\\ProjetoCRAS\\Models\\Item.cs",
               "RelativeDocumentMoniker": "ProjetoCRAS\\Models\\Item.cs",
-              "ToolTip": "C:\\Users\\aluno\\Desktop\\ProjetoCRAS\\ProjetoCRAS\\ProjetoCRAS\\Models\\Item.cs",
+              "ToolTip": "C:\\Users\\aluno\\Documents\\Projeto 3 semestre\\ProjetoCRAS\\ProjetoCRAS\\Models\\Item.cs",
               "RelativeToolTip": "ProjetoCRAS\\Models\\Item.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAA1wBMAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-26T10:17:09.421Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-26T10:17:09.421Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\aluno\\Desktop\\ProjetoCRAS\\ProjetoCRAS\\ProjetoCRAS\\MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\aluno\\Documents\\Projeto 3 semestre\\ProjetoCRAS\\ProjetoCRAS\\MainWindow.xaml",
               "RelativeDocumentMoniker": "ProjetoCRAS\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\aluno\\Desktop\\ProjetoCRAS\\ProjetoCRAS\\ProjetoCRAS\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\aluno\\Documents\\Projeto 3 semestre\\ProjetoCRAS\\ProjetoCRAS\\MainWindow.xaml",
               "RelativeToolTip": "ProjetoCRAS\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2026-03-26T10:15:15.923Z",
@@ -116,16 +165,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\aluno\\Desktop\\ProjetoCRAS\\ProjetoCRAS\\ProjetoCRAS\\MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\aluno\\Documents\\Projeto 3 semestre\\ProjetoCRAS\\ProjetoCRAS\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "ProjetoCRAS\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\aluno\\Desktop\\ProjetoCRAS\\ProjetoCRAS\\ProjetoCRAS\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\aluno\\Documents\\Projeto 3 semestre\\ProjetoCRAS\\ProjetoCRAS\\MainWindow.xaml.cs",
               "RelativeToolTip": "ProjetoCRAS\\MainWindow.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-26T10:15:13.042Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-26T10:15:13.042Z"
             },
             {
               "$type": "Bookmark",

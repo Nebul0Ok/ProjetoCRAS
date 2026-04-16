@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET9_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NET9_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 E:\Projetos\ProjetoCRAS\ProjetoCRAS\App.xaml
-7-2105944960
+81808495310
 1-877112361
-15-335129645
+16-1486188817
 200754226803
-MainWindow.xaml;Source\Icones.xaml;Views\TelaDeposito.xaml;Views\TelaEstoque.xaml;Views\TelaHistorico.xaml;Views\TelaHome.xaml;Views\TelaItens.xaml;
+MainWindow.xaml;Source\Icones.xaml;Views\MenuLateral.xaml;Views\TelaDeposito.xaml;Views\TelaEstoque.xaml;Views\TelaHistorico.xaml;Views\TelaHome.xaml;Views\TelaItens.xaml;
 
-True
+False
 
