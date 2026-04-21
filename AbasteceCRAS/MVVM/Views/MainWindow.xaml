@@ -1,0 +1,41 @@
+﻿<Window x:Class="AbasteceCRAS.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AbasteceCRAS"
+        mc:Ignorable="d"
+        Title="AbasteceCRAS" Height="450" Width="800"
+        ResizeMode="CanResize"
+        >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="9*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="Blue">
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Button Content="Config" Grid.Column="0" Height="20" Width="20" HorizontalAlignment="Left"/>
+
+                <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right">
+                    <TextBlock VerticalAlignment="Center"
+                   Text="{Binding UsuarioAtual.Nome}"
+                   Margin="0,0,10,0" Foreground="White"
+                   />
+                    <Button Content="Icon" Width="20" Height="20"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+
+        <ContentControl Grid.Row="1" Content="{Binding CurrentView}">
+        </ContentControl>
+
+
+    </Grid>
+</Window>

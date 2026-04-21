@@ -1,0 +1,270 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\CSharp\\repos\\AbasteceCRAS\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7AAEC649-BE97-5DD5-9813-0CB677B26DB4}|AbasteceCRAS\\AbasteceCRAS.csproj|e:\\csharp\\repos\\abastececras\\abastececras\\mvvm\\views\\telalogin.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AAEC649-BE97-5DD5-9813-0CB677B26DB4}|AbasteceCRAS\\AbasteceCRAS.csproj|solutionrelative:abastececras\\mvvm\\views\\telalogin.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AAEC649-BE97-5DD5-9813-0CB677B26DB4}|AbasteceCRAS\\AbasteceCRAS.csproj|e:\\csharp\\repos\\abastececras\\abastececras\\mvvm\\views\\homeview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AAEC649-BE97-5DD5-9813-0CB677B26DB4}|AbasteceCRAS\\AbasteceCRAS.csproj|solutionrelative:abastececras\\mvvm\\views\\homeview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AAEC649-BE97-5DD5-9813-0CB677B26DB4}|AbasteceCRAS\\AbasteceCRAS.csproj|e:\\csharp\\repos\\abastececras\\abastececras\\mvvm\\viewmodels\\homeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AAEC649-BE97-5DD5-9813-0CB677B26DB4}|AbasteceCRAS\\AbasteceCRAS.csproj|solutionrelative:abastececras\\mvvm\\viewmodels\\homeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AAEC649-BE97-5DD5-9813-0CB677B26DB4}|AbasteceCRAS\\AbasteceCRAS.csproj|e:\\csharp\\repos\\abastececras\\abastececras\\mvvm\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AAEC649-BE97-5DD5-9813-0CB677B26DB4}|AbasteceCRAS\\AbasteceCRAS.csproj|solutionrelative:abastececras\\mvvm\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AAEC649-BE97-5DD5-9813-0CB677B26DB4}|AbasteceCRAS\\AbasteceCRAS.csproj|e:\\csharp\\repos\\abastececras\\abastececras\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AAEC649-BE97-5DD5-9813-0CB677B26DB4}|AbasteceCRAS\\AbasteceCRAS.csproj|solutionrelative:abastececras\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AAEC649-BE97-5DD5-9813-0CB677B26DB4}|AbasteceCRAS\\AbasteceCRAS.csproj|e:\\csharp\\repos\\abastececras\\abastececras\\mvvm\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{7AAEC649-BE97-5DD5-9813-0CB677B26DB4}|AbasteceCRAS\\AbasteceCRAS.csproj|solutionrelative:abastececras\\mvvm\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AAEC649-BE97-5DD5-9813-0CB677B26DB4}|AbasteceCRAS\\AbasteceCRAS.csproj|e:\\csharp\\repos\\abastececras\\abastececras\\mvvm\\views\\homeview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{7AAEC649-BE97-5DD5-9813-0CB677B26DB4}|AbasteceCRAS\\AbasteceCRAS.csproj|solutionrelative:abastececras\\mvvm\\views\\homeview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AAEC649-BE97-5DD5-9813-0CB677B26DB4}|AbasteceCRAS\\AbasteceCRAS.csproj|e:\\csharp\\repos\\abastececras\\abastececras\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{7AAEC649-BE97-5DD5-9813-0CB677B26DB4}|AbasteceCRAS\\AbasteceCRAS.csproj|solutionrelative:abastececras\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AAEC649-BE97-5DD5-9813-0CB677B26DB4}|AbasteceCRAS\\AbasteceCRAS.csproj|e:\\csharp\\repos\\abastececras\\abastececras\\mvvm\\views\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AAEC649-BE97-5DD5-9813-0CB677B26DB4}|AbasteceCRAS\\AbasteceCRAS.csproj|solutionrelative:abastececras\\mvvm\\views\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AAEC649-BE97-5DD5-9813-0CB677B26DB4}|AbasteceCRAS\\AbasteceCRAS.csproj|e:\\csharp\\repos\\abastececras\\abastececras\\mvvm\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AAEC649-BE97-5DD5-9813-0CB677B26DB4}|AbasteceCRAS\\AbasteceCRAS.csproj|solutionrelative:abastececras\\mvvm\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AAEC649-BE97-5DD5-9813-0CB677B26DB4}|AbasteceCRAS\\AbasteceCRAS.csproj|e:\\csharp\\repos\\abastececras\\abastececras\\services\\sessionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AAEC649-BE97-5DD5-9813-0CB677B26DB4}|AbasteceCRAS\\AbasteceCRAS.csproj|solutionrelative:abastececras\\services\\sessionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AAEC649-BE97-5DD5-9813-0CB677B26DB4}|AbasteceCRAS\\AbasteceCRAS.csproj|e:\\csharp\\repos\\abastececras\\abastececras\\mvvm\\viewmodels\\viewmodelbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AAEC649-BE97-5DD5-9813-0CB677B26DB4}|AbasteceCRAS\\AbasteceCRAS.csproj|solutionrelative:abastececras\\mvvm\\viewmodels\\viewmodelbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AAEC649-BE97-5DD5-9813-0CB677B26DB4}|AbasteceCRAS\\AbasteceCRAS.csproj|e:\\csharp\\repos\\abastececras\\abastececras\\mvvm\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AAEC649-BE97-5DD5-9813-0CB677B26DB4}|AbasteceCRAS\\AbasteceCRAS.csproj|solutionrelative:abastececras\\mvvm\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AAEC649-BE97-5DD5-9813-0CB677B26DB4}|AbasteceCRAS\\AbasteceCRAS.csproj|e:\\csharp\\repos\\abastececras\\abastececras\\core\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AAEC649-BE97-5DD5-9813-0CB677B26DB4}|AbasteceCRAS\\AbasteceCRAS.csproj|solutionrelative:abastececras\\core\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AAEC649-BE97-5DD5-9813-0CB677B26DB4}|AbasteceCRAS\\AbasteceCRAS.csproj|e:\\csharp\\repos\\abastececras\\abastececras\\core\\onpropertychangedhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AAEC649-BE97-5DD5-9813-0CB677B26DB4}|AbasteceCRAS\\AbasteceCRAS.csproj|solutionrelative:abastececras\\core\\onpropertychangedhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HomeView.xaml.cs",
+              "DocumentMoniker": "E:\\CSharp\\repos\\AbasteceCRAS\\AbasteceCRAS\\MVVM\\Views\\HomeView.xaml.cs",
+              "RelativeDocumentMoniker": "AbasteceCRAS\\MVVM\\Views\\HomeView.xaml.cs",
+              "ToolTip": "E:\\CSharp\\repos\\AbasteceCRAS\\AbasteceCRAS\\MVVM\\Views\\HomeView.xaml.cs",
+              "RelativeToolTip": "AbasteceCRAS\\MVVM\\Views\\HomeView.xaml.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-21T01:20:39.054Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "E:\\CSharp\\repos\\AbasteceCRAS\\AbasteceCRAS\\App.xaml.cs",
+              "RelativeDocumentMoniker": "AbasteceCRAS\\App.xaml.cs",
+              "ToolTip": "E:\\CSharp\\repos\\AbasteceCRAS\\AbasteceCRAS\\App.xaml.cs",
+              "RelativeToolTip": "AbasteceCRAS\\App.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-21T01:20:19.268Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HomeViewModel.cs",
+              "DocumentMoniker": "E:\\CSharp\\repos\\AbasteceCRAS\\AbasteceCRAS\\MVVM\\ViewModels\\HomeViewModel.cs",
+              "RelativeDocumentMoniker": "AbasteceCRAS\\MVVM\\ViewModels\\HomeViewModel.cs",
+              "ToolTip": "E:\\CSharp\\repos\\AbasteceCRAS\\AbasteceCRAS\\MVVM\\ViewModels\\HomeViewModel.cs",
+              "RelativeToolTip": "AbasteceCRAS\\MVVM\\ViewModels\\HomeViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAIAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-21T00:56:34.293Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainViewModel.cs",
+              "DocumentMoniker": "E:\\CSharp\\repos\\AbasteceCRAS\\AbasteceCRAS\\MVVM\\ViewModels\\MainViewModel.cs",
+              "RelativeDocumentMoniker": "AbasteceCRAS\\MVVM\\ViewModels\\MainViewModel.cs",
+              "ToolTip": "E:\\CSharp\\repos\\AbasteceCRAS\\AbasteceCRAS\\MVVM\\ViewModels\\MainViewModel.cs",
+              "RelativeToolTip": "AbasteceCRAS\\MVVM\\ViewModels\\MainViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAUAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T18:37:34.473Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TelaLogin.xaml.cs",
+              "DocumentMoniker": "E:\\CSharp\\repos\\AbasteceCRAS\\AbasteceCRAS\\MVVM\\Views\\TelaLogin.xaml.cs",
+              "RelativeDocumentMoniker": "AbasteceCRAS\\MVVM\\Views\\TelaLogin.xaml.cs",
+              "ToolTip": "E:\\CSharp\\repos\\AbasteceCRAS\\AbasteceCRAS\\MVVM\\Views\\TelaLogin.xaml.cs",
+              "RelativeToolTip": "AbasteceCRAS\\MVVM\\Views\\TelaLogin.xaml.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAkwA4AAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T22:09:10.994Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "E:\\CSharp\\repos\\AbasteceCRAS\\AbasteceCRAS\\MVVM\\Views\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "AbasteceCRAS\\MVVM\\Views\\MainWindow.xaml",
+              "ToolTip": "E:\\CSharp\\repos\\AbasteceCRAS\\AbasteceCRAS\\MVVM\\Views\\MainWindow.xaml",
+              "RelativeToolTip": "AbasteceCRAS\\MVVM\\Views\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-21T01:18:29.491Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HomeView.xaml",
+              "DocumentMoniker": "E:\\CSharp\\repos\\AbasteceCRAS\\AbasteceCRAS\\MVVM\\Views\\HomeView.xaml",
+              "RelativeDocumentMoniker": "AbasteceCRAS\\MVVM\\Views\\HomeView.xaml",
+              "ToolTip": "E:\\CSharp\\repos\\AbasteceCRAS\\AbasteceCRAS\\MVVM\\Views\\HomeView.xaml",
+              "RelativeToolTip": "AbasteceCRAS\\MVVM\\Views\\HomeView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-21T00:58:48.886Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "E:\\CSharp\\repos\\AbasteceCRAS\\AbasteceCRAS\\MVVM\\Views\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "AbasteceCRAS\\MVVM\\Views\\MainWindow.xaml.cs",
+              "ToolTip": "E:\\CSharp\\repos\\AbasteceCRAS\\AbasteceCRAS\\MVVM\\Views\\MainWindow.xaml.cs",
+              "RelativeToolTip": "AbasteceCRAS\\MVVM\\Views\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T18:16:06.792Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "App.xaml",
+              "DocumentMoniker": "E:\\CSharp\\repos\\AbasteceCRAS\\AbasteceCRAS\\App.xaml",
+              "RelativeDocumentMoniker": "AbasteceCRAS\\App.xaml",
+              "ToolTip": "E:\\CSharp\\repos\\AbasteceCRAS\\AbasteceCRAS\\App.xaml",
+              "RelativeToolTip": "AbasteceCRAS\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-20T18:24:06.784Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "E:\\CSharp\\repos\\AbasteceCRAS\\AbasteceCRAS\\MVVM\\ViewModels\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "AbasteceCRAS\\MVVM\\ViewModels\\LoginViewModel.cs",
+              "ToolTip": "E:\\CSharp\\repos\\AbasteceCRAS\\AbasteceCRAS\\MVVM\\ViewModels\\LoginViewModel.cs",
+              "RelativeToolTip": "AbasteceCRAS\\MVVM\\ViewModels\\LoginViewModel.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAUwDIAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T18:56:18.656Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "SessionService.cs",
+              "DocumentMoniker": "E:\\CSharp\\repos\\AbasteceCRAS\\AbasteceCRAS\\Services\\SessionService.cs",
+              "RelativeDocumentMoniker": "AbasteceCRAS\\Services\\SessionService.cs",
+              "ToolTip": "E:\\CSharp\\repos\\AbasteceCRAS\\AbasteceCRAS\\Services\\SessionService.cs",
+              "RelativeToolTip": "AbasteceCRAS\\Services\\SessionService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-21T00:07:06.665Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ViewModelBase.cs",
+              "DocumentMoniker": "E:\\CSharp\\repos\\AbasteceCRAS\\AbasteceCRAS\\MVVM\\ViewModels\\ViewModelBase.cs",
+              "RelativeDocumentMoniker": "AbasteceCRAS\\MVVM\\ViewModels\\ViewModelBase.cs",
+              "ToolTip": "E:\\CSharp\\repos\\AbasteceCRAS\\AbasteceCRAS\\MVVM\\ViewModels\\ViewModelBase.cs",
+              "RelativeToolTip": "AbasteceCRAS\\MVVM\\ViewModels\\ViewModelBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T18:37:43.125Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "E:\\CSharp\\repos\\AbasteceCRAS\\AbasteceCRAS\\MVVM\\Models\\Usuario.cs",
+              "RelativeDocumentMoniker": "AbasteceCRAS\\MVVM\\Models\\Usuario.cs",
+              "ToolTip": "E:\\CSharp\\repos\\AbasteceCRAS\\AbasteceCRAS\\MVVM\\Models\\Usuario.cs",
+              "RelativeToolTip": "AbasteceCRAS\\MVVM\\Models\\Usuario.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAYwBEAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T18:48:04.992Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "OnPropertyChangedHandler.cs",
+              "DocumentMoniker": "E:\\CSharp\\repos\\AbasteceCRAS\\AbasteceCRAS\\Core\\OnPropertyChangedHandler.cs",
+              "RelativeDocumentMoniker": "AbasteceCRAS\\Core\\OnPropertyChangedHandler.cs",
+              "ToolTip": "E:\\CSharp\\repos\\AbasteceCRAS\\AbasteceCRAS\\Core\\OnPropertyChangedHandler.cs",
+              "RelativeToolTip": "AbasteceCRAS\\Core\\OnPropertyChangedHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T18:42:14.818Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "RelayCommand.cs",
+              "DocumentMoniker": "E:\\CSharp\\repos\\AbasteceCRAS\\AbasteceCRAS\\Core\\RelayCommand.cs",
+              "RelativeDocumentMoniker": "AbasteceCRAS\\Core\\RelayCommand.cs",
+              "ToolTip": "E:\\CSharp\\repos\\AbasteceCRAS\\AbasteceCRAS\\Core\\RelayCommand.cs",
+              "RelativeToolTip": "AbasteceCRAS\\Core\\RelayCommand.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAowCUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T18:37:52.646Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
