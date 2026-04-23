@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProjetoCRAS")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e832b726231fa1c9a8cbc7cb65814f5fe43df422")]
 [assembly: System.Reflection.AssemblyProductAttribute("ProjetoCRAS")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProjetoCRAS")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
