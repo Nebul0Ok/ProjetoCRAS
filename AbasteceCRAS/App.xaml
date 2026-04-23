@@ -1,0 +1,24 @@
+﻿<Application x:Class="AbasteceCRAS.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:AbasteceCRAS"
+             xmlns:vm="clr-namespace:AbasteceCRAS.MVVM.ViewModels"
+             xmlns:views="clr-namespace:AbasteceCRAS.MVVM.Views"
+             >
+    <Application.Resources>
+
+        <DataTemplate DataType="{x:Type vm:LoginViewModel}">
+            <views:TelaLogin/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:HomeViewModel}">
+            <views:HomeView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:DepositoViewModel}">
+            <views:DepositoView/>
+        </DataTemplate>
+        
+
+    </Application.Resources>
+</Application>
