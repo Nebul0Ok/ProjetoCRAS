@@ -8,24 +8,19 @@
     "net9.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\aluno\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\aluno\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\aluno\\Desktop\\projetos\\ProjetoCRAS\\ProjetoCRAS\\ProjetoCRAS.csproj",
+      "projectUniqueName": "C:\\Users\\aluno\\Desktop\\cras\\ProjetoCRAS\\ProjetoCRAS\\ProjetoCRAS.csproj",
       "projectName": "ProjetoCRAS",
-      "projectPath": "C:\\Users\\aluno\\Desktop\\projetos\\ProjetoCRAS\\ProjetoCRAS\\ProjetoCRAS.csproj",
+      "projectPath": "C:\\Users\\aluno\\Desktop\\cras\\ProjetoCRAS\\ProjetoCRAS\\ProjetoCRAS.csproj",
       "packagesPath": "C:\\Users\\aluno\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\aluno\\Desktop\\projetos\\ProjetoCRAS\\ProjetoCRAS\\obj\\",
+      "outputPath": "C:\\Users\\aluno\\Desktop\\cras\\ProjetoCRAS\\ProjetoCRAS\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
         "C:\\Users\\aluno\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

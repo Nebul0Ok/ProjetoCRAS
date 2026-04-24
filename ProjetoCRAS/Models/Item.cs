@@ -32,9 +32,7 @@ namespace ProjetoCRAS.Models
 
             TipoDeItems.Add(novoTipo);
 
-            Historico h = new Historico(user.NomeUsuario,$"Tipo '{novoTipo.NomeTipo}' adicionado ao item '{NomeItem}'");
-
-            h.AdicionarHistoricoLista(h);
+            Historico.Registrar(user.NomeUsuario,$"Tipo '{novoTipo.NomeTipo}' adicionado ao item '{NomeItem}'");
 
             return true;
         }
@@ -52,9 +50,7 @@ namespace ProjetoCRAS.Models
 
             TipoDeItems.Remove(tipoExistente);
 
-            Historico h = new Historico(user.NomeUsuario,$"Tipo '{tipoExistente.NomeTipo}' removido do item '{NomeItem}'");
-
-            h.AdicionarHistoricoLista(h);
+            Historico.Registrar(user.NomeUsuario,$"Tipo '{tipoExistente.NomeTipo}' removido do item '{NomeItem}'");
 
             return true;
         }
@@ -75,8 +71,7 @@ namespace ProjetoCRAS.Models
             tipoExistente.QuantidadeTipoProduto = tipoAtualizado.QuantidadeTipoProduto;
             tipoExistente.Medida = tipoAtualizado.Medida;
 
-            Historico h = new Historico(user.NomeUsuario, $"Tipo '{tipoExistente.NomeTipo}' atualizado no item '{NomeItem}'");
-            h.AdicionarHistoricoLista(h);
+            Historico.Registrar(user.NomeUsuario, $"Tipo '{tipoExistente.NomeTipo}' atualizado no item '{NomeItem}'");
 
             return true;
         }

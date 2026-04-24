@@ -12,16 +12,17 @@ namespace ProjetoCRAS.Models
         public string Usuario { get; set; }
         public string Acao { get; set; }
 
-        public List<Historico> _historico = new List<Historico>();
+        public static List<Historico> ListaHistorico { get; set; } = new List<Historico>();
 
         public Historico(string Usuario, string Acao) {
-            this.Usuario = Usuario;
+           this.Usuario = Usuario;
             this.Acao = Acao;
-            DataRegistro = DateTime.Now;
+            this.DataRegistro = DateTime.Now;
         }
 
-        public void AdicionarHistoricoLista(Historico hist) {
-            _historico.Add(hist);
+        public static void Registrar(string Usuario, string Acao)
+        {
+            ListaHistorico.Add(new Historico(Usuario, Acao));
         }
 
     }
