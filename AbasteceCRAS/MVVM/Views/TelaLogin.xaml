@@ -6,30 +6,74 @@
         xmlns:local="clr-namespace:AbasteceCRAS.MVVM.Views"
         mc:Ignorable="d"
         Title="AbasteceCRAS - Login" Height="450" Width="800">
-    <Grid Background="Gray">
+    
+  <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
-        <Border Background="White" CornerRadius="20" Width="220" Height="300">
-            <StackPanel Margin="10">
-                <TextBlock Text="Login" FontSize="25" Foreground="Navy"/>
-                <Separator Margin="10" />
-                <TextBlock Text="E-mail:"/>
-                <TextBox Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}"/>
-                <Separator Margin="10" Background="Transparent" />
-                <TextBlock Text="Senha:"/>
-                <PasswordBox PasswordChanged="PasswordBox_PasswordChanged"/>
-                <Separator Margin="10" Background="Transparent" />
-                <Button Content="Esqueceu a senha?" 
-                        Foreground="Blue" Background="Transparent" BorderBrush="Transparent" 
-                        Width="auto" Height="auto" HorizontalAlignment="Left"/>
+        <Border Grid.Column="0" CornerRadius="20,0,0,20">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#000080" Offset="0.0"/>
+                    <GradientStop Color="#0099FF" Offset="1.0"/>
+                </LinearGradientBrush>
+            </Border.Background>
 
-                <Separator Margin="10" Background="Transparent" />
+            <Grid Margin="30">
+                <Canvas Opacity="0.1">
+                    <Ellipse Fill="White" Width="200" Height="200" Canvas.Left="-50" Canvas.Top="-50"/>
+                    <Ellipse Fill="White" Width="150" Height="150" Canvas.Right="-30" Canvas.Bottom="-30"/>
+                    <Rectangle Fill="White" Width="100" Height="100" Canvas.Left="100" Canvas.Top="150" Opacity="0.5"/>
+                </Canvas>
 
-                <Button Content="Confirmar" Width="70" Height="30"
-                        Command="{Binding RealizarLogin}"
-                        CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
-            </StackPanel>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                    <Border Width="120" Height="150" Background="White" CornerRadius="60,60,10,10" 
+                    Padding="15" Margin="0,0,0,30" BorderBrush="#00AEEF" BorderThickness="2">
+                        <Grid>
+                            <UniformGrid Columns="2" Rows="3" Opacity="0.2">
+                                <Rectangle Fill="#00AEEF" Margin="2" RadiusX="2" RadiusY="2"/>
+                                <Rectangle Fill="#00AEEF" Margin="2" RadiusX="2" RadiusY="2"/>
+                                <Rectangle Fill="#00AEEF" Margin="2" RadiusX="2" RadiusY="2"/>
+                                <Rectangle Fill="#00AEEF" Margin="2" RadiusX="2" RadiusY="2"/>
+                                <Rectangle Fill="#00AEEF" Margin="2" RadiusX="2" RadiusY="2"/>
+                                <Rectangle Fill="#00AEEF" Margin="2" RadiusX="2" RadiusY="2"/>
+                            </UniformGrid>
+                            <Ellipse Fill="#00AEEF" Width="20" Height="20" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,-10,0"/>
+                        </Grid>
+                    </Border>
+
+                    <TextBlock Text="CRAS Cruzeiro" Foreground="White" FontSize="22" FontWeight="Bold" 
+                       HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" Margin="0,0,0,5"/>
+                    <TextBlock Text="Seja bem-vindo(a) ao seu sistema de gerenciamento de estoque." 
+                       Foreground="White" FontSize="14" Opacity="0.8" 
+                       HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" MaxWidth="220"/>
+
+                </StackPanel>
+
+                <Polyline Points="0,10 10,0 20,10 30,0 40,10 50,0 60,10 70,0" Stroke="White" StrokeThickness="1" 
+                  Opacity="0.4" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,10,10"/>
+
+            </Grid>
         </Border>
-        
-        
-    </Grid>
+
+        <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="50">
+            <TextBlock Text="LOGIN" FontSize="28" FontWeight="Bold" Foreground="#333" Margin="0,0,0,20"/>
+
+            <TextBlock Text="Usuário" FontSize="12" Foreground="Gray"/>
+            <TextBox Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}" VerticalContentAlignment="Center" Height="35" Margin="0,5,0,15" Background="#F0F4F8"/>
+
+            <TextBlock Text="Senha" FontSize="12" Foreground="Gray"/>
+            <PasswordBox VerticalContentAlignment="Center" Height="35" Margin="0,5,0,10" Background="#F0F4F8" PasswordChanged="PasswordBox_PasswordChanged"/>
+
+            <TextBlock Text="Esqueci minha senha" HorizontalAlignment="Left" FontSize="12" Foreground="#0099FF" Cursor="Hand"/>
+
+            <Button Content="Entrar" Background="#0099FF" Foreground="White" 
+                Height="40" Margin="0,20,0,10" FontWeight="Bold" Command="{Binding RealizarLogin}"
+                CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
+
+        </StackPanel>
+  </Grid>
 </Window>

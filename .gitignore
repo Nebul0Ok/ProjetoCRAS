@@ -1,0 +1,9 @@
+# Pastas de build
+[Bb]in/
+[Oo]bj/
+.vs/
+
+# Arquivos de usuário
+*.user
+*.suo
+*.slnx.sqlite

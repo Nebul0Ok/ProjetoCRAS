@@ -41,7 +41,7 @@ public class LoginViewModel: ViewModelBase
 
             if (usuarioEncontrado != null)
             {
-                MessageBox.Show($"Logado.");
+                MessageBox.Show("Bem-vindo ao sistema!", "Login Efetuado", MessageBoxButton.OK, MessageBoxImage.Information);
                 SessionService.Instance.UsuarioLogado = usuarioEncontrado;
 
                 if(parameter is Window currentWindow)
@@ -54,7 +54,7 @@ public class LoginViewModel: ViewModelBase
             }
             else
             {
-                MessageBox.Show("Usuario não econtrado");
+                MessageBox.Show("Credenciais inválidas.", "Erro de Login", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
 
         } 
