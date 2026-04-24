@@ -6,34 +6,25 @@
              xmlns:local="clr-namespace:AbasteceCRAS.MVVM.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="White">
-        <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-            </Grid.ColumnDefinitions>
 
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-            </Grid.RowDefinitions>
+    <Grid Margin="10,0,0,10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
-            <Button Grid.Row="0" Grid.Column="0"
-                    Content="Estoque"
-                    Width="100" Height="75"/>
+        <StackPanel Grid.Column="0" VerticalAlignment="Center">
+            <TextBlock Text="Bem-vindo ao Sistema de Gestão CRAS" FontSize="24" FontWeight="Bold"/>
+            <TextBlock Text="Selecione uma opção para continuar" Margin="0,0,0,20"/>
 
-            <Button Grid.Row="1" Grid.Column="0"
-                    Content="Itens"
-                    Width="100" Height="75"/>
+            <UniformGrid Rows="2" Columns="2" Width="500" Height="300" Margin="0,0,0,0">
+                <Button Style="{StaticResource CardButtonStyle}" Content="Estoque"/>
+                <Button Style="{StaticResource CardButtonStyle}" Content="Depósitos"/>
+                <Button Style="{StaticResource CardButtonStyle}" Content="Itens"/>
+                <Button Style="{StaticResource CardButtonStyle}" Content="Histórico"/>
+            </UniformGrid>
+        </StackPanel>
 
-            <Button Grid.Row="0" Grid.Column="1"
-                    Content="Depósito"
-                    Width="100" Height="75"/>
-    
-            <Button Grid.Row="1" Grid.Column="1"
-                    Content="Histórico"
-                    Width="100" Height="75"/>
-
-        </Grid>
+        <Image Grid.Column="1" Source="/img/logo_cras.svg" Width="300" VerticalAlignment="Center"/>
     </Grid>
 </UserControl>
