@@ -8,23 +8,23 @@
     "net9.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\João\\.nuget\\packages\\": {},
-    "E:\\Programas\\Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\BRENO\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\CSharp\\repos\\AbasteceCRAS\\AbasteceCRAS\\AbasteceCRAS.csproj",
+      "projectUniqueName": "C:\\Users\\BRENO\\Documents\\CRAS\\ProjetoCRAS\\AbasteceCRAS\\AbasteceCRAS.csproj",
       "projectName": "AbasteceCRAS",
-      "projectPath": "E:\\CSharp\\repos\\AbasteceCRAS\\AbasteceCRAS\\AbasteceCRAS.csproj",
-      "packagesPath": "C:\\Users\\João\\.nuget\\packages\\",
-      "outputPath": "E:\\CSharp\\repos\\AbasteceCRAS\\AbasteceCRAS\\obj\\",
+      "projectPath": "C:\\Users\\BRENO\\Documents\\CRAS\\ProjetoCRAS\\AbasteceCRAS\\AbasteceCRAS.csproj",
+      "packagesPath": "C:\\Users\\BRENO\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\BRENO\\Documents\\CRAS\\ProjetoCRAS\\AbasteceCRAS\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "E:\\Programas\\Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\João\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\BRENO\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -33,7 +33,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

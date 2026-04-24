@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AbasteceCRAS")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+01c5ef84c17eb5fd974bdc24279cba0cfc00ab3d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+47939ae2827cf93b67bc3508a83c25c5e033f495")]
 [assembly: System.Reflection.AssemblyProductAttribute("AbasteceCRAS")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AbasteceCRAS")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
