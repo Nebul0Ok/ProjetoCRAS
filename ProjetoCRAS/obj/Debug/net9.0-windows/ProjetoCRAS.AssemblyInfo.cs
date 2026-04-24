@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("AbasteceCRAS")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("ProjetoCRAS")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+01c5ef84c17eb5fd974bdc24279cba0cfc00ab3d")]
-[assembly: System.Reflection.AssemblyProductAttribute("AbasteceCRAS")]
-[assembly: System.Reflection.AssemblyTitleAttribute("AbasteceCRAS")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+338c75276a442a2ac06000d44f06a93ff83ad34e")]
+[assembly: System.Reflection.AssemblyProductAttribute("ProjetoCRAS")]
+[assembly: System.Reflection.AssemblyTitleAttribute("ProjetoCRAS")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 [assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows7.0")]
