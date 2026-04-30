@@ -13,7 +13,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Border Grid.Column="0" CornerRadius="20,0,0,20">
+        <Border Grid.Column="0">
             <Border.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                     <GradientStop Color="#000080" Offset="0.0"/>
@@ -21,45 +21,56 @@
                 </LinearGradientBrush>
             </Border.Background>
 
-            <Grid Margin="30">
-                <Canvas Opacity="0.1">
-                    <Ellipse Fill="White" Width="200" Height="200" Canvas.Left="-50" Canvas.Top="-50"/>
-                    <Ellipse Fill="White" Width="150" Height="150" Canvas.Right="-30" Canvas.Bottom="-30"/>
-                    <Rectangle Fill="White" Width="100" Height="100" Canvas.Left="100" Canvas.Top="150" Opacity="0.5"/>
-                </Canvas>
+            <Grid Margin="40">
+                <Grid Opacity="0.1" IsHitTestVisible="False">
+                    <Ellipse Fill="White" Width="250" Height="250" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-80,-80,0,0"/>
+                    <Ellipse Fill="White" Width="200" Height="200" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,-50,-50"/>
+                    <Rectangle Fill="White" Width="120" Height="120" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="150,200,0,0" Opacity="0.5">
+                        <Rectangle.RenderTransform>
+                            <RotateTransform Angle="45"/>
+                        </Rectangle.RenderTransform>
+                    </Rectangle>
+                </Grid>
 
-                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Stretch">
 
-                    <Border Width="120" Height="150" Background="White" CornerRadius="60,60,10,10" 
-                    Padding="15" Margin="0,0,0,30" BorderBrush="#00AEEF" BorderThickness="2">
-                        <Grid>
-                            <UniformGrid Columns="2" Rows="3" Opacity="0.2">
-                                <Rectangle Fill="#00AEEF" Margin="2" RadiusX="2" RadiusY="2"/>
-                                <Rectangle Fill="#00AEEF" Margin="2" RadiusX="2" RadiusY="2"/>
-                                <Rectangle Fill="#00AEEF" Margin="2" RadiusX="2" RadiusY="2"/>
-                                <Rectangle Fill="#00AEEF" Margin="2" RadiusX="2" RadiusY="2"/>
-                                <Rectangle Fill="#00AEEF" Margin="2" RadiusX="2" RadiusY="2"/>
-                                <Rectangle Fill="#00AEEF" Margin="2" RadiusX="2" RadiusY="2"/>
-                            </UniformGrid>
-                            <Ellipse Fill="#00AEEF" Width="20" Height="20" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,-10,0"/>
-                        </Grid>
-                    </Border>
+                    <Viewbox MaxHeight="220" Stretch="Uniform" Margin="0,0,0,40">
+                        <Border Width="120" Height="150" Background="White" CornerRadius="60,60,10,10" 
+                            Padding="15" BorderBrush="#00AEEF" BorderThickness="2">
+                            <Grid>
+                                <UniformGrid Columns="2" Rows="3" Opacity="0.2">
+                                    <Rectangle Fill="#00AEEF" Margin="2" RadiusX="2" RadiusY="2"/>
+                                    <Rectangle Fill="#00AEEF" Margin="2" RadiusX="2" RadiusY="2"/>
+                                    <Rectangle Fill="#00AEEF" Margin="2" RadiusX="2" RadiusY="2"/>
+                                    <Rectangle Fill="#00AEEF" Margin="2" RadiusX="2" RadiusY="2"/>
+                                    <Rectangle Fill="#00AEEF" Margin="2" RadiusX="2" RadiusY="2"/>
+                                    <Rectangle Fill="#00AEEF" Margin="2" RadiusX="2" RadiusY="2"/>
+                                </UniformGrid>
+                                <Ellipse Fill="#00AEEF" Width="20" Height="20" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,-10,0"/>
+                            </Grid>
+                        </Border>
+                    </Viewbox>
 
-                    <TextBlock Text="CRAS Cruzeiro" Foreground="White" FontSize="22" FontWeight="Bold" 
-                       HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" Margin="0,0,0,5"/>
+                    <TextBlock Text="CRAS Cruzeiro" Foreground="White" FontSize="32" FontWeight="Bold" 
+                           HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" Margin="0,0,0,10">
+                        <TextBlock.Effect>
+                            <DropShadowEffect BlurRadius="10" ShadowDepth="2" Opacity="0.3"/>
+                        </TextBlock.Effect>
+                    </TextBlock>
+                    
                     <TextBlock Text="Seja bem-vindo(a) ao seu sistema de gerenciamento de estoque." 
-                       Foreground="White" FontSize="14" Opacity="0.8" 
-                       HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" MaxWidth="220"/>
-
+                           Foreground="White" FontSize="18" Opacity="0.9" 
+                           HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" 
+                           MaxWidth="350"/>
+                    
                 </StackPanel>
 
-                <Polyline Points="0,10 10,0 20,10 30,0 40,10 50,0 60,10 70,0" Stroke="White" StrokeThickness="1" 
-                  Opacity="0.4" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,10,10"/>
-
+                <Polyline Points="0,10 10,0 20,10 30,0 40,10 50,0 60,10 70,0" Stroke="White" StrokeThickness="1.5" 
+                      Opacity="0.5" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10,0,0,10"/>
             </Grid>
         </Border>
 
-        <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="50">
+        <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="60">
             <TextBlock Text="LOGIN" FontSize="28" FontWeight="Bold" Foreground="#333" Margin="0,0,0,20"/>
 
             <TextBlock Text="Usuário" FontSize="12" Foreground="Gray"/>
