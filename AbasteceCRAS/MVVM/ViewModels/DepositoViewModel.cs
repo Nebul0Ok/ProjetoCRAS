@@ -1,5 +1,5 @@
 ﻿namespace AbasteceCRAS.MVVM.ViewModels;
 
-public class HomeViewModel
+public class DepositoViewModel
 {
 }
