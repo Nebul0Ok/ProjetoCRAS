@@ -13,5 +13,8 @@ public class DadosService
 
     private DadosService()
     {
+        ListaProduto = new ObservableCollection<Produto>();
+        ListaHistorico = new ObservableCollection<Historico>();
+        ListaDeposito = new ObservableCollection<Deposito>();
     }
 }

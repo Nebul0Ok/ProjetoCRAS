@@ -29,7 +29,7 @@
             <Button Grid.Row="0" Grid.Column="1"
                     Content="Depósito"
                     Width="100" Height="75"
-                    Command="{Binding AcessarDeposito}"/>
+                    Command="{Binding DataContext.AcessarDeposito, RelativeSource={RelativeSource AncestorType=Window}}"/>
     
             <Button Grid.Row="1" Grid.Column="1"
                     Content="Histórico"

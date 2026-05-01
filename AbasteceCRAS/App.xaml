@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:AbasteceCRAS"
              xmlns:vm="clr-namespace:AbasteceCRAS.MVVM.ViewModels"
              xmlns:views="clr-namespace:AbasteceCRAS.MVVM.Views"
-             StartupUri="MVVM/Views/TelaLogin.xaml">
+             StartupUri="MVVM/Views/MainWindow.xaml">
     <Application.Resources>
 
         <DataTemplate DataType="{x:Type vm:LoginViewModel}">

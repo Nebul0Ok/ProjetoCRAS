@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="AbasteceCRAS" Height="450" Width="800"
         ResizeMode="CanResize"
-        >
+        WindowState="Maximized">
+        
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
