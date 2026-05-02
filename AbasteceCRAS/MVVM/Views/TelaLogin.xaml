@@ -5,6 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AbasteceCRAS.MVVM.Views"
         mc:Ignorable="d"
+        WindowState="Maximized" 
+        WindowStyle="None"
+        ResizeMode="CanMinimize"
+        AllowsTransparency="False"
         Title="AbasteceCRAS - Login" Height="450" Width="800">
     
   <Grid Background="White">

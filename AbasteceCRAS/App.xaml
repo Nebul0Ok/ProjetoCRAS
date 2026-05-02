@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:AbasteceCRAS"
              xmlns:vm="clr-namespace:AbasteceCRAS.MVVM.ViewModels"
              xmlns:views="clr-namespace:AbasteceCRAS.MVVM.Views"
-             StartupUri="MVVM/Views/MainWindow.xaml">
+             StartupUri="MVVM/Views/TelaLogin.xaml">
     <Application.Resources>
         
         <!-- Estilo para os botões na HomeView, resolver erro da responsividade -->
