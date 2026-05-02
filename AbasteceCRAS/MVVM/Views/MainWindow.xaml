@@ -6,111 +6,41 @@
         xmlns:local="clr-namespace:AbasteceCRAS"
         mc:Ignorable="d"
         Title="AbasteceCRAS" Height="450" Width="800"
-        ResizeMode="CanResize"
-        xmlns:svg="http://sharpvectors.codeplex.com/svgloader/"
+        WindowState="Maximized" 
+        WindowStyle="None"
+        ResizeMode="CanMinimize"
+        AllowsTransparency="False"
         >
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="9*"/>
         </Grid.RowDefinitions>
 
-        <!--
-        <ContentControl Grid.Row="1"
-            Content="{Binding CurrentView}">
+        <Grid Grid.Row="0" Background="Blue">
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Button Content="Config" Grid.Column="0" Height="20" Width="20" HorizontalAlignment="Left"/>
+
+                <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right">
+                    <TextBlock VerticalAlignment="Center"
+               Text="{Binding UsuarioAtual.Nome}"
+               Margin="0,0,10,0" Foreground="White"
+               />
+                    <Button Content="Icon" Width="20" Height="20"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+
+        <ContentControl Grid.Row="1" Content="{Binding CurrentView}">
         </ContentControl>
-        -->
 
-        <!-- Nav -->
-        <Grid Grid.Row="0" 
-              Background="#111184" 
-              Height="60">
-        </Grid>
 
-        <!-- Main -->
-        <Grid Grid.Row="1" >
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-
-            <StackPanel Grid.Column="0" VerticalAlignment="Center" Margin="50,0">
-                <!-- Textos -->
-                <TextBlock Text="Bem-vindo ao Sistema de Gestão CRAS" FontSize="20" FontWeight="Bold"/>
-                <TextBlock Text="Selecione uma opção para continuar"/>
-
-                <!-- Cards -->
-                <UniformGrid Rows="2" Columns="2" Width="500" Height="300">
-                    <Button Style="{StaticResource CardButtonStyle}">
-                        <StackPanel>
-                            <TextBlock Text="&#xf466;"
-                           FontFamily="/Fonts/#Font Awesome 7 Free Solid"        
-                           FontSize="45" 
-                           HorizontalAlignment="Center" 
-                           Margin="0,0,0,15"
-                           Foreground="#333"/>
-
-                            <TextBlock Text="Estoque" 
-                            HorizontalAlignment="Center" 
-                            FontSize="18" 
-                            Foreground="Black" />
-                        </StackPanel>
-                    </Button>
-                    <Button Style="{StaticResource CardButtonStyle}"  >
-                        <StackPanel>
-                            <TextBlock Text="&#xf494;" 
-                           FontFamily="/Fonts/#Font Awesome 7 Free Solid"
-                           FontSize="45" 
-                           HorizontalAlignment="Center" 
-                           Margin="0,0,0,15"
-                           Foreground="#333"/>
-
-                            <TextBlock Text="Depósitos" 
-                            HorizontalAlignment="Center" 
-                            FontSize="18" 
-                            Foreground="Black" />
-                        </StackPanel>
-                    </Button>
-                    <Button Style="{StaticResource CardButtonStyle}">
-                        <StackPanel>
-                            <TextBlock Text="&#xf291;" 
-                           FontFamily="/Fonts/#Font Awesome 7 Free Solid"
-                           FontSize="45" 
-                           HorizontalAlignment="Center" 
-                           Margin="0,0,0,15"
-                           Foreground="#333"/>
-
-                            <TextBlock Text="Itens" 
-                            HorizontalAlignment="Center" 
-                            FontSize="18" 
-                            Foreground="Black" />
-                        </StackPanel>
-                    </Button>
-                    <Button Style="{StaticResource CardButtonStyle}" >
-                        <StackPanel>
-                            <TextBlock Text="&#xf1da;" 
-                           FontFamily="/Fonts/#Font Awesome 7 Free Solid"
-                           FontSize="45" 
-                           HorizontalAlignment="Center" 
-                           Margin="0,0,0,15"
-                           Foreground="#333"/>
-
-                            <TextBlock Text="Histórico" 
-                            HorizontalAlignment="Center" 
-                            FontSize="18" 
-                            Foreground="Black" />
-                        </StackPanel>
-                    </Button>
-                </UniformGrid>
-            </StackPanel>
-
-            <Image Grid.Column="1" 
-               Source="/img/cras-seeklogo.png"
-               Stretch="Uniform" 
-               Margin="40"/>
-
-        </Grid>
     </Grid>
-   
+
 </Window>

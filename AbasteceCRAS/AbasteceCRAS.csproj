@@ -9,8 +9,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="fonts\Font Awesome 7 Free-Solid-900.otf" />
+    <None Remove="img\cras-seeklogo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Assets\" />
     <Folder Include="Styles\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="fonts\Font Awesome 7 Free-Solid-900.otf" />
+    <Resource Include="img\cras-seeklogo.png" />
   </ItemGroup>
 
 </Project>

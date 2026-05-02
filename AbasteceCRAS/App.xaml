@@ -4,48 +4,56 @@
              xmlns:local="clr-namespace:AbasteceCRAS"
              xmlns:vm="clr-namespace:AbasteceCRAS.MVVM.ViewModels"
              xmlns:views="clr-namespace:AbasteceCRAS.MVVM.Views"
-             StartupUri="MVVM/Views/TelaLogin.xaml">
+             StartupUri="MVVM/Views/MainWindow.xaml">
     <Application.Resources>
         
         <!-- Estilo para os botões na HomeView, resolver erro da responsividade -->
         <Style x:Key="CardButtonStyle" TargetType="Button">
-            <Setter Property="Margin" Value="0,10,25,10"/>
-            <Setter Property="Padding" Value="12"/>
+            <!-- Cores PADRÃO (Estado normal) -->
             <Setter Property="Background" Value="Beige"/>
+            <Setter Property="BorderBrush" Value="#E0E0E0"/>
+
+            <Setter Property="Margin" Value="0,10,25,10"/>
+            <Setter Property="Padding" Value="25"/>
             <Setter Property="Foreground" Value="#333"/>
             <Setter Property="FontSize" Value="20"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="BorderThickness" Value="1.5"/>
-            <Setter Property="BorderBrush" Value="#E0E0E0"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Border x:Name="border"
-                                Background="{TemplateBinding Background}"
-                                BorderBrush="{TemplateBinding BorderBrush}" 
-                                BorderThickness="{TemplateBinding BorderThickness}"
-                                CornerRadius="18"
-                                SnapsToDevicePixels="True">
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}" 
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        Padding="{TemplateBinding Padding}"
+                       
+                        CornerRadius="18"
+                        SnapsToDevicePixels="True">
                             <ContentPresenter HorizontalAlignment="Center"
-                                              VerticalAlignment="Center"
-                                              RecognizesAccessKey="True"/>
+                                      VerticalAlignment="Center"/>
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="border" Property="Background" Value="#FF1976D2"/>
+                                <!-- Pega a cor de fundo da TAG do botão -->
+                                <Setter TargetName="border" Property="Background" 
+                                Value="{Binding Tag, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                <!-- Pega a cor da borda do UID do botão -->
+                                <Setter TargetName="border" Property="BorderBrush" 
+                                Value="{Binding Uid, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                <Setter TargetName="border" Property="BorderThickness" Value="2.5"/>
+
                             </Trigger>
+
                             <Trigger Property="IsPressed" Value="True">
-                                <Setter TargetName="border" Property="Background" Value="#FF1565C0"/>
+                                <Setter TargetName="border" Property="Opacity" Value="0.8"/>
                                 <Setter Property="RenderTransform">
                                     <Setter.Value>
                                         <ScaleTransform ScaleX="0.97" ScaleY="0.97"/>
                                     </Setter.Value>
                                 </Setter>
-                            </Trigger>
-                            <Trigger Property="IsEnabled" Value="False">
-                                <Setter TargetName="border" Property="Opacity" Value="0.6"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>

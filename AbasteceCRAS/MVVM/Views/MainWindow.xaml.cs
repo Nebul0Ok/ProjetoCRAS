@@ -21,6 +21,7 @@ namespace AbasteceCRAS
         {
             InitializeComponent();
             this.DataContext = new MainViewModel();
+            this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
         }
     }
 }
