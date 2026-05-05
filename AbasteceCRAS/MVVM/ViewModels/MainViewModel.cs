@@ -8,13 +8,13 @@ namespace AbasteceCRAS.MVVM.ViewModels
     public class MainViewModel : ViewModelBase
     {
         public Usuario UsuarioAtual { get;set;}
-        public DepositoViewModel Deposito;
         public HomeViewModel Home;
+        public DepositoViewModel Deposito;
+        public ItensViewModel Itens;
+        public EstoqueViewModel Estoque;
+        public HistoricoViewModel Historico;
 
         public static MainViewModel Instance { get; private set;}
-
-        
-
 
         private object _currentView;
         public object CurrentView
@@ -27,9 +27,17 @@ namespace AbasteceCRAS.MVVM.ViewModels
         {
             UsuarioAtual = SessionService.Instance.UsuarioLogado;
             Home = new HomeViewModel();
-            CurrentView = Home;
             Deposito = new DepositoViewModel();
+            Itens = new ItensViewModel();
+            Historico = new HistoricoViewModel();
+            Estoque = new EstoqueViewModel();
+            CurrentView = Home;
             Instance = this;
+        }
+
+        public void AcessarHome()
+        {
+            CurrentView = Home;
         }
 
         public void AcessarDeposito()
@@ -37,10 +45,22 @@ namespace AbasteceCRAS.MVVM.ViewModels
             CurrentView = Deposito;
         }
 
-        public void AcessarHome()
+        public void AcessarItens()
         {
-            CurrentView = Home;
+            CurrentView = Itens;
         }
+
+        public void AcessarEstoque()
+        {
+            CurrentView = Estoque;
+        }
+
+        public void AcessarHistorico()
+        {
+            CurrentView = Historico;
+        }
+
+
 
     }
 }

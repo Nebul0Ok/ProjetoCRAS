@@ -9,8 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Assets\" />
-    <Folder Include="Styles\" />
+    <None Remove="Assets\cras-seeklogo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Assets\cras-seeklogo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

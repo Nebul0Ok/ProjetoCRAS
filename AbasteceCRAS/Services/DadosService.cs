@@ -7,9 +7,9 @@ public class DadosService
     private static DadosService _instance;
     public static DadosService Instance => _instance ??= new DadosService();
 
-    public ObservableCollection<Produto> ListaProduto { get; set; }
-    public ObservableCollection<Historico> ListaHistorico { get; set; }
-    public ObservableCollection<Deposito> ListaDeposito { get; set; }
+    public ObservableCollection<Produto> ListaProduto { get; set; } = new ObservableCollection<Produto>();
+    public ObservableCollection<Historico> ListaHistorico { get; set; } = new ObservableCollection<Historico>();
+    public ObservableCollection<Deposito> ListaDeposito { get; set; } = new ObservableCollection<Deposito>();
 
     private DadosService()
     {

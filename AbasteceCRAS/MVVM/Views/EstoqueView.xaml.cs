@@ -1,6 +1,4 @@
-﻿using AbasteceCRAS.MVVM.ViewModels;
-using AbasteceCRAS.Services;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,11 +16,11 @@ using System.Windows.Shapes;
 namespace AbasteceCRAS.MVVM.Views
 {
     /// <summary>
-    /// Interaction logic for HomeView.xaml
+    /// Interaction logic for EstoqueView.xaml
     /// </summary>
-    public partial class HomeView : UserControl
+    public partial class EstoqueView : UserControl
     {
-        public HomeView()
+        public EstoqueView()
         {
             InitializeComponent();
         }

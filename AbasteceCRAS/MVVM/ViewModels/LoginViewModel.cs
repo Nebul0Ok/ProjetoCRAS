@@ -58,7 +58,7 @@ public class LoginViewModel: ViewModelBase
             }
 
         } 
-        catch(Exception ex)
+        catch
         {
 
         }

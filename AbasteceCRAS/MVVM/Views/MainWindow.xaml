@@ -6,29 +6,73 @@
         xmlns:local="clr-namespace:AbasteceCRAS"
         mc:Ignorable="d"
         Title="AbasteceCRAS" Height="450" Width="800"
-        ResizeMode="CanResize"
+        WindowState="Maximized" 
+        WindowStyle="None"
+        ResizeMode="CanMinimize"
+        AllowsTransparency="False"
+        KeyDown="Window_KeyDown"
         >
+
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="9*"/>
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0" Background="Blue">
+        <Grid Grid.Row="0" Background="#111184">
             <Grid Margin="10">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
 
-                <Button Content="Config" Grid.Column="0" Height="20" Width="20" HorizontalAlignment="Left"/>
+                <Button  Grid.Column="0" Height="35" Width="35" VerticalAlignment="Center" HorizontalAlignment="Left" Style="{StaticResource BotaoIcone}">
+                    <Canvas VerticalAlignment="Center" HorizontalAlignment="Center" Name="Capa_1" Width="24.75" Height="24.75">
+                        <Canvas.RenderTransform>
+                            <TranslateTransform X="0" Y="0"/>
+                        </Canvas.RenderTransform>
+                        <Canvas.Resources/>
+                        <Canvas Name="g4">
+                            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path2" Fill="White">
+                                <Path.Data>
+                                    <PathGeometry Figures="M0 3.875c0-1.104 0.896-2 2-2h20.75c1.104 0 2 0.896 2 2s-0.896 2-2 2H2C0.896 5.875 0 4.979 0 3.875z M22.75 10.375H2   c-1.104 0-2 0.896-2 2c0 1.104 0.896 2 2 2h20.75c1.104 0 2-0.896 2-2C24.75 11.271 23.855 10.375 22.75 10.375z M22.75 18.875H2   c-1.104 0-2 0.896-2 2s0.896 2 2 2h20.75c1.104 0 2-0.896 2-2S23.855 18.875 22.75 18.875z" FillRule="NonZero"/>
+                                </Path.Data>
+                            </Path>
+                        </Canvas>
+                    </Canvas>
+                </Button>
 
                 <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right">
                     <TextBlock VerticalAlignment="Center"
                    Text="{Binding UsuarioAtual.Nome}"
                    Margin="0,0,10,0" Foreground="White"
+                   FontSize="20" FontWeight="Bold"
                    />
-                    <Button Content="Icon" Width="20" Height="20"/>
+                    <Button VerticalAlignment="Center" Width="35" Height="35" Style="{StaticResource BotaoIcone}">
+                        <Canvas HorizontalAlignment="Center" VerticalAlignment="Center" Name="svg8" Width="24" Height="24">
+                            <Canvas.RenderTransform>
+                                <TranslateTransform X="0" Y="0"/>
+                            </Canvas.RenderTransform>
+                            <Canvas.Resources/>
+                            <!--Unknown tag: sodipodi:namedview-->
+                            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path1" Fill="White" Opacity="0.8">
+                                <Path.Data>
+                                    <PathGeometry Figures="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" FillRule="NonZero"/>
+                                </Path.Data>
+                            </Path>
+                            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path4" Fill="Black">
+                                <Path.Data>
+                                    <PathGeometry Figures="M16.807 19.0112C15.4398 19.9504 13.7841 20.5 12 20.5C10.2159 20.5 8.56023 19.9503 7.193 19.0111C6.58915 18.5963 6.33109 17.8062 6.68219 17.1632C7.41001 15.8302 8.90973 15 12 15C15.0903 15 16.59 15.8303 17.3178 17.1632C17.6689 17.8062 17.4108 18.5964 16.807 19.0112Z" FillRule="NonZero"/>
+                                </Path.Data>
+                            </Path>
+                            <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path6" Fill="Black">
+                                <Path.Data>
+                                    <PathGeometry Figures="M12 12C13.6569 12 15 10.6569 15 9C15 7.34315 13.6569 6 12 6C10.3432 6 9.00004 7.34315 9.00004 9C9.00004 10.6569 10.3432 12 12 12Z" FillRule="NonZero"/>
+                                </Path.Data>
+                            </Path>
+                        </Canvas>
+                    </Button>
                 </StackPanel>
             </Grid>
         </Grid>
