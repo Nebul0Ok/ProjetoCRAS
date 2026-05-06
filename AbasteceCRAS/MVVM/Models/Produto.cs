@@ -1,22 +1,34 @@
-﻿namespace AbasteceCRAS.MVVM.Models;
+﻿using AbasteceCRAS.Core;
+using AbasteceCRAS.Services;
+using System.Collections.ObjectModel;
 
-public class Produto
+namespace AbasteceCRAS.MVVM.Models;
+
+public class Produto: OnPropertyChangedHandler
 {
     public string NomeItem { get; set; }
     public DateTime DataCadastroItem { get; set; }
-    public List<TipoDeItem> TipoDeItems { get; set; }
-    public int QuantidadeDeTipos {  get; set; }
+    public ObservableCollection<TipoDeItem> TipoDeItems { get; set; }
+    private int _quantidadeDeTipos;
+    public int QuantidadeDeTipos {
+        get => _quantidadeDeTipos;
+        set
+        {
+            _quantidadeDeTipos = value;
+            OnPropertyChanged();
+        }
+    }
 
     public Produto(string NomeItem)
     {
         this.NomeItem = NomeItem;
         DataCadastroItem = DateTime.Now;
-        TipoDeItems = new List<TipoDeItem>();
+        TipoDeItems = new ObservableCollection<TipoDeItem>();
         QuantidadeDeTipos = TipoDeItems.Count;
     }
 
     // Adiciona um tipo ao item
-    public bool AdicionarTipoItem(TipoDeItem novoTipo, Usuario user)
+    public bool AdicionarTipoItem(TipoDeItem novoTipo)
     {
         if (novoTipo == null)
             return false;
@@ -24,7 +36,7 @@ public class Produto
         TipoDeItems.Add(novoTipo);
         QuantidadeDeTipos = TipoDeItems.Count;
 
-        //Historico.Registrar(user.Nome, $"Tipo '{novoTipo.NomeTipo}' adicionado ao item '{NomeItem}'");
+        DadosService.Instance.ListaHistorico.Add(new Historico($"Tipo '{novoTipo.NomeTipo}' adicionado", SessionService.Instance.UsuarioLogado.Nome));
 
         return true;
     }

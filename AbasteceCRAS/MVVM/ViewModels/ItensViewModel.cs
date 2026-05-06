@@ -4,6 +4,7 @@ using AbasteceCRAS.Services;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace AbasteceCRAS.MVVM.ViewModels
@@ -13,7 +14,6 @@ namespace AbasteceCRAS.MVVM.ViewModels
         // --Botões --
         public ICommand RetornarParaHome { get; }
         public ICommand AdicionarItem {  get; }
-        public ICommand ExcluirItem { get; }
         public ICommand AdicionarTipo { get; }
 
 
@@ -31,6 +31,7 @@ namespace AbasteceCRAS.MVVM.ViewModels
                 OnPropertyChanged(nameof(ItemSelecionado));
             }
         }
+
         private string _nomeDoTipo;
         public string NomeDoTipo
         {
@@ -42,12 +43,25 @@ namespace AbasteceCRAS.MVVM.ViewModels
             }
         }
 
+        private bool _isPerecivel;
+        public bool IsPerecivel
+        {
+            get => _isPerecivel;
+            set
+            {
+                if (_isPerecivel != value)
+                {
+                    _isPerecivel = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
 
         public ItensViewModel()
         {
             RetornarParaHome = new RelayCommand(o => MainViewModel.Instance.AcessarHome());
             AdicionarItem = new RelayCommand(AdicionarItens);
-            ExcluirItem = new RelayCommand(RemoverItem);
             AdicionarTipo = new RelayCommand(AdicionarTipoItem);
         }
 
@@ -58,24 +72,28 @@ namespace AbasteceCRAS.MVVM.ViewModels
             DadosService.Instance.ListaProduto.Add(p);
         }
 
-        public void RemoverItem(object parameter)
-        {
-            var produtoRemovido = DadosService.Instance.ListaProduto.FirstOrDefault(n => n == ItemSelecionado);
-
-            if(produtoRemovido != null)
-            {
-                DadosService.Instance.ListaProduto.Remove(produtoRemovido);
-            }
-        }
 
         public void AdicionarTipoItem(object parameter) {
-            if (ItemSelecionado == null || string.IsNullOrWhiteSpace(NomeDoTipo))
-                return;
+            var ItemAdicao = DadosService.Instance.ListaProduto.FirstOrDefault(n => n == ItemSelecionado);
 
-            var novoTipo = new TipoDeItem(NomeDoTipo, 0);
-            ItemSelecionado.AdicionarTipoItem(novoTipo, SessionService.Instance.UsuarioLogado);
+            if (ItemAdicao != null)
+            {
+                //MessageBox.Show($"Produto: {ItemSelecionado.NomeItem}");
 
-            OnPropertyChanged(nameof(ItemSelecionado));
+                if (ItemAdicao.AdicionarTipoItem(new TipoDeItem(NomeDoTipo, 0)))
+                {
+                    MessageBox.Show("Item adicionado com sucesso!");
+                }
+                else
+                {
+                    MessageBox.Show("Item não pôde ser adicionado!");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Selecione um produto");
+            }
 
         }
 

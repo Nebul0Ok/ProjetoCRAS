@@ -55,7 +55,7 @@
                         </Border>
                     </Viewbox>
 
-                    <TextBlock Text="CRAS Cruzeiro" Foreground="White" FontSize="32" FontWeight="Bold" 
+                    <TextBlock Text="AbasteceCRAS" Foreground="White" FontSize="32" FontWeight="Bold" 
                            HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" Margin="0,0,0,10">
                         <TextBlock.Effect>
                             <DropShadowEffect BlurRadius="10" ShadowDepth="2" Opacity="0.3"/>
