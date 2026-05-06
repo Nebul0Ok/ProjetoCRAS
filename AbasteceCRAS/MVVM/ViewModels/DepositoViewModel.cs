@@ -24,13 +24,6 @@ namespace AbasteceCRAS.MVVM.ViewModels
             set { _localInput = value; OnPropertyChanged(); }
         }
 
-        private string _capacidadeInput;
-        public string CapacidadeInput
-        {
-            get => _capacidadeInput;
-            set { _capacidadeInput = value; OnPropertyChanged(); }
-        }
-
         public ICommand AdicionarDepositoCommand { get; }
 
         public DepositoViewModel()
@@ -45,7 +38,6 @@ namespace AbasteceCRAS.MVVM.ViewModels
             {
                 Nome = NomeInput,
                 Localizacao = LocalInput,
-                Capacidade = CapacidadeInput
             };
 
             DadosService.Instance.ListaDeposito.Add(novoDeposito);
@@ -56,7 +48,6 @@ namespace AbasteceCRAS.MVVM.ViewModels
         {
             NomeInput = string.Empty;
             LocalInput = string.Empty;
-            CapacidadeInput = string.Empty;
         }
 
         //Criar os demais métodos do CRUD
