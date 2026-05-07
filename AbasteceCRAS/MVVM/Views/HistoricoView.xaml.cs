@@ -24,5 +24,14 @@ namespace AbasteceCRAS.MVVM.Views
         {
             InitializeComponent();
         }
+
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            dgHistorico.SelectedItem = null;
+        }
     }
 }

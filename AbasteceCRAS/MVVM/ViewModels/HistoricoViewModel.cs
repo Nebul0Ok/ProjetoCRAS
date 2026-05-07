@@ -20,5 +20,6 @@ namespace AbasteceCRAS.MVVM.ViewModels
 
             RetornarParaHome = new RelayCommand(o => MainViewModel.Instance.AcessarHome());
         }
+
     }
 }
