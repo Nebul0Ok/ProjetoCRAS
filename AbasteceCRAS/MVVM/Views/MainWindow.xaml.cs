@@ -24,10 +24,6 @@ namespace AbasteceCRAS
         {
             InitializeComponent();
             this.DataContext = new MainViewModel();
-            Historico h = new Historico("Deletou Uva", "Pedro");
-            Historico i = new Historico("Adicionou Uva", "André");
-            DadosService.Instance.ListaHistorico.Add(h);
-            DadosService.Instance.ListaHistorico.Add(i);
         }
 
         public void Window_KeyDown(object sender, KeyEventArgs e)

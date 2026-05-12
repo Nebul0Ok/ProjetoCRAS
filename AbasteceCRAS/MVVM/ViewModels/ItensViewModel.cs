@@ -19,7 +19,11 @@ namespace AbasteceCRAS.MVVM.ViewModels
 
         //  --  Variáveis ---
         private string _nomeItem;
-        public string NomeItem { get => _nomeItem; set { _nomeItem = value; OnPropertyChanged(); } }
+        public string NomeItem { 
+            get => _nomeItem;
+            set { _nomeItem = value; OnPropertyChanged(); 
+            }
+        }
 
         private Produto _itemSelecionado;
         public Produto ItemSelecionado
@@ -57,19 +61,39 @@ namespace AbasteceCRAS.MVVM.ViewModels
             }
         }
 
+        private int _quantidadeTipoItem;
+        public int QuantidadeTipoItem
+        {
+            get => _quantidadeTipoItem;
+            set
+            {
+                _quantidadeTipoItem = value;
+                OnPropertyChanged();
+            }
+        }
 
+        //Construtor
         public ItensViewModel()
         {
             RetornarParaHome = new RelayCommand(o => MainViewModel.Instance.AcessarHome());
             AdicionarItem = new RelayCommand(AdicionarItens);
             AdicionarTipo = new RelayCommand(AdicionarTipoItem);
+            ItemSelecionado = null;
         }
 
         // -- Métodos --
         public void AdicionarItens(object parameter)
         {
+            if (string.IsNullOrWhiteSpace(NomeItem))
+            {
+                MessageBox.Show("Digite um nome para o item.");
+                return;
+            }
+
             Produto p = new Produto(NomeItem);
             DadosService.Instance.ListaProduto.Add(p);
+
+            NomeItem = string.Empty;
         }
 
 
@@ -80,7 +104,7 @@ namespace AbasteceCRAS.MVVM.ViewModels
             {
                 //MessageBox.Show($"Produto: {ItemSelecionado.NomeItem}");
 
-                if (ItemAdicao.AdicionarTipoItem(new TipoDeItem(NomeDoTipo, 0)))
+                if (ItemAdicao.AdicionarTipoItem(new TipoDeItem(NomeDoTipo, QuantidadeTipoItem)))
                 {
                     MessageBox.Show("Item adicionado com sucesso!");
                 }

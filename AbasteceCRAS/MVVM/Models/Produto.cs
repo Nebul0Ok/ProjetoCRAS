@@ -9,6 +9,8 @@ public class Produto: OnPropertyChangedHandler
     public string NomeItem { get; set; }
     public DateTime DataCadastroItem { get; set; }
     public ObservableCollection<TipoDeItem> TipoDeItems { get; set; }
+    public Deposito DepositoAtual { get; set; }
+
     private int _quantidadeDeTipos;
     public int QuantidadeDeTipos {
         get => _quantidadeDeTipos;
@@ -19,12 +21,35 @@ public class Produto: OnPropertyChangedHandler
         }
     }
 
+    private bool _expandido;
+    public bool Expandido
+    {
+        get => _expandido;
+        set
+        {
+            _expandido = value;
+            OnPropertyChanged();
+        }
+    }
+
     public Produto(string NomeItem)
     {
         this.NomeItem = NomeItem;
         DataCadastroItem = DateTime.Now;
         TipoDeItems = new ObservableCollection<TipoDeItem>();
         QuantidadeDeTipos = TipoDeItems.Count;
+        DepositoAtual = new Deposito("teste", "teste");
+        
+    }
+
+    public Produto(string NomeItem, int Quantidade)
+    {
+        this.NomeItem = NomeItem;
+        DataCadastroItem = DateTime.Now;
+        TipoDeItems = new ObservableCollection<TipoDeItem>();
+        QuantidadeDeTipos = Quantidade;
+        DepositoAtual = new Deposito("teste", "teste");
+
     }
 
     // Adiciona um tipo ao item
@@ -74,9 +99,6 @@ public class Produto: OnPropertyChangedHandler
 
         tipoExistente.NomeTipo = tipoAtualizado.NomeTipo;
         tipoExistente.QuantidadeTipoEstoque = tipoAtualizado.QuantidadeTipoEstoque;
-        tipoExistente.QuantidadeTipoProduto = tipoAtualizado.QuantidadeTipoProduto;
-        tipoExistente.Medida = tipoAtualizado.Medida;
-
         //Historico.Registrar(user.NomeUsuario, $"Tipo '{tipoExistente.NomeTipo}' atualizado no item '{NomeItem}'");
 
         return true;

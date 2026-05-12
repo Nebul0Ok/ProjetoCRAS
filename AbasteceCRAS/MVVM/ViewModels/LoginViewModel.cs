@@ -2,6 +2,7 @@
 using AbasteceCRAS.MVVM.Models;
 using AbasteceCRAS.MVVM.Views;
 using AbasteceCRAS.Services;
+using AbasteceCRAS.Teste;
 using System.Windows;
 using System.Windows.Input;
 
@@ -30,6 +31,11 @@ public class LoginViewModel: ViewModelBase
     public LoginViewModel()
     {
         RealizarLogin = new RelayCommand(ExecutarLogin);
+
+        foreach(var prod in Produtos.prod)
+        {
+            DadosService.Instance.ListaProduto.Add(prod);
+        }
     }
 
     public void ExecutarLogin(object parameter)

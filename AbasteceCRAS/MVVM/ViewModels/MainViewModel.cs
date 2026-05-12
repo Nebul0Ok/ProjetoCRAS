@@ -1,6 +1,8 @@
 ﻿using AbasteceCRAS.Core;
 using AbasteceCRAS.MVVM.Models;
+using AbasteceCRAS.MVVM.Views;
 using AbasteceCRAS.Services;
+using System.Windows;
 using System.Windows.Input;
 
 namespace AbasteceCRAS.MVVM.ViewModels
@@ -14,6 +16,9 @@ namespace AbasteceCRAS.MVVM.ViewModels
         public EstoqueViewModel Estoque;
         public HistoricoViewModel Historico;
 
+        public ICommand MenuLateral { get; }
+        public ICommand Sair {  get; }
+
         public static MainViewModel Instance { get; private set;}
 
         private object _currentView;
@@ -22,6 +27,17 @@ namespace AbasteceCRAS.MVVM.ViewModels
             get { return _currentView; }
             set { _currentView = value; OnPropertyChanged();}
         }
+
+        private Visibility _menuLateralVisibility = Visibility.Collapsed;
+        public Visibility MenuLateralVisibility
+        {
+            get => _menuLateralVisibility;
+            set
+            {
+                _menuLateralVisibility = value; OnPropertyChanged();
+            }
+        }
+
 
         public MainViewModel()
         {
@@ -33,6 +49,10 @@ namespace AbasteceCRAS.MVVM.ViewModels
             Estoque = new EstoqueViewModel();
             CurrentView = Home;
             Instance = this;
+
+            MenuLateral = new RelayCommand(AlterarMenuLateral);
+            Sair = new RelayCommand(SairSistema);
+
         }
 
         public void AcessarHome()
@@ -60,6 +80,39 @@ namespace AbasteceCRAS.MVVM.ViewModels
             CurrentView = Historico;
         }
 
+
+        public void AlterarMenuLateral(object parameter)
+        {
+
+            if (MenuLateralVisibility == Visibility.Collapsed)
+            {
+                MenuLateralVisibility = Visibility.Visible;
+            }
+            else
+            {
+                MenuLateralVisibility = Visibility.Collapsed;
+            }
+
+        }
+
+        public void SairSistema (object parameter)
+        {
+            MessageBoxResult confirmar = MessageBox.Show("Deseja deslogar?", "", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (confirmar == MessageBoxResult.Yes)
+            {
+                if(parameter is Window mainWindow)
+                {
+                    SessionService.Instance.UsuarioLogado = null;
+                    TelaLogin t = new TelaLogin();
+
+                    t.Show();
+                    mainWindow.Close();
+
+
+                }
+            }
+        }
 
 
     }

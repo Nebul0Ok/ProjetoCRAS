@@ -12,6 +12,7 @@
                 <ResourceDictionary Source="/Styles/BotoesCards.xaml"/>
                 <ResourceDictionary Source="/Styles/Icones.xaml"/>
                 <ResourceDictionary Source="/Styles/BotaoIcone.xaml"/>
+                <ResourceDictionary Source="/Styles/EstiloBotao.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             
             <!--
