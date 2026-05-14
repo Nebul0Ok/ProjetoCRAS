@@ -14,6 +14,26 @@ public class LoginViewModel: ViewModelBase
     private string _email;
     private string _senha;
 
+    private string _emailFeedback;
+    public string EmailFeedback
+    {
+        get => _emailFeedback;
+        set
+        {
+            _emailFeedback = value; OnPropertyChanged();
+        }
+    }
+
+    private string _senhaFeedback;
+    public string SenhaFeedback
+    {
+        get => _senhaFeedback;
+        set
+        {
+            _senhaFeedback = value; OnPropertyChanged();
+        }
+    }
+
     public string Email
     {
         get => _email;
@@ -32,16 +52,24 @@ public class LoginViewModel: ViewModelBase
     {
         RealizarLogin = new RelayCommand(ExecutarLogin);
 
+        foreach(var estoque in Armazens.ArmazemMock)
+        {
+            DadosService.Instance.ListaDeposito.Add(estoque);
+        }
+
         foreach(var prod in Produtos.prod)
         {
             DadosService.Instance.ListaProduto.Add(prod);
         }
+
+        EmailFeedback = string.Empty;
+        SenhaFeedback = string.Empty;
     }
 
     public void ExecutarLogin(object parameter)
     {
-       
-        try 
+
+        try
         {
             var usuarioEncontrado = TelaLogin.UsuariosCadastrados.FirstOrDefault(u => u.Email == Email && u.Senha == Senha);
 
@@ -50,7 +78,7 @@ public class LoginViewModel: ViewModelBase
                 MessageBox.Show($"Logado.");
                 SessionService.Instance.UsuarioLogado = usuarioEncontrado;
 
-                if(parameter is Window currentWindow)
+                if (parameter is Window currentWindow)
                 {
                     MainWindow mainWindow = new MainWindow();
                     mainWindow.Show();
@@ -63,10 +91,33 @@ public class LoginViewModel: ViewModelBase
                 MessageBox.Show("Usuario não econtrado");
             }
 
-        } 
+        }
         catch
         {
 
         }
+
+        //SenhaFeedback = string.Empty;
+        //EmailFeedback = string.Empty;
+
+        //if (DadosService.Instance.UsuariosCadastrados.ContainsKey(Email)) {
+        //    if (DadosService.Instance.UsuariosCadastrados.ContainsValue(Senha))
+        //    {
+
+        //    }
+        //    else
+        //    {
+        //        SenhaFeedback = "Senha não encontrada";
+        //    }
+        //}
+        //else
+        //{
+        //    EmailFeedback = "E-mail não encontrado";
+        //    if (!DadosService.Instance.UsuariosCadastrados.ContainsValue(Senha))
+        //    {
+        //        SenhaFeedback = "Senha não encontrada";
+        //    }
+        //}
+
     }
 }

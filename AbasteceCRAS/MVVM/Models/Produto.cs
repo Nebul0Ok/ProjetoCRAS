@@ -9,7 +9,6 @@ public class Produto: OnPropertyChangedHandler
     public string NomeItem { get; set; }
     public DateTime DataCadastroItem { get; set; }
     public ObservableCollection<TipoDeItem> TipoDeItems { get; set; }
-    public Deposito DepositoAtual { get; set; }
 
     private int _quantidadeDeTipos;
     public int QuantidadeDeTipos {
@@ -38,7 +37,6 @@ public class Produto: OnPropertyChangedHandler
         DataCadastroItem = DateTime.Now;
         TipoDeItems = new ObservableCollection<TipoDeItem>();
         QuantidadeDeTipos = TipoDeItems.Count;
-        DepositoAtual = new Deposito("teste", "teste");
         
     }
 
@@ -48,9 +46,19 @@ public class Produto: OnPropertyChangedHandler
         DataCadastroItem = DateTime.Now;
         TipoDeItems = new ObservableCollection<TipoDeItem>();
         QuantidadeDeTipos = Quantidade;
-        DepositoAtual = new Deposito("teste", "teste");
 
     }
+
+    public Produto(string NomeItem, int Quantidade, Deposito deposito)
+    {
+        this.NomeItem = NomeItem;
+        DataCadastroItem = DateTime.Now;
+        TipoDeItems = new ObservableCollection<TipoDeItem>();
+        QuantidadeDeTipos = Quantidade;
+        
+    }
+
+
 
     // Adiciona um tipo ao item
     public bool AdicionarTipoItem(TipoDeItem novoTipo)

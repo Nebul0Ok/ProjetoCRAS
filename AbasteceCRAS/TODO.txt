@@ -1,3 +1,5 @@
-1 - Corrigir o problema da barra lateral da lista da tela EstoqueView
+1 - Corrigir o tratamento de dados do login
 
-2 - Todo o resto
+2 - Adicionar uma hash de senha
+
+3 - 
