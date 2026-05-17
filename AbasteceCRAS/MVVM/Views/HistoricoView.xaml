@@ -27,8 +27,16 @@
                  HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
 
-        <Button Grid.Column="0" Grid.Row="0" Content="◀" Width="50" Height="30" FontSize="20"
-        Command="{Binding RetornarParaHome}"/>
+        <Button Grid.Column="0" 
+        Grid.Row="0" 
+        Style="{StaticResource BotaoIcone}" 
+        Width="50" 
+        Height="50" 
+        Command="{Binding RetornarParaHome}">
+            <Image Source="{StaticResource IconeVoltarSeta}" 
+           Stretch="Uniform" 
+           Margin="5"/>
+        </Button>
 
         <Border Grid.Row="1" Grid.Column="1"  BorderBrush="Gray" BorderThickness="1" CornerRadius="10">
             <DataGrid Margin="20" ItemsSource="{Binding Source={x:Static services:DadosService.Instance}, Path=ListaHistorico}" AutoGenerateColumns="False" CanUserAddRows="False">

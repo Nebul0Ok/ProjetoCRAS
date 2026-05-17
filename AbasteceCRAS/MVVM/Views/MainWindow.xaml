@@ -85,7 +85,7 @@
 
         <Grid x:Name="MenuLateral" Visibility="{Binding MenuLateralVisibility}">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="2*"/>
                 <ColumnDefinition Width="7*"/>
             </Grid.ColumnDefinitions>
 
@@ -103,7 +103,7 @@
 
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="2*"/>
                             <ColumnDefinition Width="7*"/>
                         </Grid.ColumnDefinitions>
 
@@ -114,15 +114,14 @@
                                     <Path Fill="Gray">
                                         <Path.Data>
                                             <PathGeometry
-                                            Figures="M256 0C114.609 0 0 114.609 0 256s114.609 256 256 256s256-114.609 256-256S397.391 0 256 0z M256 472c-119.297 0-216-96.703-216-216S136.703 40 256 40s216 96.703 216 216S375.297 472 256 472z"
-                                            FillRule="EvenOdd"/>
+                                                Figures="M256 0C114.609 0 0 114.609 0 256s114.609 256 256 256s256-114.609 256-256S397.391 0 256 0z M256 472c-119.297 0-216-96.703-216-216S136.703 40 256 40s216 96.703 216 216S375.297 472 256 472z"
+                                                FillRule="EvenOdd"/>
                                         </Path.Data>
                                     </Path>
 
                                     <Polygon
-            Points="286,144 174,256 286,368 318,336 238,256 318,176"
-            Fill="Gray"/>
-
+                                        Points="286,144 174,256 286,368 318,336 238,256 318,176"
+                                        Fill="Gray"/>
                                 </Canvas>
                             </Viewbox>
                         </Button>
@@ -134,10 +133,111 @@
 
 
 
-                    <Button Content="Configurações" Grid.Row="1" Margin="10"/>
-                    <Button Content="Usuário" Grid.Row="2" Margin="10"/>
-                    <Button Content="Sair" Grid.Row="3" Margin="10" Command="{Binding Sair}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
-                    <Button Content="Cadastrar Administrador" Grid.Row="4" Margin="10"/>
+                    <Button Style="{StaticResource MenuLateralButtonStyle}"
+                            Width="auto" 
+                            Height="auto" 
+                            Margin="10,0,10,5"
+                            Grid.Row="1"
+                            Background="#f9f9f9"
+                            BorderBrush="#8F3176"
+                            Tag="#F5E6F0" 
+                            Uid="#8F3176"
+                            Command="{Binding NavegarConfiguracoes}">   
+
+                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                            <Viewbox Height="35" Width="35" Margin="0,10,0,0">
+                                <Canvas Width="16" Height="16">
+                                    <Path Fill="#8F3176" 
+                                        Data="M8,10A2,2 0 1,0 8,6A2,2 0 0,0 8,10M14.7,9C14.7,8.66 14.74,8.33 14.74,8C14.74,7.67 14.7,7.33 14.7,7L16.54,5.57C16.71,5.44 16.76,5.2 16.65,5.03L14.91,2.03C14.8,1.86 14.59,1.79 14.41,1.86L12.24,2.74C11.79,2.39 11.3,2.1 10.77,1.88L10.45,0.43C10.41,0.24 10.25,0.1 10.05,0.1H6.62C6.42,0.1 6.26,0.24 6.22,0.43L5.9,1.88C5.37,2.1 4.88,2.39 4.43,2.74L2.26,1.86C2.08,1.79 1.87,1.86 1.76,2.03L0.02,5.03C-0.09,5.2 -0.04,5.44 0.13,5.57L1.97,7C1.93,7.33 1.93,7.67 1.93,8C1.93,8.33 1.93,8.66 1.97,9L0.13,10.43C-0.04,10.56 -0.09,10.8 0.02,10.97L1.76,13.97C1.87,14.14 2.08,14.21 2.26,14.14L4.43,13.26C4.88,13.61 5.37,13.9 5.9,14.12L6.22,15.57C6.26,15.76 6.42,15.9 6.62,15.9H10.05C10.25,15.9 10.41,15.76 10.45,15.57L10.77,14.12C11.3,13.9 11.79,13.61 12.24,13.26L14.41,14.14C14.59,14.21 14.8,14.14 14.91,13.97L16.65,10.97C16.76,10.8 16.71,10.56 16.54,10.43L14.7,9Z" />
+                                </Canvas>
+                            </Viewbox>
+
+                            <TextBlock Text="Configurações"
+                            FontSize="14"
+                            Foreground="#2D2D2D"
+                            HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Style="{StaticResource MenuLateralButtonStyle}"
+                            Width="auto" 
+                            Height="auto" 
+                            Margin="10,0,10,5"
+                            Grid.Row="2"
+                            Background="#f9f9f9"
+                            BorderBrush="#111184"
+                            Tag="#E6E6F5" 
+                            Uid="#111184"
+                            Command="{Binding NavegarUsuario}">
+
+                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                            <Viewbox Height="35" Width="35" Margin="0,10,0,0">
+                                <Canvas Width="16" Height="16">
+                                    <Path Fill="#111184" 
+                                         Data="M8,8A3,3 0 1,0 8,2A3,3 0 0,0 8,8M8,9C5.33,9 0,10.34 0,13V15H16V13C16,10.34 10.67,9 8,9Z" />
+                                </Canvas>
+                            </Viewbox>
+
+                            <TextBlock Text="Usuário"
+                               FontSize="14"
+                               Foreground="#2D2D2D"
+                               HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Style="{StaticResource MenuLateralButtonStyle}"
+                               Width="auto" 
+                               Height="auto" 
+                               Margin="10,0,10,5"
+                               Grid.Row="3"
+                               Background="#f9f9f9"
+                               BorderBrush="#C1272D"
+                               Tag="#F5E6E6" 
+                               Uid="#C1272D"
+                               Command="{Binding Sair}" 
+                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}">
+
+                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                            <Viewbox Height="35" Width="35" Margin="0,10,0,0">
+                                <Canvas Width="16" Height="16">
+                                    <Path Fill="#C1272D" 
+                                        Data="M10,2V4H3V12H10V14H1C0.4,14 0,13.6 0,13V3C0,2.4 0.4,2 1,2H10M13.4,5.4L12,6.8L13.2,8H6V10H13.2L12,11.2L13.4,12.6L16,10L13.4,5.4Z" />
+                                </Canvas>
+                            </Viewbox>
+
+                            <TextBlock Text="Sair"
+                               FontSize="14"
+                               Foreground="#2D2D2D"
+                               HorizontalAlignment="Center"/>   
+                        </StackPanel>
+                    </Button>
+                    <Button Style="{StaticResource MenuLateralButtonStyle}"
+                                Width="auto" 
+                                Height="auto" 
+                                Margin="10,0,10,5"
+                                Grid.Row="4"
+                                Background="#f9f9f9"
+                                BorderBrush="#1A7F43"
+                                Tag="#E6F5EC" 
+                                Uid="#1A7F43"
+                                Command="{Binding NavegarCadastrarAdmin}">  
+
+                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                            <Viewbox Height="35" Width="35" Margin="0,10,0,0">
+                                <Canvas Width="16" Height="16">
+                                    <Path Fill="#1A7F43" 
+                                        Data="M12,1L6,3L0,1V5C0,8.7 2.6,12.1 6,13C7.4,12.6 8.7,11.8 9.7,10.7C9.3,10.2 9,9.6 9,9C9,7.3 10.3,6 12,6C13.1,6 14.1,6.6 14.6,7.5C14.9,6.7 15,5.9 15,5V1L12,1M12,7A2,2 0 0,0 10,9A2,2 0 0,0 12,11A2,2 0 0,0 14,9A2,2 0 0,0 12,7M12,8V10H10V9H12V8Z" />
+                                </Canvas>
+                            </Viewbox>
+
+                            <TextBlock Text="Cadastrar Administrador"
+                               FontSize="14"
+                               Foreground="#2D2D2D"
+                               HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
 
 
                 </Grid>

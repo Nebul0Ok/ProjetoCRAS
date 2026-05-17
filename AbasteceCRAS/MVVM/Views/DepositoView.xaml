@@ -38,11 +38,22 @@
                 <ColumnDefinition Width="10*"/>
             </Grid.ColumnDefinitions>
 
-            <Button Grid.Row="0" Grid.Column="0" Margin="10"
-                Content="Voltar" Command="{Binding RetornarParaHome}"/>
+        <Button Grid.Row="0" 
+        Grid.Column="0" 
+        Margin="10"
+        Style="{StaticResource BotaoIcone}" 
+        Width="50" 
+        Height="50" 
+        Command="{Binding RetornarParaHome}">
+
+            <Image Source="{StaticResource IconeVoltarSeta}" 
+           Stretch="Uniform" 
+           Margin="5"/>
+
+        </Button>
 
 
-            <Grid Grid.Row="1" Grid.Column="1" Background="White">
+        <Grid Grid.Row="1" Grid.Column="1" Background="White">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>

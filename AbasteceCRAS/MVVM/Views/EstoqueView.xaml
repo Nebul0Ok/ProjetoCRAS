@@ -78,8 +78,19 @@
             <ColumnDefinition Width="10*"/>
         </Grid.ColumnDefinitions>
 
-        <Button Grid.Row="0" Grid.Column="0" Margin="10"
-                Content="Voltar" Command="{Binding VoltarHome}"/>
+        <Button Grid.Row="0" 
+        Grid.Column="0" 
+        Margin="10"
+        Style="{StaticResource BotaoIcone}" 
+        Width="50" 
+        Height="50" 
+        Command="{Binding VoltarHome}">
+
+            <Image Source="{StaticResource IconeVoltarSeta}" 
+           Stretch="Uniform" 
+           Margin="5"/>
+
+        </Button>
 
 
         <Grid Grid.Column="1" Grid.Row="1"  Background="White">
