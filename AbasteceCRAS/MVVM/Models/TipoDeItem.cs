@@ -1,13 +1,25 @@
-﻿using AbasteceCRAS.Services;
+﻿using AbasteceCRAS.MVVM.ViewModels;
+using AbasteceCRAS.Services;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 
 namespace AbasteceCRAS.MVVM.Models;
 
-public class TipoDeItem
+public class TipoDeItem : ViewModelBase
 {
     public string NomeTipo { get; set; }
     public DateTime DataCadastroTipo { get; set; }
-    public int QuantidadeTipoEstoque { get; set; }
+
+    private int _quantidadeTipoEstoque;
+    public int QuantidadeTipoEstoque
+    {
+        get => _quantidadeTipoEstoque;
+        set
+        {
+            _quantidadeTipoEstoque = value;
+            OnPropertyChanged();
+        }
+    }
     public Deposito DepositoAtual { get; set; }
 
     public TipoDeItem( string NomeTipo, int QuantidadeTipoEstoque, int QuantidadeTipoProduto, string Medida)

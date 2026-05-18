@@ -13,8 +13,8 @@ public partial class TelaLogin : Window
         InitializeComponent();
         this.DataContext = new LoginViewModel();
         UsuariosCadastrados = new List<Usuario>();
-        Usuario u = new Usuario("Carlos", "carlos@email.com", "carlos123");
-        Usuario admin = new Usuario("Admin", "admin", "admin");
+        Usuario u = new Usuario("Carlos", "carlos@email.com", "carlos123", "administrador");
+        Usuario admin = new Usuario("Admin", "admin", "admin", "coordenador");
         UsuariosCadastrados.Add(u);
         UsuariosCadastrados.Add(admin);
     }

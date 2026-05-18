@@ -2,6 +2,7 @@
 using AbasteceCRAS.MVVM.Models;
 using AbasteceCRAS.Services;
 using System.Collections.ObjectModel;
+using System.Windows;
 using System.Windows.Input;
 
 namespace AbasteceCRAS.MVVM.ViewModels
@@ -10,136 +11,122 @@ namespace AbasteceCRAS.MVVM.ViewModels
     {
         public ICommand RetornarParaHome { get; }
         public ICommand DiminuirLista { get; }
+        public ICommand SelecionarEntrada { get; }
+        public ICommand SelecionarSaida {  get; }
+        public ICommand VoltarHome { get; }
+        public ICommand BtnConfirmarOperacao { get; }
 
-
-        private string[] _listaItens;
-        public string[] ListaItens
-        {
-            get => _listaItens;
-            set
-            {
-                _listaItens = value;
-                OnPropertyChanged();
-            }
-        }
-
-        //   Pega o nome do item que o usuario selecionou
-        //  e cria uma lista com o valor de todos do 
-        //  nome de todos os tipos que esse item tem
-                
-
-        private string _itemSelecionado;
-        public string ItemSelecionado 
-        {  
-            get => _itemSelecionado;
-            set
-            {
-                _itemSelecionado = value;
-
-                Produto produto = DadosService.Instance.ListaProduto.FirstOrDefault(o => o.NomeItem == value);
-
-                if (produto != null)
-                {
-                    ObservableCollection<string> tipos = new ObservableCollection<string>();
-
-                    foreach (TipoDeItem tipo in produto.TipoDeItems)
-                    {
-                        tipos.Add(tipo.NomeTipo);
-                    }
-
-                    ListaTipos = tipos;
-                }
-
-                OnPropertyChanged();
-            }
-        }
-
-        private ObservableCollection<string> _listaTipos;
-        public ObservableCollection<string> ListaTipos
-        {
-            get => _listaTipos;
-            set
-            {
-                _listaTipos = value;
-                OnPropertyChanged();
-            }
-        }
-
-        //  Pegar a variável com o valor do item selecionado
-        //  Criar uma lista com os armazens que ele está
-        //  Adicionar ao valor da lista que vai ser exibida
-
-
-        private string _tipoSelecionado;
-        public string TipoSelecionado
-        {
-            get => _tipoSelecionado;
-            set
-            {
-                _tipoSelecionado = value;
-
-                Produto prod = DadosService.Instance.ListaProduto.FirstOrDefault(o => o.NomeItem == ItemSelecionado);
-
-                if (prod != null)
-                {
-                    IEnumerable<TipoDeItem> tipo = prod.TipoDeItems.Where(t => t.NomeTipo == value);
-
-                    if(tipo != null)
-                    {
-                        ObservableCollection<string> deposito = new ObservableCollection<string>();
-
-                        foreach (TipoDeItem tipos in tipo)
-                        {
-                            deposito.Add(tipos.DepositoAtual.Nome);
-                        }
-
-                        ListaDepositos = deposito;
-                    }
-                    
-                }
-            }
-        }
-
-
-
-        private ObservableCollection<string> _listaDepositos;
-        public ObservableCollection<string> ListaDepositos
-        {
-            get => _listaDepositos;
-            set
-            {
-                _listaDepositos = value;
-                OnPropertyChanged();
-            }
-        }
-
-        private string _depositoSelecionado;
-        public string DepositoSelecionado
-        {
-            get => _depositoSelecionado;
-            set
-            {
-                _depositoSelecionado = value;
-            }
-        }
-
-
+        //Construtor
         public EstoqueViewModel()
         {
             RetornarParaHome = new RelayCommand(o => MainViewModel.Instance.AcessarHome());
             VoltarHome = new RelayCommand(VoltarParaHome);
             DiminuirLista = new RelayCommand(o => DiminuirALista(o));
+            BtnConfirmarOperacao = new RelayCommand(Operacao);
+        }
 
-            ListaItens = new string[DadosService.Instance.ListaProduto.Count];
 
-            for(int i = 0; i<ListaItens.Length; i++)
+
+
+
+        // ---------- Variáveis ----------
+
+        //Operações
+
+        private bool _isEntrada;
+        public bool IsEntrada
+        {
+            get => _isEntrada;
+            set
             {
-                ListaItens[i] = DadosService.Instance.ListaProduto[i].NomeItem;
+                _isEntrada = value;
+                OnPropertyChanged();
             }
         }
 
-        public ICommand VoltarHome { get; }
+        private bool _isSaida;
+        public bool IsSaida
+        {
+            get => _isSaida;
+            set
+            {
+                _isSaida = value;
+                OnPropertyChanged();
+            }
+        }
 
+        private int _valorQuantidade;
+        public int ValorQuantidade
+        {
+            get => _valorQuantidade;
+            set
+            {
+                _valorQuantidade = value;
+                OnPropertyChanged();
+            }
+        }
+
+
+        //Listas
+
+        //Cria uma cópia da
+        //lista de produtos para
+        //ser usado na tela
+        public ObservableCollection<Produto> ListaItens { get; set; } = DadosService.Instance.ListaProduto;
+
+        private Produto _itemSelecionado;
+        public Produto ItemSelecionado
+        {
+            get => _itemSelecionado;
+            set
+            {
+                _itemSelecionado = value;
+                ListaTipos = value.TipoDeItems;
+                OnPropertyChanged();
+            }
+        }
+
+        //Precisa de um campo privado também,
+        //já que ele muda toda a lista sempre
+        //que o usuário seleciona um outro item
+        private ObservableCollection<TipoDeItem> _listaTipos;
+        public ObservableCollection<TipoDeItem> ListaTipos
+        {
+            get => _listaTipos;
+            set
+            {
+                _listaTipos = value;
+
+                
+                OnPropertyChanged();
+            }
+        }
+
+        private TipoDeItem _tipoSelecionado;
+        public TipoDeItem TipoSelecionado
+        {
+            get => _tipoSelecionado;
+            set
+            {
+                _tipoSelecionado = value;
+                OnPropertyChanged();
+            }
+        }
+
+        //private ObservableCollection<Deposito> _listaDeposito;
+        //public ObservableCollection<Deposito> ListaDeposito
+        //{
+        //    get => _listaDeposito;
+        //    set
+        //    {
+        //        _listaDeposito = value;
+        //        OnPropertyChanged()
+        //    }
+        //}
+
+
+
+//Funções
         public void VoltarParaHome (object juninho)
         {
             MainViewModel.Instance.AcessarHome();
@@ -160,6 +147,56 @@ namespace AbasteceCRAS.MVVM.ViewModels
         }
 
 
+        public void Operacao(object parameter)
+        {
+            if (!IsEntrada && !IsSaida)
+            {
+                MessageBox.Show("Por favor, selecione uma operação");
+            }
+
+            Produto p = DadosService.Instance.ListaProduto.FirstOrDefault(o => o == ItemSelecionado);
+
+            if (p == null) return;
+
+
+            if (IsEntrada)
+            {
+                foreach (TipoDeItem prod in p.TipoDeItems)
+                {
+                    if (prod == TipoSelecionado)
+                    {
+                        prod.QuantidadeTipoEstoque += ValorQuantidade;
+                        MessageBox.Show($"Quantidade de {prod.NomeTipo} alterado para {prod.QuantidadeTipoEstoque}");
+                    }
+                }
+
+            }
+            else if (IsSaida)
+            {
+                foreach (TipoDeItem prod in p.TipoDeItems)
+                {
+                    if (prod == TipoSelecionado)
+                    {
+                        prod.QuantidadeTipoEstoque -= ValorQuantidade;
+                        MessageBox.Show($"Quantidade de {prod.NomeTipo} alterado para {prod.QuantidadeTipoEstoque}");
+                    }
+                }
+            }
+
+        }
+
+        public bool EntradaEstoque(TipoDeItem ItemModificado)
+        {
+            if(ValorQuantidade == null)
+            {
+                return false;
+            }
+            else
+            {
+                ItemModificado.QuantidadeTipoEstoque += ValorQuantidade;
+                return true;
+            }
+        }
 
     }
 }

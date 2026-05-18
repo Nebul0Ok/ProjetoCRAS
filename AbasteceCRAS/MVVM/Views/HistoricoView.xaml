@@ -23,23 +23,47 @@
 
         <TextBlock Grid.Column="1" Grid.Row="0" 
                  Text="Histórico de Movimentações"
-                 FontFamily="Roboto" FontSize="14" FontWeight="Bold"
+                 FontFamily="Roboto" FontSize="20" FontWeight="Bold"
                  HorizontalAlignment="Left" VerticalAlignment="Center"/>
-
 
         <Button Grid.Column="0" Grid.Row="0" Content="◀" Width="50" Height="30" FontSize="20"
         Command="{Binding RetornarParaHome}"/>
 
         <Border Grid.Row="1" Grid.Column="1"  BorderBrush="Gray" BorderThickness="1" CornerRadius="10">
-            <DataGrid Margin="20" ItemsSource="{Binding Source={x:Static services:DadosService.Instance}, Path=ListaHistorico}" AutoGenerateColumns="False" CanUserAddRows="False">
+            <DataGrid x:Name="dgHistorico" Margin="20" ItemsSource="{Binding Source={x:Static services:DadosService.Instance}, Path=ListaHistorico}" AutoGenerateColumns="False" CanUserAddRows="False" GridLinesVisibility="Horizontal" 
+              HorizontalGridLinesBrush="#F0F0F0"
+              RowHeight="50"
+              HeadersVisibility="Column"
+              Background="Transparent"
+              BorderThickness="0"
+              CanUserSortColumns="False"
+              IsReadOnly="True"
+              SelectionUnit="FullRow">
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Setter Property="Padding" Value="10,0,0,10"/>
+                        <Setter Property="BorderThickness" Value="0,0,0,1"/>
+                        <Setter Property="BorderBrush" Value="#E0E0E0"/>
+                        <Setter Property="FontSize" Value="16"/>
+                    </Style>
+                </DataGrid.ColumnHeaderStyle>
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Data" Binding="{Binding DataDaOcorrencia}" Width="*"/>
-                    <DataGridTextColumn Header="Ocorrido" Binding="{Binding Ocorrencia}" Width="*"/>
-                    <DataGridTextColumn Header="Responsável" Binding="{Binding Responsavel}" Width="*"/>
+                    <DataGridTextColumn Header="Data/Hora" FontSize="14" Binding="{Binding DataDaOcorrencia}" Width="1.5*"/>
+                    <DataGridTemplateColumn Header="Tipo" Width="*">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border CornerRadius="12" Padding="8,2" HorizontalAlignment="Left"
+                                     Background="{Binding CorTipo}">
+                                    <TextBlock Text="{Binding Ocorrencia}" FontSize="14"/>
+                                </Border>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="Responsável" FontSize="14" Binding="{Binding Responsavel}" Width="*"/>
                 </DataGrid.Columns>
-
             </DataGrid>
         </Border>
-
     </Grid>
 </UserControl>

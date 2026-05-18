@@ -2,4 +2,4 @@
 
 2 - Adicionar uma hash de senha
 
-3 - 
+3 - Corrigir o depósito dos itens para ser uma lista ao invés de apenas um item

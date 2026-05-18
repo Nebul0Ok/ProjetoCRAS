@@ -40,7 +40,7 @@
 
                     <Viewbox MaxHeight="220" Stretch="Uniform" Margin="0,0,0,40">
                         <Border Width="120" Height="150" Background="White" CornerRadius="60,60,10,10" 
-                            Padding="15" BorderBrush="#00AEEF" BorderThickness="2">
+                    Padding="15" BorderBrush="#00AEEF" BorderThickness="2">
                             <Grid>
                                 <UniformGrid Columns="2" Rows="3" Opacity="0.2">
                                     <Rectangle Fill="#00AEEF" Margin="2" RadiusX="2" RadiusY="2"/>
@@ -56,21 +56,21 @@
                     </Viewbox>
 
                     <TextBlock Text="AbasteceCRAS" Foreground="White" FontSize="32" FontWeight="Bold" 
-                           HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" Margin="0,0,0,10">
+                   HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" Margin="0,0,0,10">
                         <TextBlock.Effect>
                             <DropShadowEffect BlurRadius="10" ShadowDepth="2" Opacity="0.3"/>
                         </TextBlock.Effect>
                     </TextBlock>
 
                     <TextBlock Text="Seja bem-vindo(a) ao seu sistema de gerenciamento de estoque." 
-                           Foreground="White" FontSize="18" Opacity="0.9" 
-                           HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" 
-                           MaxWidth="350"/>
+                   Foreground="White" FontSize="18" Opacity="0.9" 
+                   HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" 
+                   MaxWidth="350"/>
 
                 </StackPanel>
 
                 <Polyline Points="0,10 10,0 20,10 30,0 40,10 50,0 60,10 70,0" Stroke="White" StrokeThickness="1.5" 
-                      Opacity="0.5" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10,0,0,10"/>
+              Opacity="0.5" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10,0,0,10"/>
             </Grid>
         </Border>
 

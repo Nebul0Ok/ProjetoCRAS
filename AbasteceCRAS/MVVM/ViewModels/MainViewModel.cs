@@ -16,6 +16,74 @@ namespace AbasteceCRAS.MVVM.ViewModels
         public EstoqueViewModel Estoque;
         public HistoricoViewModel Historico;
 
+        private bool _isCordenador;
+        public bool IsCordenador
+        {
+            get
+            {
+                if (SessionService.Instance.UsuarioLogado.Cargo.Equals("coordenador"))
+                {
+                    _isCordenador = true;
+                }
+                else
+                {
+                    _isCordenador = false;
+                }
+
+                return _isCordenador;
+            }
+            set
+            {
+                _isCordenador = value;
+
+                OnPropertyChanged();
+            }
+        }
+
+        private float _margemSeparator;
+        public float MargemSeparator
+        {
+            get
+            {
+                if (IsCordenador)
+                {
+                    _margemSeparator = 0;
+                }
+                else
+                {
+                    _margemSeparator = 10;
+                }
+                return _margemSeparator;
+            }
+            set
+            {
+                _margemSeparator = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private Visibility _visibilidadeCadastro;
+        public Visibility VisibilidadeCadastro
+        {
+            get
+            {
+                if (IsCordenador)
+                {
+                    _visibilidadeCadastro = Visibility.Visible;
+                }
+                else
+                {
+                    _visibilidadeCadastro = Visibility.Collapsed;
+                }
+                return _visibilidadeCadastro;
+            }
+            set
+            {
+                _visibilidadeCadastro = value;
+                OnPropertyChanged();
+            }
+        }
+
         public ICommand MenuLateral { get; }
         public ICommand Sair {  get; }
 
@@ -53,6 +121,10 @@ namespace AbasteceCRAS.MVVM.ViewModels
             MenuLateral = new RelayCommand(AlterarMenuLateral);
             Sair = new RelayCommand(SairSistema);
 
+            if (SessionService.Instance.UsuarioLogado.Cargo.Equals("administrador"))
+            {
+
+            }
         }
 
         public void AcessarHome()

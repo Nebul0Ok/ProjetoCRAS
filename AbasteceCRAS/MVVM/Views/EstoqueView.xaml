@@ -20,6 +20,52 @@
             <Setter Property="Margin" Value="0,0,0,5"/>
         </Style>
 
+
+
+            <Style TargetType="RadioButton">
+                <Setter Property="Background" Value="White"/>
+                <Setter Property="Foreground" Value="Black"/>
+                <Setter Property="BorderBrush" Value="Gray"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="Padding" Value="10,5"/>
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="FontSize" Value="14"/>
+                
+
+            <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="RadioButton">
+                            <Border x:Name="border"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="4">
+                                <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"/>
+                            </Border>
+
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="#DDD"/>
+                                </Trigger>
+
+                                <Trigger Property="IsChecked" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="Black"/>
+                                    <Setter TargetName="border" Property="BorderBrush" Value="#4CAF50"/>
+                                    <Setter Property="Foreground" Value="White"/>
+                                </Trigger>
+                                
+
+                                <Trigger Property="IsEnabled" Value="False">
+                                    <Setter TargetName="border" Property="Opacity" Value="0.5"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+
         <!-- Estilo para os botões de Alternância (Entrada/Saída) -->
         <Style x:Key="ToggleButtonStyle" TargetType="Button">
             <Setter Property="Height" Value="38"/>
@@ -99,34 +145,39 @@
                             <TextBlock Text="Nova Movimentação" FontSize="18" FontWeight="Bold" Margin="0,0,0,15"/>
 
                             <TextBlock Text="Qual ação irá fazer?" Style="{StaticResource FieldLabelStyle}"/>
-                            <UniformGrid Columns="2" Margin="0,0,0,20">
-                                <Button Content="+ Entrada" Command="{Binding SelecionarEntrada}"
-                                        Background="Black" 
-                                        Foreground="White" 
-                                        Style="{StaticResource ToggleButtonStyle}"
-                                        Margin="0,0,5,0"/>
-
-                                <Button Content="- Saída" Command="{Binding SelecionarSaida}"
-                                        Background="White"
-                                        Foreground="Black"
-                                        Style="{StaticResource ToggleButtonStyle}"
-                                        Margin="5,0,0,0"/>
+                            <UniformGrid Columns="3" Margin="0,0,0,20">
+                                <RadioButton Content="Entrada" IsChecked="{Binding IsEntrada}"/>
+                                <RadioButton Content="Saída" IsChecked="{Binding IsSaida}"/>
+                                <RadioButton Content="Trocar Deposito" IsChecked="{Binding IsTrocaDeposito}"/>
                             </UniformGrid>
 
-                            <TextBlock Text="Item:" Style="{StaticResource FieldLabelStyle}"/>
-                            <ComboBox Margin="0,0,0,15" ItemsSource="{Binding ListaItens}" SelectedItem="{Binding ItemSelecionado}"/>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Item:" Style="{StaticResource FieldLabelStyle}"/>
+                                <!-- Debug -->
+                                <TextBlock Text="{Binding ItemSelecionado.NomeItem}" Visibility="Hidden"/>
+                            </StackPanel>
+                            <ComboBox Margin="0,0,0,15" ItemsSource="{Binding ListaItens}" DisplayMemberPath="NomeItem" SelectedItem="{Binding ItemSelecionado}"/>
 
-                            <TextBlock Text="Tipo:" Style="{StaticResource FieldLabelStyle}"/>
-                            <ComboBox Margin="0,0,0,15" ItemsSource="{Binding ListaTipos}" SelectedItem="{Binding TipoSelecionado}"/>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Tipo:" Style="{StaticResource FieldLabelStyle}"/>
+                                <!-- Debug -->
+                                <TextBlock Text="{Binding TipoSelecionado.NomeTipo}" Visibility="Hidden"/>
+                            </StackPanel>
+                            <ComboBox Margin="0,0,0,15" ItemsSource="{Binding ListaTipos}" DisplayMemberPath="NomeTipo" SelectedItem="{Binding TipoSelecionado}"/>
 
-                            <TextBlock Text="Depósito:" Style="{StaticResource FieldLabelStyle}"/>
-                            <ComboBox Margin="0,0,0,15" ItemsSource="{Binding ListaDepositos}"/>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Depósito:" Style="{StaticResource FieldLabelStyle}"/>
+                                <!-- Debug -->
+                                <TextBlock Text="{Binding DepositoSelecionado.Nome}" Visibility="Visible"/>
+                            </StackPanel>
+                            <ComboBox Margin="0,0,0,15" ItemsSource="{Binding ListaDepositos}" DisplayMemberPath="Nome" SelectedItem="{Binding DepositoSelecionado}"/>
 
                             <TextBlock Text="Quantidade:" Style="{StaticResource FieldLabelStyle}"/>
-                            <TextBox Text="0" Height="45" Background="#F0F4F8" BorderThickness="0" Margin="0,0,0,25" 
+                            <TextBox Text="{Binding ValorQuantidade}" Height="45" Background="#F0F4F8" BorderThickness="0" Margin="0,0,0,25" 
                       VerticalContentAlignment="Center" Padding="15,0" FontWeight="SemiBold"/>
 
-                            <Button Content="+ Registrar Entrada" Background="Black" Foreground="White" Height="48" FontWeight="Bold" Cursor="Hand">
+                            <Button Content="Confirmar" Background="Black" Foreground="White" Height="48" FontWeight="Bold" Cursor="Hand"
+                                    Command="{Binding BtnConfirmarOperacao}">
                                 <Button.Template>
                                     <ControlTemplate TargetType="Button">
                                         <Border Background="{TemplateBinding Background}" CornerRadius="10">

@@ -9,6 +9,5 @@ public class SessionService
     public static SessionService Instance => _instance ??= new SessionService();  
 
     public Usuario UsuarioLogado { get; set;}
-
     private SessionService() { }
 }

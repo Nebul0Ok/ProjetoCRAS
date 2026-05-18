@@ -1,6 +1,7 @@
 ﻿using AbasteceCRAS.Core;
 using AbasteceCRAS.MVVM.Models;
 using AbasteceCRAS.Services;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,17 @@ namespace AbasteceCRAS.MVVM.ViewModels
 {
     public class ItensViewModel: ViewModelBase
     {
+
+        //Construtor
+        public ItensViewModel()
+        {
+            RetornarParaHome = new RelayCommand(o => MainViewModel.Instance.AcessarHome());
+            AdicionarItem = new RelayCommand(AdicionarItens);
+            AdicionarTipo = new RelayCommand(AdicionarTipoItem);
+            ItemSelecionado = null;
+            ListaProduto = DadosService.Instance.ListaProduto;
+        }
+
         // --Botões --
         public ICommand RetornarParaHome { get; }
         public ICommand AdicionarItem {  get; }
@@ -18,6 +30,29 @@ namespace AbasteceCRAS.MVVM.ViewModels
 
 
         //  --  Variáveis ---
+
+        private ObservableCollection<Produto> _listaProduto;
+        public ObservableCollection<Produto> ListaProduto
+        {
+            get => _listaProduto;
+            set
+            {
+                _listaProduto = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private ObservableCollection<TipoDeItem> _listaTipo;
+        public ObservableCollection<TipoDeItem> ListaTipo
+        {
+            get => _listaTipo;
+            set
+            {
+                _listaTipo = value;
+                OnPropertyChanged();
+            }
+        }
+
         private string _nomeItem;
         public string NomeItem { 
             get => _nomeItem;
@@ -32,9 +67,16 @@ namespace AbasteceCRAS.MVVM.ViewModels
             set
             {
                 _itemSelecionado = value;
+
+                if (value != null)
+                {
+                    ListaTipo = value.TipoDeItems;
+                }
+
                 OnPropertyChanged(nameof(ItemSelecionado));
             }
         }
+
 
         private string _nomeDoTipo;
         public string NomeDoTipo
@@ -72,14 +114,52 @@ namespace AbasteceCRAS.MVVM.ViewModels
             }
         }
 
-        //Construtor
-        public ItensViewModel()
+        private string _nomeItemPesquisado;
+        public string NomeItemPesquisado
         {
-            RetornarParaHome = new RelayCommand(o => MainViewModel.Instance.AcessarHome());
-            AdicionarItem = new RelayCommand(AdicionarItens);
-            AdicionarTipo = new RelayCommand(AdicionarTipoItem);
-            ItemSelecionado = null;
+            get => _nomeItemPesquisado;
+            set
+            {
+                _nomeItemPesquisado = value;
+
+                if (!string.IsNullOrWhiteSpace(value))
+                {
+                    ListaProduto = new ObservableCollection<Produto>(DadosService.Instance.ListaProduto.Where(o => o.NomeItem.Contains(value, StringComparison.OrdinalIgnoreCase)));
+                }
+                else
+                {
+                    ListaProduto = DadosService.Instance.ListaProduto;
+                }
+
+                OnPropertyChanged();
+            }
         }
+
+        private string _nomeTipoPesquisado;
+        public string NomeTipoPesquisado
+        {
+            get => _nomeTipoPesquisado;
+            set
+            {
+                _nomeTipoPesquisado= value;
+
+                if (ItemSelecionado != null)
+                {
+                    if (!String.IsNullOrWhiteSpace(value))
+                    {
+                        ListaTipo = new ObservableCollection<TipoDeItem>(ItemSelecionado.TipoDeItems.Where(o => o.NomeTipo.Contains(value, StringComparison.OrdinalIgnoreCase)));
+                    }
+                    else
+                    {
+                        ListaTipo = ItemSelecionado.TipoDeItems;
+                    }
+                }
+                
+
+                OnPropertyChanged();
+            }
+        }
+
 
         // -- Métodos --
         public void AdicionarItens(object parameter)
