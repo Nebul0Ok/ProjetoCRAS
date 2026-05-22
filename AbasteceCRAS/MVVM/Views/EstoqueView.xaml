@@ -115,7 +115,7 @@
     <Grid Background="White">
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="9.9*"/>
         </Grid.RowDefinitions>
 
@@ -125,7 +125,8 @@
         </Grid.ColumnDefinitions>
 
         <Button Grid.Row="0" Grid.Column="0" Margin="10"
-                Content="Voltar" Command="{Binding VoltarHome}"/>
+                Width="50" Height="30" Style="{StaticResource BotaoRetorno}"
+                Command="{Binding VoltarHome}"/>
 
 
         <Grid Grid.Column="1" Grid.Row="1"  Background="White">

@@ -7,5 +7,109 @@
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="Cursor" Value="Hand"/>
     </Style>
-    
+
+    <Style x:Key="BotaoRetorno"
+           TargetType="Button">
+
+        <Setter Property="Width" Value="50"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Background" Value="#1E1E1E"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Foreground" Value="White"/>
+
+        <Setter Property="Template">
+
+            <Setter.Value>
+
+                <ControlTemplate TargetType="Button">
+
+                    <Border x:Name="Bd"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="7"
+                            RenderTransformOrigin="0.5,0.5">
+
+                        <Border.RenderTransform>
+                            <ScaleTransform/>
+                        </Border.RenderTransform>
+
+                        <Grid>
+
+                            <!-- Seta -->
+                            <Path x:Name="Arrow"
+                                  Data="M 12,0 L 0,10 L 12,20"
+                                  Stroke="{TemplateBinding Foreground}"
+                                  StrokeThickness="2.8"
+                                  StrokeStartLineCap="Round"
+                                  StrokeEndLineCap="Round"
+                                  StrokeLineJoin="Round"
+                                  Width="12"
+                                  Height="20"
+                                  Stretch="Fill"
+                                  HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"/>
+
+                        </Grid>
+
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+
+                        <!-- Hover -->
+                        <Trigger Property="IsMouseOver"
+                                 Value="True">
+
+                            <!-- Fundo branco -->
+                            <Setter Property="Background"
+                                    Value="White"/>
+
+                            <!-- Borda preta -->
+                            <Setter Property="BorderBrush"
+                                    Value="Black"/>
+
+                            <!-- Seta preta -->
+                            <Setter Property="Foreground"
+                                    Value="Black"/>
+
+                        </Trigger>
+
+                        <!-- Clique -->
+                        <Trigger Property="IsPressed"
+                                 Value="True">
+
+                            <Setter TargetName="Bd"
+                                    Property="RenderTransform">
+
+                                <Setter.Value>
+                                    <ScaleTransform ScaleX="0.94"
+                                                    ScaleY="0.94"/>
+                                </Setter.Value>
+
+                            </Setter>
+
+                        </Trigger>
+
+                        <!-- Desabilitado -->
+                        <Trigger Property="IsEnabled"
+                                 Value="False">
+
+                            <Setter TargetName="Bd"
+                                    Property="Opacity"
+                                    Value="0.4"/>
+
+                        </Trigger>
+
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+
+            </Setter.Value>
+
+        </Setter>
+
+    </Style>
+
 </ResourceDictionary>

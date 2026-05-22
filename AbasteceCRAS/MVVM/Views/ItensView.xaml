@@ -20,7 +20,7 @@
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="9*"/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Content="◀"
+            <Button Grid.Column="0" Style="{StaticResource BotaoRetorno}"
                     Width="50" Height="30" FontSize="20"
                     Command="{Binding RetornarParaHome}"/>
 

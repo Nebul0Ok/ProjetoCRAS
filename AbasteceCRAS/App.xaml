@@ -41,6 +41,10 @@
                 <views:HistoricoView/>
             </DataTemplate>
 
+            <DataTemplate DataType="{x:Type vm:CadastroUsuarioViewModel}">
+                <views:CadastroUsuarioView/>
+            </DataTemplate>
+
 
         </ResourceDictionary>
 

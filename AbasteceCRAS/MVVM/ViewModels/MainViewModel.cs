@@ -15,6 +15,7 @@ namespace AbasteceCRAS.MVVM.ViewModels
         public ItensViewModel Itens;
         public EstoqueViewModel Estoque;
         public HistoricoViewModel Historico;
+        public CadastroUsuarioViewModel CadastroUsuario;
 
         private bool _isCordenador;
         public bool IsCordenador
@@ -86,6 +87,7 @@ namespace AbasteceCRAS.MVVM.ViewModels
 
         public ICommand MenuLateral { get; }
         public ICommand Sair {  get; }
+        public ICommand NavegarCadastrarAdmin {  get; }
 
         public static MainViewModel Instance { get; private set;}
 
@@ -115,6 +117,7 @@ namespace AbasteceCRAS.MVVM.ViewModels
             Itens = new ItensViewModel();
             Historico = new HistoricoViewModel();
             Estoque = new EstoqueViewModel();
+            CadastroUsuario = new CadastroUsuarioViewModel();
             CurrentView = Home;
             Instance = this;
 
@@ -125,6 +128,8 @@ namespace AbasteceCRAS.MVVM.ViewModels
             {
 
             }
+
+            NavegarCadastrarAdmin = new RelayCommand(AcessarCadastroUsuario);
         }
 
         public void AcessarHome()
@@ -150,6 +155,11 @@ namespace AbasteceCRAS.MVVM.ViewModels
         public void AcessarHistorico()
         {
             CurrentView = Historico;
+        }
+
+        public void AcessarCadastroUsuario(object parameter)
+        {
+            CurrentView = CadastroUsuario;
         }
 
 

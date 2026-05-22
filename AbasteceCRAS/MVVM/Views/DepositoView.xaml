@@ -29,7 +29,7 @@
         <Grid Background="White">
 
             <Grid.RowDefinitions>
-                <RowDefinition Height="0.8*"/>
+                <RowDefinition Height="auto"/>
                 <RowDefinition Height="9.9*"/>
             </Grid.RowDefinitions>
 
@@ -39,7 +39,9 @@
             </Grid.ColumnDefinitions>
 
             <Button Grid.Row="0" Grid.Column="0" Margin="10"
-                Content="Voltar" Command="{Binding RetornarParaHome}"/>
+                    Width="50" Height="30"
+                    Style="{StaticResource BotaoRetorno}"
+                    Command="{Binding RetornarParaHome}"/>
 
 
             <Grid Grid.Row="1" Grid.Column="1" Background="White">

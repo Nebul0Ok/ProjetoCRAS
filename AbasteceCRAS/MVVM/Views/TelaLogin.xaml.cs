@@ -15,8 +15,10 @@ public partial class TelaLogin : Window
         UsuariosCadastrados = new List<Usuario>();
         Usuario u = new Usuario("Carlos", "carlos@email.com", "carlos123", "administrador");
         Usuario admin = new Usuario("Admin", "admin", "admin", "coordenador");
-        UsuariosCadastrados.Add(u);
-        UsuariosCadastrados.Add(admin);
+        Usuario j = new Usuario("João", "joao@email.com", "joao123", "coordenador");
+        SessionService.CadastrarUsuario(u);
+        SessionService.CadastrarUsuario(admin);
+        SessionService.CadastrarUsuario(j);
     }
 
     private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
