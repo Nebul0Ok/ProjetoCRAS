@@ -1,5 +1,5 @@
-1 - Corrigir o tratamento de dados do login
+x 1 - Corrigir o tratamento de dados do login
 
-2 - Adicionar uma hash de senha
+x 2 - Adicionar uma hash de senha
 
-3 - Corrigir o depósito dos itens para ser uma lista ao invés de apenas um item
+x 3 - Corrigir o depósito dos itens para ser uma lista ao invés de apenas um item

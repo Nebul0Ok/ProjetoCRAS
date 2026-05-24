@@ -1,4 +1,5 @@
-﻿using AbasteceCRAS.MVVM.Models;
+﻿using AbasteceCRAS.Core;
+using AbasteceCRAS.MVVM.Models;
 using System.Net.NetworkInformation;
 
 namespace AbasteceCRAS.Services;
@@ -27,6 +28,8 @@ public class SessionService
 
         if (cadastrado) return false;
 
+        u.Senha = HashSenha.HashSenhas(u.Senha);
+
         UsuariosCadastrados.Add((UsuariosCadastrados.Count + 1), u);
 
         return true;
@@ -34,6 +37,7 @@ public class SessionService
 
     public bool LoginUsuario (string email, string senha)
     {
+        senha = HashSenha.HashSenhas(senha);
         var login = UsuariosCadastrados.Values.FirstOrDefault(o => o.Email == email && o.Senha == senha);
 
         if (login != null)

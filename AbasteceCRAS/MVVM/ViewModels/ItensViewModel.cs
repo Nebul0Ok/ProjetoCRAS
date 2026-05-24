@@ -173,6 +173,8 @@ namespace AbasteceCRAS.MVVM.ViewModels
             Produto p = new Produto(NomeItem);
             DadosService.Instance.ListaProduto.Add(p);
 
+            DadosService.Instance.SalvarHistorico($"Adicionado o item {p.NomeItem}");
+
             NomeItem = string.Empty;
         }
 
@@ -187,6 +189,7 @@ namespace AbasteceCRAS.MVVM.ViewModels
                 if (ItemAdicao.AdicionarTipoItem(new TipoDeItem(NomeDoTipo, QuantidadeTipoItem)))
                 {
                     MessageBox.Show("Item adicionado com sucesso!");
+                    DadosService.Instance.SalvarHistorico($"Adicionado o tipo {NomeDoTipo} ao item {ItemAdicao.NomeItem} com a quantidade {QuantidadeTipoItem}");
                 }
                 else
                 {

@@ -4,6 +4,7 @@ using AbasteceCRAS.Services;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Input;
+using System.Linq;
 
 namespace AbasteceCRAS.MVVM.ViewModels
 {
@@ -168,21 +169,57 @@ namespace AbasteceCRAS.MVVM.ViewModels
             }
         }
 
-        //private ObservableCollection<Deposito> _listaDeposito;
-        //public ObservableCollection<Deposito> ListaDeposito
-        //{
-        //    get => _listaDeposito;
-        //    set
-        //    {
-        //        _listaDeposito = value;
-        //        OnPropertyChanged()
-        //    }
-        //}
+        public ObservableCollection<Deposito> ListaDepositos
+        {
+            get
+            {
+                
+                if (string.IsNullOrEmpty(LocalSelecionado))
+                {
+                    return DadosService.Instance.ListaDeposito;
+                }
+                var filtrados = DadosService.Instance.ListaDeposito
+                    .Where(d => d.Localizacao == LocalSelecionado);
+                return new ObservableCollection<Deposito>(filtrados);
+            }
+        }
+
+        private Deposito _depositoSelecionado;
+        public Deposito DepositoSelecionado
+        {
+            get => _depositoSelecionado;
+            set
+            {
+                _depositoSelecionado = value;
+                OnPropertyChanged();
+            }
+        }
 
 
+        public ObservableCollection<string> ListaLocais
+        {
+            get
+            {
+                var locais = DadosService.Instance.ListaDeposito
+                    .Select(d => d.Localizacao)
+                    .Where(l => !string.IsNullOrEmpty(l))
+                    .Distinct();
+                return new ObservableCollection<string>(locais);
+            }
+        }
 
-
-
+        private string _localSelecionado;
+        public string LocalSelecionado
+        {
+            get => _localSelecionado;
+            set
+            {
+                _localSelecionado = value;
+                OnPropertyChanged();
+                OnPropertyChanged(nameof(ListaDepositos)); 
+                DepositoSelecionado = null;
+            }
+        }
 
 
 
@@ -230,6 +267,7 @@ namespace AbasteceCRAS.MVVM.ViewModels
                     {
                         prod.QuantidadeTipoEstoque += ValorQuantidade;
                         MessageBox.Show($"Quantidade de {prod.NomeTipo} alterado para {prod.QuantidadeTipoEstoque}");
+                        DadosService.Instance.SalvarHistorico($"Adicionado {ValorQuantidade} ao estoque de {prod.NomeTipo}");
                     }
                 }
 
@@ -242,6 +280,24 @@ namespace AbasteceCRAS.MVVM.ViewModels
                     {
                         prod.QuantidadeTipoEstoque -= ValorQuantidade;
                         MessageBox.Show($"Quantidade de {prod.NomeTipo} alterado para {prod.QuantidadeTipoEstoque}");
+                        DadosService.Instance.SalvarHistorico($"Reduzido {ValorQuantidade} do estoque de {prod.NomeTipo}");
+                    }
+                }
+            }
+            else if (IsTrocaDeposito)
+            {
+                if (DepositoSelecionado == null)
+                {
+                    MessageBox.Show("Por favor, selecione o depósito de destino");
+                    return;
+                }
+                foreach (TipoDeItem prod in p.TipoDeItems)
+                {
+                    if (prod == TipoSelecionado)
+                    {
+                        prod.DepositoAtual = DepositoSelecionado;
+                        MessageBox.Show($"Depósito de {prod.NomeTipo} alterado para {DepositoSelecionado.Nome}");
+                        DadosService.Instance.SalvarHistorico($"Local de {prod.NomeTipo} foi alterado para {DepositoSelecionado} em {LocalSelecionado}");
                     }
                 }
             }

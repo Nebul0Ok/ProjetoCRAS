@@ -20,7 +20,16 @@ public class TipoDeItem : ViewModelBase
             OnPropertyChanged();
         }
     }
-    public Deposito DepositoAtual { get; set; }
+    private Deposito _depositoAtual;
+    public Deposito DepositoAtual
+    {
+        get => _depositoAtual;
+        set
+        {
+            _depositoAtual = value;
+            OnPropertyChanged();
+        }
+    }
 
     public TipoDeItem( string NomeTipo, int QuantidadeTipoEstoque, int QuantidadeTipoProduto, string Medida)
     {

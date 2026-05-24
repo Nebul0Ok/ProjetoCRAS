@@ -41,6 +41,9 @@ public class DepositoViewModel : ViewModelBase
         Deposito p = new Deposito(NomeInput, LocalInput);
 
         DadosService.Instance.ListaDeposito.Add(p);
+
+        DadosService.Instance.SalvarHistorico($"Adicionado depósito {p.Nome} no local {p.Localizacao}");
+
         LimparCampos();
     }
 
