@@ -32,5 +32,21 @@ public class SessionService
         return true;
     }
 
+    public bool LoginUsuario (string email, string senha)
+    {
+        var login = UsuariosCadastrados.Values.FirstOrDefault(o => o.Email == email && o.Senha == senha);
+
+        if (login != null)
+        {
+            UsuarioLogado = login;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
+    }
+
     private SessionService() { }
 }

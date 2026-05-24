@@ -6,11 +6,9 @@
         xmlns:local="clr-namespace:AbasteceCRAS"
         mc:Ignorable="d"
         Title="AbasteceCRAS" Height="720" Width="1280"
-        WindowState="Maximized" 
-        WindowStyle="None"
-        ResizeMode="CanMinimize"
         AllowsTransparency="False"
         KeyDown="Window_KeyDown"
+        WindowState="Maximized" WindowStartupLocation="CenterScreen"
         >
 
     <Grid>

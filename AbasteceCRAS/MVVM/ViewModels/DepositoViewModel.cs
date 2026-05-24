@@ -50,5 +50,4 @@ public class DepositoViewModel : ViewModelBase
         LocalInput = string.Empty;
     }
 
-    //Criar os demais métodos do CRUD
 }

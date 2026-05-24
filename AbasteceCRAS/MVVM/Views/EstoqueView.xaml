@@ -152,30 +152,58 @@
                                 <RadioButton Content="Trocar Deposito" IsChecked="{Binding IsTrocaDeposito}"/>
                             </UniformGrid>
 
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Item:" Style="{StaticResource FieldLabelStyle}"/>
-                                <!-- Debug -->
-                                <TextBlock Text="{Binding ItemSelecionado.NomeItem}" Visibility="Hidden"/>
-                            </StackPanel>
-                            <ComboBox Margin="0,0,0,15" ItemsSource="{Binding ListaItens}" DisplayMemberPath="NomeItem" SelectedItem="{Binding ItemSelecionado}"/>
+                            <Grid>
+                                <StackPanel Visibility="{Binding EntradaSaidaVisibility}">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="Item:" Style="{StaticResource FieldLabelStyle}"/>
+                                        <!-- Debug -->
+                                        <TextBlock Text="{Binding ItemSelecionado.NomeItem}" Visibility="Hidden"/>
+                                    </StackPanel>
+                                    <ComboBox Margin="0,0,0,15" ItemsSource="{Binding ListaItens}" DisplayMemberPath="NomeItem" SelectedItem="{Binding ItemSelecionado}"/>
 
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Tipo:" Style="{StaticResource FieldLabelStyle}"/>
-                                <!-- Debug -->
-                                <TextBlock Text="{Binding TipoSelecionado.NomeTipo}" Visibility="Hidden"/>
-                            </StackPanel>
-                            <ComboBox Margin="0,0,0,15" ItemsSource="{Binding ListaTipos}" DisplayMemberPath="NomeTipo" SelectedItem="{Binding TipoSelecionado}"/>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="Tipo:" Style="{StaticResource FieldLabelStyle}"/>
+                                        <!-- Debug -->
+                                        <TextBlock Text="{Binding TipoSelecionado.NomeTipo}" Visibility="Hidden"/>
+                                    </StackPanel>
+                                    <ComboBox Margin="0,0,0,15" ItemsSource="{Binding ListaTipos}" DisplayMemberPath="NomeTipo" SelectedItem="{Binding TipoSelecionado}"/>
 
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Depósito:" Style="{StaticResource FieldLabelStyle}"/>
-                                <!-- Debug -->
-                                <TextBlock Text="{Binding DepositoSelecionado.Nome}" Visibility="Visible"/>
-                            </StackPanel>
-                            <ComboBox Margin="0,0,0,15" ItemsSource="{Binding ListaDepositos}" DisplayMemberPath="Nome" SelectedItem="{Binding DepositoSelecionado}"/>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="Depósito:" Style="{StaticResource FieldLabelStyle}"/>
+                                        <!-- Debug -->
+                                        <TextBlock Text="{Binding DepositoSelecionado.Nome}" Visibility="Visible"/>
+                                    </StackPanel>
+                                    <ComboBox Margin="0,0,0,15" ItemsSource="{Binding ListaDepositos}" DisplayMemberPath="Nome" SelectedItem="{Binding DepositoSelecionado}"/>
 
-                            <TextBlock Text="Quantidade:" Style="{StaticResource FieldLabelStyle}"/>
-                            <TextBox Text="{Binding ValorQuantidade}" Height="45" Background="#F0F4F8" BorderThickness="0" Margin="0,0,0,25" 
-                      VerticalContentAlignment="Center" Padding="15,0" FontWeight="SemiBold"/>
+                                    <TextBlock Text="Quantidade:" Style="{StaticResource FieldLabelStyle}"/>
+                                    <TextBox Text="{Binding ValorQuantidade}" Height="45" Background="#F0F4F8" BorderThickness="0" Margin="0,0,0,25" 
+                                             VerticalContentAlignment="Center" Padding="15,0" FontWeight="SemiBold"/>
+                                </StackPanel>
+
+                                <StackPanel Visibility="{Binding DepositoVisibility}">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="Item:" Style="{StaticResource FieldLabelStyle}"/>
+                                        <!-- Debug -->
+                                        <TextBlock Text="{Binding ItemSelecionado.NomeItem}" Visibility="Hidden"/>
+                                    </StackPanel>
+                                    <ComboBox Margin="0,0,0,15" ItemsSource="{Binding ListaItens}" DisplayMemberPath="NomeItem" SelectedItem="{Binding ItemSelecionado}"/>
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="Tipo:" Style="{StaticResource FieldLabelStyle}"/>
+                                        <!-- Debug -->
+                                        <TextBlock Text="{Binding TipoSelecionado.NomeTipo}" Visibility="Hidden"/>
+                                    </StackPanel>
+                                    <ComboBox Margin="0,0,0,15" ItemsSource="{Binding ListaTipos}" DisplayMemberPath="NomeTipo" SelectedItem="{Binding TipoSelecionado}"/>
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="Depósito:" Style="{StaticResource FieldLabelStyle}"/>
+                                        <!-- Debug -->
+                                        <TextBlock Text="{Binding DepositoSelecionado.Nome}" Visibility="Visible"/>
+                                    </StackPanel>
+                                    <ComboBox Margin="0,0,0,15" ItemsSource="{Binding ListaDepositos}" DisplayMemberPath="Nome" SelectedItem="{Binding DepositoSelecionado}"/>
+
+                                </StackPanel>
+                            </Grid>
 
                             <Button Content="Confirmar" Background="Black" Foreground="White" Height="48" FontWeight="Bold" Cursor="Hand"
                                     Command="{Binding BtnConfirmarOperacao}">

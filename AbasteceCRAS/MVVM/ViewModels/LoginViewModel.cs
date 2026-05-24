@@ -66,58 +66,93 @@ public class LoginViewModel: ViewModelBase
         SenhaFeedback = string.Empty;
     }
 
+    //public void ExecutarLogin(object parameter)
+    //{
+
+    //    try
+    //    {
+    //        var usuarioEncontrado = TelaLogin.UsuariosCadastrados.FirstOrDefault(u => u.Email == Email && u.Senha == Senha);
+
+    //        if (usuarioEncontrado != null)
+    //        {
+    //            MessageBox.Show($"Logado.");
+    //            SessionService.Instance.UsuarioLogado = usuarioEncontrado;
+
+    //            if (parameter is Window currentWindow)
+    //            {
+    //                MainWindow mainWindow = new MainWindow();
+    //                mainWindow.Show();
+    //                currentWindow.Close();
+    //            }
+
+    //        }
+    //        else
+    //        {
+    //            MessageBox.Show("Usuario não econtrado");
+    //        }
+
+    //    }
+    //    catch
+    //    {
+
+    //    }
+
+    //    //SenhaFeedback = string.Empty;
+    //    //EmailFeedback = string.Empty;
+
+    //    //if (DadosService.Instance.UsuariosCadastrados.ContainsKey(Email)) {
+    //    //    if (DadosService.Instance.UsuariosCadastrados.ContainsValue(Senha))
+    //    //    {
+
+    //    //    }
+    //    //    else
+    //    //    {
+    //    //        SenhaFeedback = "Senha não encontrada";
+    //    //    }
+    //    //}
+    //    //else
+    //    //{
+    //    //    EmailFeedback = "E-mail não encontrado";
+    //    //    if (!DadosService.Instance.UsuariosCadastrados.ContainsValue(Senha))
+    //    //    {
+    //    //        SenhaFeedback = "Senha não encontrada";
+    //    //    }
+    //    //}
+
+    //}
+
     public void ExecutarLogin(object parameter)
     {
+        EmailFeedback = string.Empty;
+        SenhaFeedback = string.Empty;
 
-        try
+        
+        if (String.IsNullOrWhiteSpace(Email))
         {
-            var usuarioEncontrado = TelaLogin.UsuariosCadastrados.FirstOrDefault(u => u.Email == Email && u.Senha == Senha);
-
-            if (usuarioEncontrado != null)
-            {
-                MessageBox.Show($"Logado.");
-                SessionService.Instance.UsuarioLogado = usuarioEncontrado;
-
-                if (parameter is Window currentWindow)
-                {
-                    MainWindow mainWindow = new MainWindow();
-                    mainWindow.Show();
-                    currentWindow.Close();
-                }
-
-            }
-            else
-            {
-                MessageBox.Show("Usuario não econtrado");
-            }
-
+            EmailFeedback = "Email Vazio";
+            return;
         }
-        catch
+        if (String.IsNullOrWhiteSpace(Senha))
         {
-
+            SenhaFeedback = "Senha Vazia";
+            return;
         }
 
-        //SenhaFeedback = string.Empty;
-        //EmailFeedback = string.Empty;
+        if (SessionService.Instance.LoginUsuario(Email, Senha))
+        {
+            if (parameter is Window currentWindow)
+            {
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+                currentWindow.Close();
+            }
+        }
+        else
+        {
+            MessageBox.Show("Usuario não encontrado");
+        }
 
-        //if (DadosService.Instance.UsuariosCadastrados.ContainsKey(Email)) {
-        //    if (DadosService.Instance.UsuariosCadastrados.ContainsValue(Senha))
-        //    {
 
-        //    }
-        //    else
-        //    {
-        //        SenhaFeedback = "Senha não encontrada";
-        //    }
-        //}
-        //else
-        //{
-        //    EmailFeedback = "E-mail não encontrado";
-        //    if (!DadosService.Instance.UsuariosCadastrados.ContainsValue(Senha))
-        //    {
-        //        SenhaFeedback = "Senha não encontrada";
-        //    }
-        //}
 
     }
 }

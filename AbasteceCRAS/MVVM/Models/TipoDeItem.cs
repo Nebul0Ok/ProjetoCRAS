@@ -30,11 +30,19 @@ public class TipoDeItem : ViewModelBase
         //this.QuantidadeTipoProduto = QuantidadeTipoProduto;
     }
 
+    //public TipoDeItem(string NomeTipo, int QuantidadeTipoEstoque)
+    //{
+    //    this.NomeTipo = NomeTipo;
+    //    DataCadastroTipo = DateTime.Now;
+    //    this.QuantidadeTipoEstoque = QuantidadeTipoEstoque;
+    //}
+
     public TipoDeItem(string NomeTipo, int QuantidadeTipoEstoque)
     {
         this.NomeTipo = NomeTipo;
         DataCadastroTipo = DateTime.Now;
         this.QuantidadeTipoEstoque = QuantidadeTipoEstoque;
+        DepositoAtual = new Deposito("Nenhum", "Nenhum");
     }
 
     public TipoDeItem(string NomeTipo, int QuantidadeTipoEstoque, Deposito deposito)

@@ -17,10 +17,5 @@ public class DadosService
     {
     }
 
-    public void CadastrarUsuario(string email, string senha)
-    {
-        
-    }
-
     
 }

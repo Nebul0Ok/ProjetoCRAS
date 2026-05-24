@@ -9,12 +9,19 @@ namespace AbasteceCRAS.MVVM.ViewModels
 {
     public class EstoqueViewModel: ViewModelBase
     {
+        //Botões
         public ICommand RetornarParaHome { get; }
         public ICommand DiminuirLista { get; }
         public ICommand SelecionarEntrada { get; }
         public ICommand SelecionarSaida {  get; }
         public ICommand VoltarHome { get; }
         public ICommand BtnConfirmarOperacao { get; }
+
+
+
+
+
+
 
         //Construtor
         public EstoqueViewModel()
@@ -23,7 +30,13 @@ namespace AbasteceCRAS.MVVM.ViewModels
             VoltarHome = new RelayCommand(VoltarParaHome);
             DiminuirLista = new RelayCommand(o => DiminuirALista(o));
             BtnConfirmarOperacao = new RelayCommand(Operacao);
+            EntradaSaidaVisibility = Visibility.Collapsed;
+            DepositoVisibility = Visibility.Collapsed;
         }
+
+
+
+
 
 
 
@@ -41,6 +54,8 @@ namespace AbasteceCRAS.MVVM.ViewModels
             {
                 _isEntrada = value;
                 OnPropertyChanged();
+                if (value) SwitchEntradaSaida();
+
             }
         }
 
@@ -52,6 +67,19 @@ namespace AbasteceCRAS.MVVM.ViewModels
             {
                 _isSaida = value;
                 OnPropertyChanged();
+                if (value) SwitchEntradaSaida();
+            }
+        }
+
+        private bool _isTrocaDeposito;
+        public bool IsTrocaDeposito
+        {
+            get => _isTrocaDeposito;
+            set
+            {
+                _isTrocaDeposito = value;
+                OnPropertyChanged();
+                if (value) SwitchDeposito();
             }
         }
 
@@ -65,6 +93,33 @@ namespace AbasteceCRAS.MVVM.ViewModels
                 OnPropertyChanged();
             }
         }
+
+        private Visibility _depositoVisibility;
+        public Visibility DepositoVisibility
+        {
+            get => _depositoVisibility;
+            set
+            {
+                _depositoVisibility = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private Visibility _entradaSaidaVisibility;
+        public Visibility EntradaSaidaVisibility
+        {
+            get => _entradaSaidaVisibility;
+            set
+            {
+                _entradaSaidaVisibility = value;
+                OnPropertyChanged();
+            }
+        }
+
+
+
+
+
 
 
         //Listas
@@ -126,7 +181,15 @@ namespace AbasteceCRAS.MVVM.ViewModels
 
 
 
-//Funções
+
+
+
+
+
+
+
+
+        //Funções
         public void VoltarParaHome (object juninho)
         {
             MainViewModel.Instance.AcessarHome();
@@ -149,7 +212,7 @@ namespace AbasteceCRAS.MVVM.ViewModels
 
         public void Operacao(object parameter)
         {
-            if (!IsEntrada && !IsSaida)
+            if (!IsEntrada && !IsSaida && !IsTrocaDeposito)
             {
                 MessageBox.Show("Por favor, selecione uma operação");
             }
@@ -196,6 +259,21 @@ namespace AbasteceCRAS.MVVM.ViewModels
                 ItemModificado.QuantidadeTipoEstoque += ValorQuantidade;
                 return true;
             }
+        }
+
+        public void SwitchEntradaSaida()
+        {
+            if (EntradaSaidaVisibility == Visibility.Visible) return;
+
+            DepositoVisibility = Visibility.Collapsed;
+            EntradaSaidaVisibility = Visibility.Visible;
+
+        }
+
+        public void SwitchDeposito()
+        {
+            EntradaSaidaVisibility = Visibility.Collapsed;
+            DepositoVisibility= Visibility.Visible;
         }
 
     }
