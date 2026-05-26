@@ -106,6 +106,17 @@ namespace AbasteceCRAS.MVVM.ViewModels
             }
         }
 
+        private Visibility _validadeVisibility;
+        public Visibility ValidadeVisibility
+        {
+            get => _depositoVisibility;
+            set
+            {
+                _depositoVisibility = value;
+                OnPropertyChanged();
+            }
+        }
+
         private Visibility _entradaSaidaVisibility;
         public Visibility EntradaSaidaVisibility
         {
@@ -113,6 +124,18 @@ namespace AbasteceCRAS.MVVM.ViewModels
             set
             {
                 _entradaSaidaVisibility = value;
+                OnPropertyChanged();
+            }
+        }
+
+
+        private DateTime? _dataSelecionada;
+        public DateTime? DataSelecionada
+        {
+            get => _dataSelecionada;
+            set
+            {
+                _dataSelecionada = value;
                 OnPropertyChanged();
             }
         }
@@ -138,6 +161,16 @@ namespace AbasteceCRAS.MVVM.ViewModels
             {
                 _itemSelecionado = value;
                 ListaTipos = value.TipoDeItems;
+
+                if (value.IsPerecivel)
+                {
+                    ValidadeVisibility = Visibility.Visible;
+                }
+                else
+                {
+                    ValidadeVisibility = Visibility.Collapsed;
+                }
+
                 OnPropertyChanged();
             }
         }
@@ -265,9 +298,17 @@ namespace AbasteceCRAS.MVVM.ViewModels
                 {
                     if (prod == TipoSelecionado)
                     {
-                        prod.QuantidadeTipoEstoque += ValorQuantidade;
-                        MessageBox.Show($"Quantidade de {prod.NomeTipo} alterado para {prod.QuantidadeTipoEstoque}");
-                        DadosService.Instance.SalvarHistorico($"Adicionado {ValorQuantidade} ao estoque de {prod.NomeTipo}");
+                        if (ItemSelecionado.IsPerecivel)
+                        {
+                            prod.AdicionarRemessa(new Remessa(ValorQuantidade, true, DataSelecionada));
+                            DataSelecionada = null;
+                        }
+                        else
+                        {
+                            prod.AdicionarRemessa(new Remessa(ValorQuantidade, false));
+                        }
+
+                        DadosService.Instance.SalvarHistorico($"Adicionado remessa de {ValorQuantidade} unidades ao estoque de {ItemSelecionado.NomeItem}: {prod.NomeTipo}");
                     }
                 }
 
@@ -280,7 +321,7 @@ namespace AbasteceCRAS.MVVM.ViewModels
                     {
                         prod.QuantidadeTipoEstoque -= ValorQuantidade;
                         MessageBox.Show($"Quantidade de {prod.NomeTipo} alterado para {prod.QuantidadeTipoEstoque}");
-                        DadosService.Instance.SalvarHistorico($"Reduzido {ValorQuantidade} do estoque de {prod.NomeTipo}");
+                        DadosService.Instance.SalvarHistorico($"Reduzido {ValorQuantidade} do estoque de {ItemSelecionado.NomeItem}: {prod.NomeTipo}");
                     }
                 }
             }
@@ -297,7 +338,7 @@ namespace AbasteceCRAS.MVVM.ViewModels
                     {
                         prod.DepositoAtual = DepositoSelecionado;
                         MessageBox.Show($"Depósito de {prod.NomeTipo} alterado para {DepositoSelecionado.Nome}");
-                        DadosService.Instance.SalvarHistorico($"Local de {prod.NomeTipo} foi alterado para {DepositoSelecionado} em {LocalSelecionado}");
+                        DadosService.Instance.SalvarHistorico($"Local de {prod.NomeTipo} foi alterado para {DepositoSelecionado.Nome} em {LocalSelecionado}");
                     }
                 }
             }

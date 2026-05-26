@@ -11,6 +11,10 @@
         WindowState="Maximized" WindowStartupLocation="CenterScreen"
         >
 
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+    </Window.Resources>
+
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
@@ -42,11 +46,118 @@
                     </Button>
 
                     <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right">
+                        <Grid>
+                            <Button VerticalAlignment="Center" Width="35" Height="35" Style="{StaticResource BotaoIcone}">
+                                <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
+                                    <Canvas Name="svg37" Width="34" Height="34">
+                                        <Canvas.RenderTransform>
+                                            <TranslateTransform X="2" Y="0"/>
+                                        </Canvas.RenderTransform>
+                                        <Canvas.Resources>
+                                            <LinearGradientBrush xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Key="linearGradient-1" MappingMode="RelativeToBoundingBox" StartPoint="1,0" EndPoint="1,1">
+                                                <LinearGradientBrush.GradientStops>
+                                                    <GradientStopCollection>
+                                                        <GradientStop Color="#FFC923" Offset="0"/>
+                                                        <GradientStop Color="#FFAD41" Offset="1"/>
+                                                    </GradientStopCollection>
+                                                </LinearGradientBrush.GradientStops>
+                                            </LinearGradientBrush>
+                                            <LinearGradientBrush xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Key="linearGradient-2" MappingMode="RelativeToBoundingBox" StartPoint="1,0" EndPoint="1,1">
+                                                <LinearGradientBrush.GradientStops>
+                                                    <GradientStopCollection>
+                                                        <GradientStop Color="#FE9F15" Offset="0"/>
+                                                        <GradientStop Color="#FFB03C" Offset="1"/>
+                                                    </GradientStopCollection>
+                                                </LinearGradientBrush.GradientStops>
+                                            </LinearGradientBrush>
+                                            <LinearGradientBrush xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Key="linearGradient-3" MappingMode="RelativeToBoundingBox" StartPoint="1,0" EndPoint="1,1">
+                                                <LinearGradientBrush.GradientStops>
+                                                    <GradientStopCollection>
+                                                        <GradientStop Color="#FFB637" Offset="0"/>
+                                                        <GradientStop Color="#FFBE2F" Offset="1"/>
+                                                    </GradientStopCollection>
+                                                </LinearGradientBrush.GradientStops>
+                                            </LinearGradientBrush>
+                                            <LinearGradientBrush xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Key="linearGradient-4" MappingMode="RelativeToBoundingBox" StartPoint="1,0" EndPoint="1,1">
+                                                <LinearGradientBrush.GradientStops>
+                                                    <GradientStopCollection>
+                                                        <GradientStop Color="#FFC226" Offset="0"/>
+                                                        <GradientStop Color="#FFE825" Offset="1"/>
+                                                    </GradientStopCollection>
+                                                </LinearGradientBrush.GradientStops>
+                                            </LinearGradientBrush>
+                                        </Canvas.Resources>
+                                        <Canvas Name="icons">
+                                            <Canvas Name="uigamblingwebsitelinedicnoscasinoshunter">
+                                                <Canvas.RenderTransform>
+                                                    <TranslateTransform X="-1255.000000" Y="-1905.000000"/>
+                                                </Canvas.RenderTransform>
+                                                <Canvas>
+                                                    <Canvas.RenderTransform>
+                                                        <TranslateTransform X="50.000000" Y="1871.000000"/>
+                                                    </Canvas.RenderTransform>
+                                                    <Canvas Name="bell">
+                                                        <Canvas.RenderTransform>
+                                                            <TranslateTransform X="1205.000000" Y="34.000000"/>
+                                                        </Canvas.RenderTransform>
+                                                        <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="Path" Fill="{StaticResource linearGradient-1}" StrokeThickness="1">
+                                                            <Path.Data>
+                                                                <PathGeometry Figures="M26 24.6895899 L26 14 C26 7.92486775 21.0751322 3 15 3 C8.92486775 3 4 7.92486775 4 14 L4 24.6895899 L6 24.6895899 C8.6862915 24.6895899 11.6862915 24.6895899 15 24.6895899 C18.3137085 24.6895899 21.3137085 24.6895899 24 24.6895899 L26 24.6895899 Z" FillRule="NonZero"/>
+                                                            </Path.Data>
+                                                        </Path>
+                                                        <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path29" Fill="{StaticResource linearGradient-2}" StrokeThickness="1">
+                                                            <Path.Data>
+                                                                <PathGeometry Figures="M26.5 23 C28.4329966 23 30 24.5670034 30 26.5 C30 28.4329966 28.4329966 30 26.5 30 L3.5 30 C1.56700338 30 0 28.4329966 0 26.5 C0 24.5670034 1.56700338 23 3.5 23 L26.5 23 Z" FillRule="NonZero"/>
+                                                            </Path.Data>
+                                                        </Path>
+                                                        <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="Oval" Fill="{StaticResource linearGradient-3}" StrokeThickness="1">
+                                                            <Path.Data>
+                                                                <PathGeometry Figures="M21 34 C21 30.6862915 18.3137085 28 15 28 C11.6862915 28 9 30.6862915 9 34 L21 34 Z" FillRule="NonZero"/>
+                                                            </Path.Data>
+                                                            <Path.RenderTransform>
+                                                                <TransformGroup>
+                                                                    <TranslateTransform X="-15.000000" Y="-31.000000"/>
+                                                                    <RotateTransform Angle="-180.000000"/>
+                                                                    <TranslateTransform X="15.000000" Y="31.000000"/>
+                                                                </TransformGroup>
+                                                            </Path.RenderTransform>
+                                                        </Path>
+                                                        <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="RectangleCopy11" Fill="{StaticResource linearGradient-4}" StrokeThickness="1">
+                                                            <Path.Data>
+                                                                <PathGeometry Figures="M17 2.13162821e-14 L13 2.13162821e-14 L11 2.13162821e-14 L11 1.56280256 C11 3.49579918 12.5670034 5.06280256 14.5 5.06280256 L15.5 5.06280256 C17.4329966 5.06280256 19 3.49579918 19 1.56280256 L19 2.13162821e-14 L17 2.13162821e-14 Z" FillRule="NonZero"/>
+                                                            </Path.Data>
+                                                            <Path.RenderTransform>
+                                                                <TransformGroup>
+                                                                    <TranslateTransform X="-15.000000" Y="-2.531401"/>
+                                                                    <RotateTransform Angle="-180.000000"/>
+                                                                    <TranslateTransform X="15.000000" Y="2.531401"/>
+                                                                </TransformGroup>
+                                                            </Path.RenderTransform>
+                                                        </Path>
+                                                    </Canvas>
+                                                </Canvas>
+                                            </Canvas>
+                                        </Canvas>
+                                    </Canvas>
+                                </Viewbox>
+                            </Button>
+
+                            <Ellipse Fill="Red" 
+                                     Height="12" Width="12" 
+                                     Margin="0,-10,-10,0"
+                                     IsHitTestVisible="False"
+                                     Visibility="{Binding TemNotificacao, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                        </Grid>
+                        
                         <TextBlock VerticalAlignment="Center"
                    Text="{Binding UsuarioAtual.Nome}"
                    Margin="0,0,10,0" Foreground="White"
                    FontSize="20" FontWeight="Bold"
                    />
+
+                        
+                        
+                        
                         <Button VerticalAlignment="Center" Width="35" Height="35" Style="{StaticResource BotaoIcone}">
                             <Canvas HorizontalAlignment="Center" VerticalAlignment="Center" Name="svg8" Width="24" Height="24">
                                 <Canvas.RenderTransform>

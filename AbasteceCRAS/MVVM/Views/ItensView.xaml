@@ -62,7 +62,7 @@
                         </Grid>
 
                         <StackPanel Orientation="Horizontal">
-                            <CheckBox x:Name="chkPerecivel"/>
+                            <CheckBox x:Name="chkPerecivel" IsChecked="{Binding IsPerecivel}"/>
                             <TextBlock Text="É perecível?"/>
 
                         </StackPanel>

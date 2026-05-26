@@ -7,7 +7,7 @@ public class Produtos
 {
     public static List<Produto> prod = new List<Produto>
     {
-        new Produto("Arroz", 3)
+        new Produto("Arroz", 3, true)
         {
             TipoDeItems = new ObservableCollection<TipoDeItem>
             {
@@ -17,7 +17,7 @@ public class Produtos
             }
         },
 
-        new Produto("Feijão", 3)
+        new Produto("Feijão", 3, true)
         {
             TipoDeItems = new ObservableCollection<TipoDeItem>
             {
@@ -27,7 +27,7 @@ public class Produtos
             }
         },
 
-        new Produto("Macarrão", 3)
+        new Produto("Macarrão", 3, true)
         {
             TipoDeItems = new ObservableCollection<TipoDeItem>
             {
@@ -37,7 +37,7 @@ public class Produtos
             }
         },
 
-        new Produto("Açúcar", 2)
+        new Produto("Açúcar", 2, true)
         {
             TipoDeItems = new ObservableCollection<TipoDeItem>
             {
@@ -46,7 +46,7 @@ public class Produtos
             }
         },
 
-        new Produto("Sal", 2)
+        new Produto("Sal", 2, false)
         {
             TipoDeItems = new ObservableCollection<TipoDeItem>
             {
@@ -55,7 +55,7 @@ public class Produtos
             }
         },
 
-        new Produto("Óleo", 2)
+        new Produto("Óleo", 2, true)
         {
             TipoDeItems = new ObservableCollection<TipoDeItem>
             {
@@ -64,7 +64,7 @@ public class Produtos
             }
         },
 
-        new Produto("Leite", 3)
+        new Produto("Leite", 3, true)
         {
             TipoDeItems = new ObservableCollection<TipoDeItem>
             {
@@ -74,7 +74,7 @@ public class Produtos
             }
         },
 
-        new Produto("Café", 2)
+        new Produto("Café", 2, true)
         {
             TipoDeItems = new ObservableCollection<TipoDeItem>
             {

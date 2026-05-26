@@ -64,6 +64,7 @@ public class LoginViewModel: ViewModelBase
 
         EmailFeedback = string.Empty;
         SenhaFeedback = string.Empty;
+
     }
 
     //public void ExecutarLogin(object parameter)

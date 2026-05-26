@@ -168,6 +168,10 @@
                                     </StackPanel>
                                     <ComboBox Margin="0,0,0,15" ItemsSource="{Binding ListaTipos}" DisplayMemberPath="NomeTipo" SelectedItem="{Binding TipoSelecionado}"/>
 
+                                    <StackPanel Margin="0,0,0,15" Visibility="{Binding ValidadeVisibility}">
+                                        <TextBlock Text="Validade:" Style="{StaticResource FieldLabelStyle}"/>
+                                        <DatePicker SelectedDate="{Binding DataSelecionada}"/>
+                                    </StackPanel>
 
                                     <TextBlock Text="Quantidade:" Style="{StaticResource FieldLabelStyle}"/>
                                     <TextBox Text="{Binding ValorQuantidade}" Height="45" Background="#F0F4F8" BorderThickness="0" Margin="0,0,0,25" 
@@ -232,7 +236,10 @@
                             </Grid>
 
 
-
+<!-- 
+Aqui Começa a ListBox que externa mostra os cards
+    PS: Estou me perdendo com tanta coisa.
+-->
                             <ListBox Grid.Row="1"  ItemsSource="{Binding Source={x:Static services:DadosService.Instance}, Path=ListaProduto}"
                                       HorizontalContentAlignment="Stretch" 
                                       BorderThickness="0" 
@@ -335,10 +342,15 @@ Cursor="Hand">
                                                         </StackPanel>
                                                     </Border>
                                                 </Grid>
-
+                                                
+                                                
+                                                <!-- Lista dos tipos de itens -->
+                                                
+                                                
                                                 <ItemsControl Grid.Row="1" 
-                                       ItemsSource="{Binding TipoDeItems}" 
-                                       Margin="47,15,0,0">
+                                                              ItemsSource="{Binding TipoDeItems}" 
+                                                              Margin="47,15,0,0">
+                                                    
                                                     <ItemsControl.Style>
                                                         <Style TargetType="ItemsControl">
                                                             <Setter Property="Visibility" Value="Visible"/>
@@ -353,34 +365,37 @@ Cursor="Hand">
                                                     <ItemsControl.ItemTemplate>
                                                         <DataTemplate>
                                                             <Border BorderBrush="#F8F9FA" BorderThickness="0,0,0,1" Padding="0,10">
-                                                                <Grid>
-                                                                    <Grid.ColumnDefinitions>
-                                                                        <ColumnDefinition Width="3*"/>
-                                                                        <ColumnDefinition Width="3*"/>
-                                                                        <ColumnDefinition Width="2*"/>
-                                                                        <ColumnDefinition Width="auto"/>
-                                                                    </Grid.ColumnDefinitions>
 
-                                                                    <TextBlock Text="{Binding NomeTipo}" 
+                                                                <StackPanel>
+                                                                    <Grid>
+                                                                        <Grid.ColumnDefinitions>
+                                                                            <ColumnDefinition Width="3*"/>
+                                                                            <ColumnDefinition Width="auto"/>
+                                                                        </Grid.ColumnDefinitions>
+
+                                                                        <TextBlock Text="{Binding NomeTipo}" 
                                                        Foreground="#6C757D" 
                                                        FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Left"/>
 
-                                                                    <TextBlock Grid.Column="1" Text="{Binding DepositoAtual.Nome}" Margin="10,0,0,0" FontSize="12"
-                                                        VerticalAlignment="Top" HorizontalAlignment="Center"/>
 
-                                                                    <TextBlock Grid.Column="2" Text="{Binding DepositoAtual.Localizacao}" Margin="10,0,10,0" FontSize="12"
-                                                        VerticalAlignment="Top" HorizontalAlignment="Center"/>
+                                                                        <StackPanel Grid.Column="3" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right">
 
-                                                                    <StackPanel Grid.Column="3" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right">
-
-                                                                        <TextBlock Text="{Binding QuantidadeTipoEstoque}" 
+                                                                            <TextBlock Text="{Binding QuantidadeTipoEstoque}" 
                                                             FontWeight="Bold" 
                                                             Foreground="#28a745" 
                                                             FontSize="14"/>
 
-                                                                        <TextBlock Text=" un" FontSize="12" Foreground="#ADB5BD" VerticalAlignment="Bottom" Margin="2,0,0,0"/>
-                                                                    </StackPanel>
-                                                                </Grid>
+                                                                            <TextBlock Text=" un" FontSize="12" Foreground="#ADB5BD" VerticalAlignment="Bottom" Margin="2,0,0,0"/>
+                                                                        </StackPanel>
+                                                                    </Grid>
+
+
+                                                                    <ItemsControl ItemsSource="{Binding Remessas}">
+
+                                                                    </ItemsControl>
+                                                                </StackPanel>
+
+
                                                             </Border>
                                                         </DataTemplate>
                                                     </ItemsControl.ItemTemplate>
@@ -390,37 +405,6 @@ Cursor="Hand">
                                     </DataTemplate>
                                 </ListBox.ItemTemplate>
                             </ListBox>
-
-                            <!-- Lista de Itens (ItemsControl) -->
-                            <ItemsControl ItemsSource="{Binding ListaItensEstoque}">
-                                <ItemsControl.ItemTemplate>
-                                    <DataTemplate>
-                                        <StackPanel>
-                                            <Grid Margin="0,12">
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="2*"/>
-                                                    <ColumnDefinition Width="1.5*"/>
-                                                    <ColumnDefinition Width="2*"/>
-                                                    <ColumnDefinition Width="Auto"/>
-                                                </Grid.ColumnDefinitions>
-
-                                                <TextBlock Text="{Binding NomeItem}" VerticalAlignment="Center" Grid.Column="0" FontWeight="Medium"/>
-                                                <TextBlock Text="{Binding Tipo}" VerticalAlignment="Center" Grid.Column="1" Foreground="#666"/>
-                                                <TextBlock Text="{Binding NomeDeposito}" VerticalAlignment="Center" Grid.Column="2" Foreground="#666"/>
-
-                                                <Border Grid.Column="3" Background="#E8F5E9" Padding="10,5" CornerRadius="8">
-                                                    <StackPanel Orientation="Horizontal">
-                                                        <TextBlock Text="📦" Margin="0,0,5,0" VerticalAlignment="Center" FontSize="12"/>
-                                                        <TextBlock Text="{Binding Quantidade}" FontWeight="Bold" Foreground="#2E7D32" VerticalAlignment="Center"/>
-                                                    </StackPanel>
-                                                </Border>
-                                            </Grid>
-                                            <Separator Background="#F5F5F5"/>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </ItemsControl.ItemTemplate>
-                            </ItemsControl>
-
                         </Grid>
                     </Border>
                 </Grid>

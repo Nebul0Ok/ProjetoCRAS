@@ -31,20 +31,7 @@ public class TipoDeItem : ViewModelBase
         }
     }
 
-    public TipoDeItem( string NomeTipo, int QuantidadeTipoEstoque, int QuantidadeTipoProduto, string Medida)
-    {
-        this.NomeTipo = NomeTipo;
-        DataCadastroTipo = DateTime.Now;
-        this.QuantidadeTipoEstoque = QuantidadeTipoEstoque;
-        //this.QuantidadeTipoProduto = QuantidadeTipoProduto;
-    }
-
-    //public TipoDeItem(string NomeTipo, int QuantidadeTipoEstoque)
-    //{
-    //    this.NomeTipo = NomeTipo;
-    //    DataCadastroTipo = DateTime.Now;
-    //    this.QuantidadeTipoEstoque = QuantidadeTipoEstoque;
-    //}
+    public ObservableCollection<Remessa> Remessas { get; set; } = new ObservableCollection<Remessa>();
 
     public TipoDeItem(string NomeTipo, int QuantidadeTipoEstoque)
     {
@@ -63,4 +50,9 @@ public class TipoDeItem : ViewModelBase
                                                                                 p.Localizacao == p.Localizacao);
     }
 
+
+    public void AdicionarRemessa(Remessa r)
+    {
+        Remessas.Add(r);
+    }
 }

@@ -170,7 +170,15 @@ namespace AbasteceCRAS.MVVM.ViewModels
                 return;
             }
 
-            Produto p = new Produto(NomeItem);
+            Produto p = new Produto(NomeItem, IsPerecivel);
+
+            if (DadosService.Instance.ListaProduto.FirstOrDefault(o => o.NomeItem.Equals(p.NomeItem, StringComparison.OrdinalIgnoreCase)) != null)
+            {
+                MessageBox.Show("Item já cadastrado");
+                return;
+            }
+
+
             DadosService.Instance.ListaProduto.Add(p);
 
             DadosService.Instance.SalvarHistorico($"Adicionado o item {p.NomeItem}");
@@ -186,9 +194,14 @@ namespace AbasteceCRAS.MVVM.ViewModels
             {
                 //MessageBox.Show($"Produto: {ItemSelecionado.NomeItem}");
 
+                if (ItemAdicao.TipoDeItems.FirstOrDefault(o => o.NomeTipo.Equals(NomeDoTipo, StringComparison.OrdinalIgnoreCase)) != null)
+                {
+                    MessageBox.Show("Tipo já cadastrado");
+                    return;
+                }
+
                 if (ItemAdicao.AdicionarTipoItem(new TipoDeItem(NomeDoTipo, QuantidadeTipoItem)))
                 {
-                    MessageBox.Show("Item adicionado com sucesso!");
                     DadosService.Instance.SalvarHistorico($"Adicionado o tipo {NomeDoTipo} ao item {ItemAdicao.NomeItem} com a quantidade {QuantidadeTipoItem}");
                 }
                 else

@@ -41,6 +41,17 @@ namespace AbasteceCRAS.MVVM.ViewModels
             }
         }
 
+        private bool _temNotificacao;
+        public bool TemNotificacao
+        {
+            get => _temNotificacao;
+            set
+            {
+                _temNotificacao = value;
+                OnPropertyChanged();
+            }
+        }
+
         private float _margemSeparator;
         public float MargemSeparator
         {
@@ -130,6 +141,8 @@ namespace AbasteceCRAS.MVVM.ViewModels
             }
 
             NavegarCadastrarAdmin = new RelayCommand(AcessarCadastroUsuario);
+
+            DadosService.Instance.AdicionarNotificacao("teste", "teste");
         }
 
         public void AcessarHome()
@@ -194,6 +207,11 @@ namespace AbasteceCRAS.MVVM.ViewModels
 
                 }
             }
+        }
+
+        public void AtualizarNotificacoes()
+        {
+            TemNotificacao = DadosService.Instance.Notificacoes.Capacity > 0;
         }
 
 

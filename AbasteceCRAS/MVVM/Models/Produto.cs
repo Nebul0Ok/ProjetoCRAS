@@ -10,6 +10,17 @@ public class Produto: OnPropertyChangedHandler
     public DateTime DataCadastroItem { get; set; }
     public ObservableCollection<TipoDeItem> TipoDeItems { get; set; }
 
+    private bool _isPerecivel;
+    public bool IsPerecivel
+    {
+        get => _isPerecivel;
+        set
+        {
+            _isPerecivel = value;
+            OnPropertyChanged();
+        }
+    }
+
     private int _quantidadeDeTipos;
     public int QuantidadeDeTipos {
         get => _quantidadeDeTipos;
@@ -31,7 +42,7 @@ public class Produto: OnPropertyChangedHandler
         }
     }
 
-    public Produto(string NomeItem)
+    public Produto(string NomeItem, bool IsPerecivel)
     {
         this.NomeItem = NomeItem;
         DataCadastroItem = DateTime.Now;
@@ -40,13 +51,13 @@ public class Produto: OnPropertyChangedHandler
         
     }
 
-    public Produto(string NomeItem, int Quantidade)
+    public Produto(string NomeItem, int Quantidade, bool IsPerecivel)
     {
         this.NomeItem = NomeItem;
         DataCadastroItem = DateTime.Now;
         TipoDeItems = new ObservableCollection<TipoDeItem>();
         QuantidadeDeTipos = Quantidade;
-
+        this.IsPerecivel = IsPerecivel;
     }
 
     public Produto(string NomeItem, int Quantidade, Deposito deposito)
