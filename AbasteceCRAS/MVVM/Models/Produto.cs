@@ -6,6 +6,7 @@ namespace AbasteceCRAS.MVVM.Models;
 
 public class Produto: OnPropertyChangedHandler
 {
+    public int ID { get; set; }
     public string NomeItem { get; set; }
     public DateTime DataCadastroItem { get; set; }
     public ObservableCollection<TipoDeItem> TipoDeItems { get; set; }

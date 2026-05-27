@@ -2,6 +2,7 @@
 using AbasteceCRAS.MVVM.ViewModels;
 using System.Collections.ObjectModel;
 using System.Net.Http.Headers;
+using System.Reflection;
 
 namespace AbasteceCRAS.Services;
 public class DadosService
@@ -21,7 +22,12 @@ public class DadosService
 
     private Stack<Notificacao> _notificacoes = new Stack<Notificacao>();
     public Stack<Notificacao> Notificacoes = new Stack<Notificacao>();
-
+                     //ID   Produto
+    public Dictionary<int, Produto> ItemLista { get; set; } = new Dictionary<int, Produto>();
+    public Dictionary<int, TipoDeItem> TipoDeItemLista { get; set; } = new Dictionary<int, TipoDeItem>();
+    public Dictionary<int, Remessa> RemessaLista { get; set; } = new Dictionary<int, Remessa>();
+    public Dictionary<int, Sala> SalaLista { get; set; } = new Dictionary<int, Sala>();
+    public Dictionary<int, Deposito> DepositoLista { get; set; } = new Dictionary<int, Deposito>();
 
 
 
@@ -33,7 +39,12 @@ public class DadosService
         DadosService.Instance.ListaHistorico.Add(new Historico(ocorrencia, SessionService.Instance.UsuarioLogado.Nome));
     }
 
-        //Notificações
+    public void SalvarHistoricoSistema(string ocorrencia)
+    {
+        DadosService.Instance.ListaHistorico.Add(new Historico(ocorrencia, "Sistema"));
+    }
+
+    //Notificações
     public void AdicionarNotificacao(string header, string body)
     {
         Notificacoes.Push(new Notificacao(header, body));
@@ -54,4 +65,60 @@ public class DadosService
         Notificacoes.Clear();
     }
 
+        //Adicionar
+    public bool AdicionarItem(Produto p)
+    {
+
+        if (ItemLista.ContainsValue(p)) return false;
+
+        int id = ItemLista.Count + 1;
+        p.ID = id;
+        ItemLista.Add(id, p);
+        ListaProduto.Add(p);
+
+        return true;
+    }
+
+    public bool AdicionarTipoDeItem(TipoDeItem p)
+    {
+        if (TipoDeItemLista.ContainsValue(p)) return false;
+
+        int id = TipoDeItemLista.Count + 1;
+        p.ID = id;
+        TipoDeItemLista.Add(id, p);
+
+        return true;
+    }
+    public bool AdicionarRemessa(Remessa p)
+    {
+        if (RemessaLista.ContainsValue(p)) return false;
+
+        int id = RemessaLista.Count + 1;
+        p.ID = id;
+        RemessaLista.Add(id, p);
+
+        return true;
+    }
+
+    public bool AdicionarSala(Sala p)
+    {
+        if (SalaLista.ContainsValue(p)) return false;
+
+        int id = SalaLista.Count + 1;
+        p.ID = id;
+        SalaLista.Add(id, p);
+
+        return true;
+    }
+
+    public bool AdicionarDeposito(Deposito p)
+    {
+        if (DepositoLista.ContainsValue(p)) return false;
+
+        int id = DepositoLista.Count + 1;
+        p.ID = id;
+        DepositoLista.Add(id, p);
+
+        return true;
+    }
 }

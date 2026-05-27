@@ -2,11 +2,14 @@
 using AbasteceCRAS.Services;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Numerics;
 
 namespace AbasteceCRAS.MVVM.Models;
 
 public class TipoDeItem : ViewModelBase
 {
+    public int ID { get; set; }
+    public int IDproduto { get; set; }
     public string NomeTipo { get; set; }
     public DateTime DataCadastroTipo { get; set; }
 
@@ -54,5 +57,12 @@ public class TipoDeItem : ViewModelBase
     public void AdicionarRemessa(Remessa r)
     {
         Remessas.Add(r);
+    }
+
+    public void ReduzirRemessa (Remessa r, int quant)
+    {
+        var remessa = Remessas.FirstOrDefault(o => o == r);
+
+        remessa.Quantidade -= quant;
     }
 }

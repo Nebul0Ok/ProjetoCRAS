@@ -31,7 +31,8 @@ namespace AbasteceCRAS.MVVM.ViewModels
             VoltarHome = new RelayCommand(VoltarParaHome);
             DiminuirLista = new RelayCommand(o => DiminuirALista(o));
             BtnConfirmarOperacao = new RelayCommand(Operacao);
-            EntradaSaidaVisibility = Visibility.Collapsed;
+            EntradaOperacaoVisibility = Visibility.Collapsed;
+            SaidaOperacaoVisibility = Visibility.Collapsed;
             DepositoVisibility = Visibility.Collapsed;
         }
 
@@ -55,7 +56,7 @@ namespace AbasteceCRAS.MVVM.ViewModels
             {
                 _isEntrada = value;
                 OnPropertyChanged();
-                if (value) SwitchEntradaSaida();
+                if (value) SwitchEntrada();
 
             }
         }
@@ -68,7 +69,7 @@ namespace AbasteceCRAS.MVVM.ViewModels
             {
                 _isSaida = value;
                 OnPropertyChanged();
-                if (value) SwitchEntradaSaida();
+                if (value) SwitchSaida();
             }
         }
 
@@ -109,10 +110,10 @@ namespace AbasteceCRAS.MVVM.ViewModels
         private Visibility _validadeVisibility;
         public Visibility ValidadeVisibility
         {
-            get => _depositoVisibility;
+            get => _validadeVisibility;
             set
             {
-                _depositoVisibility = value;
+                _validadeVisibility = value;
                 OnPropertyChanged();
             }
         }
@@ -136,6 +137,17 @@ namespace AbasteceCRAS.MVVM.ViewModels
             set
             {
                 _dataSelecionada = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private Visibility _remessaVisibility;
+        public Visibility RemessaVisibility
+        {
+            get => _remessaVisibility;
+            set
+            {
+                _remessaVisibility = value;
                 OnPropertyChanged();
             }
         }
@@ -199,6 +211,8 @@ namespace AbasteceCRAS.MVVM.ViewModels
             {
                 _tipoSelecionado = value;
                 OnPropertyChanged();
+
+                OnPropertyChanged(nameof(ListaRemessas));
             }
         }
 
@@ -254,6 +268,59 @@ namespace AbasteceCRAS.MVVM.ViewModels
             }
         }
 
+        public ObservableCollection<Remessa> ListaRemessas
+        {
+            get
+            {
+                ObservableCollection<Remessa> remessas = new ObservableCollection<Remessa>();
+
+                if (TipoSelecionado == null || TipoSelecionado.Remessas == null)
+                {
+                    return remessas;
+                }
+
+                foreach (Remessa r in TipoSelecionado.Remessas)
+                {
+                    remessas.Add(r);
+                }
+
+                return remessas;
+            }
+        }
+
+        private string _remessaSelecionada;
+        public string RemessaSelecionada
+        {
+            get => _remessaSelecionada;
+            set
+            {
+                _remessaSelecionada = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private Visibility _entradaOperacaoVisibility;
+        public Visibility EntradaOperacaoVisibility
+        {
+            get => _entradaOperacaoVisibility;
+            set
+            {
+                _entradaOperacaoVisibility = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private Visibility _saidaOperacaoVisibility;
+        public Visibility SaidaOperacaoVisibility
+        {
+            get => _saidaOperacaoVisibility;
+            set
+            {
+                _saidaOperacaoVisibility = value;
+                OnPropertyChanged();
+            }
+        }
+
 
 
 
@@ -294,6 +361,8 @@ namespace AbasteceCRAS.MVVM.ViewModels
 
             if (IsEntrada)
             {
+                RemessaSelecionada = null;
+
                 foreach (TipoDeItem prod in p.TipoDeItems)
                 {
                     if (prod == TipoSelecionado)
@@ -308,6 +377,8 @@ namespace AbasteceCRAS.MVVM.ViewModels
                             prod.AdicionarRemessa(new Remessa(ValorQuantidade, false));
                         }
 
+                        OnPropertyChanged(nameof(ListaRemessas));
+
                         DadosService.Instance.SalvarHistorico($"Adicionado remessa de {ValorQuantidade} unidades ao estoque de {ItemSelecionado.NomeItem}: {prod.NomeTipo}");
                     }
                 }
@@ -315,6 +386,10 @@ namespace AbasteceCRAS.MVVM.ViewModels
             }
             else if (IsSaida)
             {
+                
+                DataSelecionada = null;
+
+
                 foreach (TipoDeItem prod in p.TipoDeItems)
                 {
                     if (prod == TipoSelecionado)
@@ -358,6 +433,27 @@ namespace AbasteceCRAS.MVVM.ViewModels
             }
         }
 
+        public void SwitchEntrada()
+        {
+            if (EntradaOperacaoVisibility == Visibility.Visible) return;
+            
+            SaidaOperacaoVisibility = Visibility.Collapsed;
+            DepositoVisibility = Visibility.Collapsed;
+
+            EntradaOperacaoVisibility = Visibility.Visible;
+            
+        }
+
+        public void SwitchSaida()
+        {
+            if (SaidaOperacaoVisibility == Visibility.Visible) return;
+
+            EntradaOperacaoVisibility = Visibility.Collapsed;
+            DepositoVisibility= Visibility.Collapsed;
+
+            SaidaOperacaoVisibility = Visibility.Visible;
+        }
+
         public void SwitchEntradaSaida()
         {
             if (EntradaSaidaVisibility == Visibility.Visible) return;
@@ -369,8 +465,12 @@ namespace AbasteceCRAS.MVVM.ViewModels
 
         public void SwitchDeposito()
         {
-            EntradaSaidaVisibility = Visibility.Collapsed;
-            DepositoVisibility= Visibility.Visible;
+            if (DepositoVisibility == Visibility.Visible) return;
+
+            DepositoVisibility = Visibility.Collapsed;
+            SaidaOperacaoVisibility = Visibility.Collapsed;
+
+            DepositoVisibility = Visibility.Visible;
         }
 
     }

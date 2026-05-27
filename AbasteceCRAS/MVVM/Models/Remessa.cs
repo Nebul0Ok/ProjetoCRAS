@@ -10,6 +10,13 @@ namespace AbasteceCRAS.MVVM.Models
 {
     public class Remessa
     {
+        public int ID { get; set; }
+        public int IdProduto { get; set; }
+        public int IdTipo { get; set; }
+        public int IdLocal { get; set; }
+        public int IdSala { get; set; }
+
+
         public DateTime DataRecebimento { get; set; }
         public int Quantidade {  get; set; }
 

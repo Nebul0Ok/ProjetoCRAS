@@ -153,58 +153,128 @@
                             </UniformGrid>
 
                             <Grid>
-                                <StackPanel Visibility="{Binding EntradaSaidaVisibility}">
-                                    <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="Item:" Style="{StaticResource FieldLabelStyle}"/>
-                                        <!-- Debug -->
-                                        <TextBlock Text="{Binding ItemSelecionado.NomeItem}" Visibility="Hidden"/>
-                                    </StackPanel>
-                                    <ComboBox Margin="0,0,0,15" ItemsSource="{Binding ListaItens}" DisplayMemberPath="NomeItem" SelectedItem="{Binding ItemSelecionado}"/>
 
-                                    <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="Tipo:" Style="{StaticResource FieldLabelStyle}"/>
-                                        <!-- Debug -->
-                                        <TextBlock Text="{Binding TipoSelecionado.NomeTipo}" Visibility="Hidden"/>
-                                    </StackPanel>
-                                    <ComboBox Margin="0,0,0,15" ItemsSource="{Binding ListaTipos}" DisplayMemberPath="NomeTipo" SelectedItem="{Binding TipoSelecionado}"/>
 
-                                    <StackPanel Margin="0,0,0,15" Visibility="{Binding ValidadeVisibility}">
-                                        <TextBlock Text="Validade:" Style="{StaticResource FieldLabelStyle}"/>
-                                        <DatePicker SelectedDate="{Binding DataSelecionada}"/>
-                                    </StackPanel>
+                                <Grid Visibility="{Binding EntradaOperacaoVisibility}">
 
-                                    <TextBlock Text="Quantidade:" Style="{StaticResource FieldLabelStyle}"/>
-                                    <TextBox Text="{Binding ValorQuantidade}" Height="45" Background="#F0F4F8" BorderThickness="0" Margin="0,0,0,25" 
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+
+                                    <TextBlock Grid.Row="0" Text="Item:" Style="{StaticResource FieldLabelStyle}"/>
+                                    <ComboBox Grid.Row="1" Margin="0,0,0,15" ItemsSource="{Binding ListaItens}" DisplayMemberPath="NomeItem" SelectedItem="{Binding ItemSelecionado}"/>
+
+                                    <Separator Grid.Row="2" Visibility="Hidden"/>
+
+                                    <TextBlock Grid.Row="3" Text="Tipo:" Style="{StaticResource FieldLabelStyle}"/>
+                                    <ComboBox Grid.Row="4" Margin="0,0,0,15" ItemsSource="{Binding ListaTipos}" DisplayMemberPath="NomeTipo" SelectedItem="{Binding TipoSelecionado}"/>
+
+                                    <Separator Grid.Row="5" Visibility="Hidden"/>
+
+                                    <Grid Grid.Row="6" Visibility="{Binding ValidadeVisibility}">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+
+                                        <TextBlock Grid.Row="0" Text="Validade:" Style="{StaticResource FieldLabelStyle}"/>
+                                        <DatePicker Grid.Row="1" Margin="0,0,0,15" SelectedDate="{Binding DataSelecionada}"/>
+                                    </Grid>
+
+                                    <Separator Grid.Row="7" Visibility="Hidden"/>
+
+                                    <TextBlock Grid.Row="8" Text="Quantidade:" Style="{StaticResource FieldLabelStyle}"/>
+                                    <TextBox  Grid.Row="9" Text="{Binding ValorQuantidade}" Height="45" Background="#F0F4F8" BorderThickness="0" Margin="0,0,0,25" 
                                              VerticalContentAlignment="Center" Padding="15,0" FontWeight="SemiBold"/>
-                                </StackPanel>
 
-                                <StackPanel Visibility="{Binding DepositoVisibility}">
-                                    <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="Item:" Style="{StaticResource FieldLabelStyle}"/>
-                                        <!-- Debug -->
-                                        <TextBlock Text="{Binding ItemSelecionado.NomeItem}" Visibility="Hidden"/>
-                                    </StackPanel>
-                                    <ComboBox Margin="0,0,0,15" ItemsSource="{Binding ListaItens}" DisplayMemberPath="NomeItem" SelectedItem="{Binding ItemSelecionado}"/>
+                                </Grid>
 
-                                    <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="Tipo:" Style="{StaticResource FieldLabelStyle}"/>
-                                        <!-- Debug -->
-                                        <TextBlock Text="{Binding TipoSelecionado.NomeTipo}" Visibility="Hidden"/>
-                                    </StackPanel>
-                                    <ComboBox Margin="0,0,0,15" ItemsSource="{Binding ListaTipos}" DisplayMemberPath="NomeTipo" SelectedItem="{Binding TipoSelecionado}"/>
 
-                                    <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="Local:" Style="{StaticResource FieldLabelStyle}"/>
-                                    </StackPanel>
-                                    <ComboBox Margin="0,0,0,15" ItemsSource="{Binding ListaLocais}" SelectedItem="{Binding LocalSelecionado}"/>
+                                <Grid Visibility="{Binding SaidaOperacaoVisibility}">
+                                    
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
 
-                                    <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="Depósito:" Style="{StaticResource FieldLabelStyle}"/>
-                                    </StackPanel>
-                                    <ComboBox Margin="0,0,0,15" ItemsSource="{Binding ListaDepositos}" DisplayMemberPath="Nome" SelectedItem="{Binding DepositoSelecionado}"/>
+                                    <TextBlock Grid.Row="0" Text="Item:" Style="{StaticResource FieldLabelStyle}"/>
+                                    <ComboBox Grid.Row="1" Margin="0,0,0,15" ItemsSource="{Binding ListaItens}" DisplayMemberPath="NomeItem" SelectedItem="{Binding ItemSelecionado}"/>
 
-                                </StackPanel>
-                            </Grid>
+                                    <Separator Grid.Row="2" Visibility="Hidden"/>
+
+                                    <TextBlock Grid.Row="3" Text="Tipo:" Style="{StaticResource FieldLabelStyle}"/>
+                                    <ComboBox Grid.Row="4" Margin="0,0,0,15" ItemsSource="{Binding ListaTipos}" DisplayMemberPath="NomeTipo" SelectedItem="{Binding TipoSelecionado}"/>
+
+                                    <Separator Grid.Row="5" Visibility="Hidden"/>
+
+                                    <Grid Grid.Row="6">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+
+                                        <TextBlock Grid.Row="0" Text="Remessa:" Style="{StaticResource FieldLabelStyle}"/>
+                                        <ComboBox Grid.Row="1" Margin="0,0,0,15" ItemsSource="{Binding ListaRemessas}" DisplayMemberPath="DataRecebimento" SelectedItem="{Binding TipoSelecionado}"/>
+                                    </Grid>
+
+                                    <Separator Grid.Row="7" Visibility="Hidden"/>
+
+                                    <TextBlock Grid.Row="8" Text="Quantidade:" Style="{StaticResource FieldLabelStyle}"/>
+                                    <TextBox  Grid.Row="9" Text="{Binding ValorQuantidade}" Height="45" Background="#F0F4F8" BorderThickness="0" Margin="0,0,0,25" 
+         VerticalContentAlignment="Center" Padding="15,0" FontWeight="SemiBold"/>
+
+                                </Grid>
+
+                                <Grid Visibility="{Binding DepositoVisibility}">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+
+                                    <TextBlock Grid.Row="0" Text="Item:" Style="{StaticResource FieldLabelStyle}"/>
+                                    <ComboBox Grid.Row="1" Margin="0,0,0,15" ItemsSource="{Binding ListaItens}" DisplayMemberPath="NomeItem" SelectedItem="{Binding ItemSelecionado}"/>
+
+                                    <Separator Grid.Row="2" Visibility="Hidden"/>
+
+                                    <TextBlock Grid.Row="3" Text="Tipo:" Style="{StaticResource FieldLabelStyle}"/>
+                                    <ComboBox Grid.Row="4" Margin="0,0,0,15" ItemsSource="{Binding ListaTipos}" DisplayMemberPath="NomeTipo" SelectedItem="{Binding TipoSelecionado}"/>
+
+                                    <Separator Grid.Row="5" Visibility="Hidden"/>
+
+                                    <TextBlock Grid.Row="6" Text="Remessa:" Style="{StaticResource FieldLabelStyle}"/>
+                                    <ComboBox Grid.Row="7" Margin="0,0,0,15" ItemsSource="{Binding ListaRemessas}" DisplayMemberPath="DataRecebimento" SelectedItem="{Binding TipoSelecionado}"/>
+                                    
+                                    <Separator Grid.Row="8" Visibility="Hidden"/>
+                                    
+                                    <TextBlock Grid.Row="9" Text="Local:" Style="{StaticResource FieldLabelStyle}"/>
+                                    <ComboBox Grid.Row="10" Margin="0,0,0,15" ItemsSource="{Binding ListaLocais}" SelectedItem="{Binding LocalSelecionado}"/>
+                                </Grid>
+
+
+
+                                </Grid>
 
                             <Button Content="Confirmar" Background="Black" Foreground="White" Height="48" FontWeight="Bold" Cursor="Hand"
                                     Command="{Binding BtnConfirmarOperacao}">

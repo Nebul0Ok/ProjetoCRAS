@@ -59,68 +59,14 @@ public class LoginViewModel: ViewModelBase
 
         foreach(var prod in Produtos.prod)
         {
-            DadosService.Instance.ListaProduto.Add(prod);
+            DadosService.Instance.AdicionarItem(prod);
+            DadosService.Instance.SalvarHistoricoSistema($"O {prod.NomeItem} foi adicionado");
         }
 
         EmailFeedback = string.Empty;
         SenhaFeedback = string.Empty;
 
     }
-
-    //public void ExecutarLogin(object parameter)
-    //{
-
-    //    try
-    //    {
-    //        var usuarioEncontrado = TelaLogin.UsuariosCadastrados.FirstOrDefault(u => u.Email == Email && u.Senha == Senha);
-
-    //        if (usuarioEncontrado != null)
-    //        {
-    //            MessageBox.Show($"Logado.");
-    //            SessionService.Instance.UsuarioLogado = usuarioEncontrado;
-
-    //            if (parameter is Window currentWindow)
-    //            {
-    //                MainWindow mainWindow = new MainWindow();
-    //                mainWindow.Show();
-    //                currentWindow.Close();
-    //            }
-
-    //        }
-    //        else
-    //        {
-    //            MessageBox.Show("Usuario não econtrado");
-    //        }
-
-    //    }
-    //    catch
-    //    {
-
-    //    }
-
-    //    //SenhaFeedback = string.Empty;
-    //    //EmailFeedback = string.Empty;
-
-    //    //if (DadosService.Instance.UsuariosCadastrados.ContainsKey(Email)) {
-    //    //    if (DadosService.Instance.UsuariosCadastrados.ContainsValue(Senha))
-    //    //    {
-
-    //    //    }
-    //    //    else
-    //    //    {
-    //    //        SenhaFeedback = "Senha não encontrada";
-    //    //    }
-    //    //}
-    //    //else
-    //    //{
-    //    //    EmailFeedback = "E-mail não encontrado";
-    //    //    if (!DadosService.Instance.UsuariosCadastrados.ContainsValue(Senha))
-    //    //    {
-    //    //        SenhaFeedback = "Senha não encontrada";
-    //    //    }
-    //    //}
-
-    //}
 
     public void ExecutarLogin(object parameter)
     {

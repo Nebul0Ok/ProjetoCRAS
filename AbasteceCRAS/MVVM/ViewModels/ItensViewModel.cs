@@ -178,8 +178,7 @@ namespace AbasteceCRAS.MVVM.ViewModels
                 return;
             }
 
-
-            DadosService.Instance.ListaProduto.Add(p);
+            DadosService.Instance.AdicionarItem(p);
 
             DadosService.Instance.SalvarHistorico($"Adicionado o item {p.NomeItem}");
 
