@@ -1,4 +1,5 @@
-﻿using AbasteceCRAS.Services;
+﻿using AbasteceCRAS.Core;
+using AbasteceCRAS.Services;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Eventing.Reader;
@@ -8,17 +9,28 @@ using System.Threading.Tasks;
 
 namespace AbasteceCRAS.MVVM.Models
 {
-    public class Remessa
+    public class Remessa: OnPropertyChangedHandler
     {
         public int ID { get; set; }
         public int IdProduto { get; set; }
+
+        
         public int IdTipo { get; set; }
         public int IdLocal { get; set; }
         public int IdSala { get; set; }
 
 
         public DateTime DataRecebimento { get; set; }
-        public int Quantidade {  get; set; }
+        private int _quantidade;
+        public int Quantidade
+        {
+            get => _quantidade;
+            set
+            {
+                _quantidade = value;
+                OnPropertyChanged();
+            }
+        }
 
         public bool IsPerecivel {  get; set; }
         public DateTime? DataValidade { get; set; }

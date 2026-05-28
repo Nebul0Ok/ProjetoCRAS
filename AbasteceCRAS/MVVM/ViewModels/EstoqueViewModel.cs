@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Input;
 using System.Linq;
+using System.Diagnostics.CodeAnalysis;
 
 namespace AbasteceCRAS.MVVM.ViewModels
 {
@@ -288,8 +289,8 @@ namespace AbasteceCRAS.MVVM.ViewModels
             }
         }
 
-        private string _remessaSelecionada;
-        public string RemessaSelecionada
+        private Remessa _remessaSelecionada;
+        public Remessa RemessaSelecionada
         {
             get => _remessaSelecionada;
             set
@@ -361,7 +362,6 @@ namespace AbasteceCRAS.MVVM.ViewModels
 
             if (IsEntrada)
             {
-                RemessaSelecionada = null;
 
                 foreach (TipoDeItem prod in p.TipoDeItems)
                 {
@@ -390,15 +390,35 @@ namespace AbasteceCRAS.MVVM.ViewModels
                 DataSelecionada = null;
 
 
-                foreach (TipoDeItem prod in p.TipoDeItems)
+
+                TipoDeItem? tipo = p.TipoDeItems.FirstOrDefault(o => o.NomeTipo == TipoSelecionado.NomeTipo);
+
+                if (tipo == null) return;
+
+                
+                if (RemessaSelecionada == null)
                 {
-                    if (prod == TipoSelecionado)
-                    {
-                        prod.QuantidadeTipoEstoque -= ValorQuantidade;
-                        MessageBox.Show($"Quantidade de {prod.NomeTipo} alterado para {prod.QuantidadeTipoEstoque}");
-                        DadosService.Instance.SalvarHistorico($"Reduzido {ValorQuantidade} do estoque de {ItemSelecionado.NomeItem}: {prod.NomeTipo}");
-                    }
+                    MessageBox.Show("Remessa não selecionada");
+                    return;
                 }
+
+                if (ValorQuantidade > RemessaSelecionada.Quantidade)
+                {
+                    MessageBox.Show("Valor a reduzr maior do que há no estoque");
+                    return;
+                }
+
+                if (RemessaSelecionada.Quantidade == 0)
+                {
+                    return;
+                }
+
+                Remessa remessaReduct = RemessaSelecionada;
+
+                remessaReduct.Quantidade -= ValorQuantidade;
+
+                DadosService.Instance.SalvarHistorico($"Reduzido {ValorQuantidade} do estoque de {ItemSelecionado.NomeItem}: {tipo.NomeTipo} cadastrado no dia {remessaReduct.DataRecebimento}");
+
             }
             else if (IsTrocaDeposito)
             {
