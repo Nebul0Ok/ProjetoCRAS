@@ -12,14 +12,9 @@ namespace AbasteceCRAS.MVVM.Models
     public class Remessa: OnPropertyChangedHandler
     {
         public int ID { get; set; }
-        public int IdProduto { get; set; }
-
+        public string Local { get; set; }
+        public string Sala { get; set; }
         
-        public int IdTipo { get; set; }
-        public int IdLocal { get; set; }
-        public int IdSala { get; set; }
-
-
         public DateTime DataRecebimento { get; set; }
         private int _quantidade;
         public int Quantidade
@@ -36,20 +31,24 @@ namespace AbasteceCRAS.MVVM.Models
         public DateTime? DataValidade { get; set; }
 
 
-        public Remessa(int Quantidade, bool IsPerecivel, DateTime? DataValidade)
+        public Remessa(int Quantidade, bool IsPerecivel, DateTime? DataValidade, string Local, string Sala)
         {
             this.DataRecebimento = DateTime.Now;
             this.Quantidade = Quantidade;
             this.IsPerecivel = IsPerecivel;
             this.DataValidade = DataValidade;
+            this.Local = Local;
+            this.Sala = Sala;
         }
 
-        public Remessa(int Quantidade, bool IsPerecivel)
+        public Remessa(int Quantidade, bool IsPerecivel, string Local, string Sala)
         {
             this.DataRecebimento = DateTime.Now;
             this.Quantidade = Quantidade;
             this.IsPerecivel = IsPerecivel;
             this.DataValidade = null;
+            this.Local = Local;
+            this.Sala = Sala;
         }
 
         public bool VerificarValidadeNotificacao()

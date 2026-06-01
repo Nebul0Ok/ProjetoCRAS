@@ -23,8 +23,6 @@ namespace AbasteceCRAS.MVVM.ViewModels
 
 
 
-
-
         //Construtor
         public EstoqueViewModel()
         {
@@ -36,11 +34,6 @@ namespace AbasteceCRAS.MVVM.ViewModels
             SaidaOperacaoVisibility = Visibility.Collapsed;
             DepositoVisibility = Visibility.Collapsed;
         }
-
-
-
-
-
 
 
 
@@ -153,6 +146,18 @@ namespace AbasteceCRAS.MVVM.ViewModels
             }
         }
 
+        private Sala _salaSelecionada;
+        public Sala SalaSelecionada
+        {
+            get => _salaSelecionada;
+            set
+            {
+                _salaSelecionada = value;
+                OnPropertyChanged();
+
+                DepositoSelecionado = null;
+            }
+        }
 
 
 
@@ -183,6 +188,8 @@ namespace AbasteceCRAS.MVVM.ViewModels
                 {
                     ValidadeVisibility = Visibility.Collapsed;
                 }
+
+                TipoSelecionado = null;
 
                 OnPropertyChanged();
             }
@@ -369,12 +376,12 @@ namespace AbasteceCRAS.MVVM.ViewModels
                     {
                         if (ItemSelecionado.IsPerecivel)
                         {
-                            prod.AdicionarRemessa(new Remessa(ValorQuantidade, true, DataSelecionada));
+                            prod.AdicionarRemessa(new Remessa(ValorQuantidade, true, DataSelecionada, SalaSelecionada.Nome, SalaSelecionada.Nome));
                             DataSelecionada = null;
                         }
                         else
                         {
-                            prod.AdicionarRemessa(new Remessa(ValorQuantidade, false));
+                            prod.AdicionarRemessa(new Remessa(ValorQuantidade, false, SalaSelecionada.Nome, SalaSelecionada.Nome));
                         }
 
                         OnPropertyChanged(nameof(ListaRemessas));

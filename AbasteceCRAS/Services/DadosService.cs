@@ -19,6 +19,7 @@ public class DadosService
     public ObservableCollection<Produto> ListaProduto { get; set; } = new ObservableCollection<Produto>();
     public ObservableCollection<Historico> ListaHistorico { get; set; } = new ObservableCollection<Historico>();
     public ObservableCollection<Deposito> ListaDeposito { get; set; } = new ObservableCollection<Deposito>();
+    public ObservableCollection<Sala> ListaSala { get; set; } = new ObservableCollection<Sala>();
 
     private Stack<Notificacao> _notificacoes = new Stack<Notificacao>();
     public Stack<Notificacao> Notificacoes = new Stack<Notificacao>();
@@ -107,18 +108,29 @@ public class DadosService
         int id = SalaLista.Count + 1;
         p.ID = id;
         SalaLista.Add(id, p);
+        ListaSala.Add(p);
 
         return true;
     }
 
-    public bool AdicionarDeposito(Deposito p)
+    //public void AdicionarDeposito(Deposito p)
+    //{
+    //    if (DepositoLista.ContainsValue(p)) return;
+
+    //    int id = DepositoLista.Count + 1;
+    //    p.ID = id;
+    //    DepositoLista.Add(id, p);
+
+    //    return;
+    //}
+
+    public void AdicionarDepositoNaSala(Sala s, Deposito d)
     {
-        if (DepositoLista.ContainsValue(p)) return false;
-
-        int id = DepositoLista.Count + 1;
-        p.ID = id;
-        DepositoLista.Add(id, p);
-
-        return true;
+        if (s.Depositos.FirstOrDefault(o => o.Nome.Equals(d.Nome)) != null) return;
+        else
+        {
+            d.ID = s.Depositos.Count + 1;
+            s.Depositos.Add(d);
+        }
     }
 }
