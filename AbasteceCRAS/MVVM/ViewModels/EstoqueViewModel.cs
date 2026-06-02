@@ -6,6 +6,7 @@ using System.Windows;
 using System.Windows.Input;
 using System.Linq;
 using System.Diagnostics.CodeAnalysis;
+using System.Xml.Serialization;
 
 namespace AbasteceCRAS.MVVM.ViewModels
 {
@@ -153,7 +154,9 @@ namespace AbasteceCRAS.MVVM.ViewModels
             set
             {
                 _salaSelecionada = value;
+                DepositoSelecionado = null;
                 OnPropertyChanged();
+                OnPropertyChanged(nameof(ListaRemessas));
 
                 DepositoSelecionado = null;
             }
@@ -178,6 +181,14 @@ namespace AbasteceCRAS.MVVM.ViewModels
             set
             {
                 _itemSelecionado = value;
+
+                if (value == null)
+                {
+                    ListaTipos = null;
+                    OnPropertyChanged();
+                    return;
+                }
+
                 ListaTipos = value.TipoDeItems;
 
                 if (value.IsPerecivel)
@@ -247,6 +258,7 @@ namespace AbasteceCRAS.MVVM.ViewModels
             {
                 _depositoSelecionado = value;
                 OnPropertyChanged();
+                OnPropertyChanged(nameof(ListaRemessas));
             }
         }
 
@@ -287,7 +299,19 @@ namespace AbasteceCRAS.MVVM.ViewModels
                     return remessas;
                 }
 
-                foreach (Remessa r in TipoSelecionado.Remessas)
+                var filtradas = TipoSelecionado.Remessas.AsEnumerable();
+
+                if (SalaSelecionada != null)
+                {
+                    filtradas = filtradas.Where(o => o.Sala == SalaSelecionada.Nome);
+                }
+
+                if (DepositoSelecionado != null)
+                {
+                    filtradas = filtradas.Where(o => o.Local == DepositoSelecionado.Nome);
+                }
+
+                foreach (Remessa r in filtradas)
                 {
                     remessas.Add(r);
                 }
@@ -306,6 +330,39 @@ namespace AbasteceCRAS.MVVM.ViewModels
                 OnPropertyChanged();
             }
         }
+
+        private Sala _salaDestinoSelecionada;
+        public Sala SalaDestinoSelecionada
+        {
+            get => _salaDestinoSelecionada;
+            set
+            {
+                _salaDestinoSelecionada= value;
+                OnPropertyChanged();
+            }
+        }
+
+        private Deposito _depositoDestinoSelecionado;
+        public Deposito DepositoDestinoSelecionado
+        {
+            get => _depositoDestinoSelecionado;
+            set
+            {
+                _depositoDestinoSelecionado= value;
+                OnPropertyChanged();
+            }
+        }
+
+
+        //Visibilidades
+
+        // **********************************************************
+        // *                                                        *
+        // *    Essa sessão controla a visibilidade de alguns       *
+        // *  elementos da tela, que ficam visiveis ou invisiveis   *
+        // *  em algum momento dessa página.                        *
+        // *                                                        *
+        // **********************************************************
 
         private Visibility _entradaOperacaoVisibility;
         public Visibility EntradaOperacaoVisibility
@@ -328,6 +385,7 @@ namespace AbasteceCRAS.MVVM.ViewModels
                 OnPropertyChanged();
             }
         }
+
 
 
 
@@ -374,14 +432,16 @@ namespace AbasteceCRAS.MVVM.ViewModels
                 {
                     if (prod == TipoSelecionado)
                     {
+                        if (SalaSelecionada == null || DepositoSelecionado == null) return;
+
                         if (ItemSelecionado.IsPerecivel)
                         {
-                            prod.AdicionarRemessa(new Remessa(ValorQuantidade, true, DataSelecionada, SalaSelecionada.Nome, SalaSelecionada.Nome));
+                            prod.AdicionarRemessa(new Remessa(ValorQuantidade, true, DataSelecionada, DepositoSelecionado.Nome, SalaSelecionada.Nome));
                             DataSelecionada = null;
                         }
                         else
                         {
-                            prod.AdicionarRemessa(new Remessa(ValorQuantidade, false, SalaSelecionada.Nome, SalaSelecionada.Nome));
+                            prod.AdicionarRemessa(new Remessa(ValorQuantidade, false, DepositoSelecionado.Nome, SalaSelecionada.Nome));
                         }
 
                         OnPropertyChanged(nameof(ListaRemessas));
@@ -429,27 +489,77 @@ namespace AbasteceCRAS.MVVM.ViewModels
             }
             else if (IsTrocaDeposito)
             {
-                if (DepositoSelecionado == null)
+                if (DepositoSelecionado == null || SalaSelecionada == null || SalaDestinoSelecionada == null || DepositoDestinoSelecionado == null || RemessaSelecionada == null || ItemSelecionado == null || TipoSelecionado == null || ValorQuantidade == null)
+                    return;
+
+
+                if(ValorQuantidade > RemessaSelecionada.Quantidade || ValorQuantidade <=0)
                 {
-                    MessageBox.Show("Por favor, selecione o depósito de destino");
+                    MessageBox.Show("Quantidade selecionada é invalida");
                     return;
                 }
-                foreach (TipoDeItem prod in p.TipoDeItems)
+
+                else if (ValorQuantidade == RemessaSelecionada.Quantidade)
                 {
-                    if (prod == TipoSelecionado)
+                    var remessaExistente = TipoSelecionado.Remessas.FirstOrDefault(o => o.Sala.Equals(SalaDestinoSelecionada.Nome) && o.Local.Equals(DepositoDestinoSelecionado.Nome));
+
+                    if (remessaExistente != null && remessaExistente.DataValidade == RemessaSelecionada.DataValidade)
                     {
-                        prod.DepositoAtual = DepositoSelecionado;
-                        MessageBox.Show($"Depósito de {prod.NomeTipo} alterado para {DepositoSelecionado.Nome}");
-                        DadosService.Instance.SalvarHistorico($"Local de {prod.NomeTipo} foi alterado para {DepositoSelecionado.Nome} em {LocalSelecionado}");
+                        remessaExistente.Quantidade += RemessaSelecionada.Quantidade;
+                        RemessaSelecionada.Quantidade = 0;
                     }
+                    else
+                    {
+                        RemessaSelecionada.Quantidade = 0;
+                        TipoSelecionado.AdicionarRemessa(new Remessa(ValorQuantidade, RemessaSelecionada.IsPerecivel, RemessaSelecionada.DataValidade, DepositoDestinoSelecionado.Nome, SalaDestinoSelecionada.Nome));
+                    }
+
+                    DadosService.Instance.SalvarHistorico($"Remessa de {ItemSelecionado.NomeItem}: {TipoSelecionado.NomeTipo} movido completamente para {SalaDestinoSelecionada.Nome}: {DepositoDestinoSelecionado.Nome}");
                 }
+
+                else if (ValorQuantidade < RemessaSelecionada.Quantidade)
+                {
+                    int QuantidadeRestante = RemessaSelecionada.Quantidade - ValorQuantidade;
+
+                    var remessaExistente = TipoSelecionado.Remessas.FirstOrDefault(o => o.Sala.Equals(SalaDestinoSelecionada.Nome) && o.Local.Equals(DepositoDestinoSelecionado.Nome));
+
+                    if (remessaExistente != null && remessaExistente.DataValidade == RemessaSelecionada.DataValidade)
+                    {
+                        remessaExistente.Quantidade += ValorQuantidade;
+                        RemessaSelecionada.Quantidade = QuantidadeRestante;
+                    }
+                    else
+                    {
+                        TipoSelecionado.AdicionarRemessa(new Remessa((ValorQuantidade), RemessaSelecionada.IsPerecivel, RemessaSelecionada.DataValidade, DepositoDestinoSelecionado.Nome, SalaDestinoSelecionada.Nome));
+                        RemessaSelecionada.Quantidade = QuantidadeRestante;
+                    }
+
+                    
+                    DadosService.Instance.SalvarHistorico($"Remessa de {ItemSelecionado.NomeItem}: {TipoSelecionado.NomeTipo} movido parcialmente para {SalaDestinoSelecionada.Nome}: {DepositoDestinoSelecionado.Nome}");
+                }
+
+                
+
             }
 
+            LimparCampos();
+
+        }
+
+        public void LimparCampos()
+        {
+            SalaSelecionada = null;
+            DepositoSelecionado = null;
+            ItemSelecionado = null;
+            TipoSelecionado = null;
+            RemessaSelecionada = null;
+            ValorQuantidade = 0;
+            DataSelecionada = null;
         }
 
         public bool EntradaEstoque(TipoDeItem ItemModificado)
         {
-            if(ValorQuantidade == null)
+            if(ValorQuantidade <= 0)
             {
                 return false;
             }
@@ -463,7 +573,9 @@ namespace AbasteceCRAS.MVVM.ViewModels
         public void SwitchEntrada()
         {
             if (EntradaOperacaoVisibility == Visibility.Visible) return;
-            
+
+            LimparCampos();
+
             SaidaOperacaoVisibility = Visibility.Collapsed;
             DepositoVisibility = Visibility.Collapsed;
 
@@ -473,7 +585,10 @@ namespace AbasteceCRAS.MVVM.ViewModels
 
         public void SwitchSaida()
         {
+
             if (SaidaOperacaoVisibility == Visibility.Visible) return;
+
+            LimparCampos();
 
             EntradaOperacaoVisibility = Visibility.Collapsed;
             DepositoVisibility= Visibility.Collapsed;
@@ -481,20 +596,15 @@ namespace AbasteceCRAS.MVVM.ViewModels
             SaidaOperacaoVisibility = Visibility.Visible;
         }
 
-        public void SwitchEntradaSaida()
-        {
-            if (EntradaSaidaVisibility == Visibility.Visible) return;
-
-            DepositoVisibility = Visibility.Collapsed;
-            EntradaSaidaVisibility = Visibility.Visible;
-
-        }
+        
 
         public void SwitchDeposito()
         {
             if (DepositoVisibility == Visibility.Visible) return;
 
-            DepositoVisibility = Visibility.Collapsed;
+            LimparCampos();
+
+            EntradaOperacaoVisibility=Visibility.Collapsed;
             SaidaOperacaoVisibility = Visibility.Collapsed;
 
             DepositoVisibility = Visibility.Visible;

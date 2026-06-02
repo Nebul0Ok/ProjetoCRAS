@@ -19,4 +19,6 @@ public class Armazens
         new Deposito("Arquivo 1","Sala de cima"),
         new Deposito("Arquivo 2","Sala de cima")
     };
+
+    
 }
