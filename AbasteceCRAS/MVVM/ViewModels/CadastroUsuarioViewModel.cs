@@ -84,4 +84,5 @@ public class CadastroUsuarioViewModel : ViewModelBase
         }
     }
 
+    // Método para limpar os campos após o cadastro
 }
