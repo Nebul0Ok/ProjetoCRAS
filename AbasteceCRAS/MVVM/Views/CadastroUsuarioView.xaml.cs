@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AbasteceCRAS.MVVM.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,15 @@ namespace AbasteceCRAS.MVVM.Views
         public CadastroUsuarioView()
         {
             InitializeComponent();
+        }
+
+        private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (this.DataContext is CadastroUsuarioViewModel vm)
+            {
+                var passwordBox = sender as PasswordBox;
+                vm.TextSenha = passwordBox?.Password;
+            }
         }
     }
 }

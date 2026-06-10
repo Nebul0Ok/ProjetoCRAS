@@ -62,7 +62,9 @@ public class LoginViewModel: ViewModelBase
         //    DadosService.Instance.SalvarHistoricoSistema($"O {prod.NomeItem} foi adicionado");
         //}
 
-        DadosService.Instance.NotificacoesAtuais.Add(new Notificacao("Arroz 5kg estragou","Arroz 5kg estragou no dia 02/06/2026. Recomenda-se remover do estoque."));
+        
+        if(DadosService.Instance.NotificacoesAtuais.Count == 0) DadosService.Instance.NotificacoesAtuais.Add(new Notificacao("Arroz 5kg estragou", "Arroz 5kg estragou no dia 02/06/2026. Recomenda-se remover do estoque."));
+
 
         EmailFeedback = string.Empty;
         SenhaFeedback = string.Empty;
