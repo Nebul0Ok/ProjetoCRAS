@@ -157,8 +157,6 @@ namespace AbasteceCRAS.MVVM.ViewModels
                 DepositoSelecionado = null;
                 OnPropertyChanged();
                 OnPropertyChanged(nameof(ListaRemessas));
-
-                DepositoSelecionado = null;
             }
         }
 
@@ -427,12 +425,15 @@ namespace AbasteceCRAS.MVVM.ViewModels
 
             if (IsEntrada)
             {
+                if (ItemSelecionado.IsPerecivel && DataSelecionada == null) return;
 
                 foreach (TipoDeItem prod in p.TipoDeItems)
                 {
                     if (prod == TipoSelecionado)
                     {
                         if (SalaSelecionada == null || DepositoSelecionado == null) return;
+
+                        if (ValorQuantidade == 0) return;
 
                         if (ItemSelecionado.IsPerecivel)
                         {
@@ -456,7 +457,8 @@ namespace AbasteceCRAS.MVVM.ViewModels
                 
                 DataSelecionada = null;
 
-
+                if (ValorQuantidade == 0) return;
+                
 
                 TipoDeItem? tipo = p.TipoDeItems.FirstOrDefault(o => o.NomeTipo == TipoSelecionado.NomeTipo);
 
@@ -489,7 +491,7 @@ namespace AbasteceCRAS.MVVM.ViewModels
             }
             else if (IsTrocaDeposito)
             {
-                if (DepositoSelecionado == null || SalaSelecionada == null || SalaDestinoSelecionada == null || DepositoDestinoSelecionado == null || RemessaSelecionada == null || ItemSelecionado == null || TipoSelecionado == null || ValorQuantidade == null)
+                if (DepositoSelecionado == null || SalaSelecionada == null || SalaDestinoSelecionada == null || DepositoDestinoSelecionado == null || RemessaSelecionada == null || ItemSelecionado == null || TipoSelecionado == null || ValorQuantidade == 0)
                     return;
 
 
@@ -557,18 +559,18 @@ namespace AbasteceCRAS.MVVM.ViewModels
             DataSelecionada = null;
         }
 
-        public bool EntradaEstoque(TipoDeItem ItemModificado)
-        {
-            if(ValorQuantidade <= 0)
-            {
-                return false;
-            }
-            else
-            {
-                ItemModificado.QuantidadeTipoEstoque += ValorQuantidade;
-                return true;
-            }
-        }
+        //public bool EntradaEstoque(TipoDeItem ItemModificado)
+        //{
+        //    if(ValorQuantidade <= 0)
+        //    {
+        //        return false;
+        //    }
+        //    else
+        //    {
+        //        ItemModificado.QuantidadeTipoEstoque += ValorQuantidade;
+        //        return true;
+        //    }
+        //}
 
         public void SwitchEntrada()
         {

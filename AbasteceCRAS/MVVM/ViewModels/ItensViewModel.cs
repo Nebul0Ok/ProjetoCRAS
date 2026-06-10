@@ -103,17 +103,6 @@ namespace AbasteceCRAS.MVVM.ViewModels
             }
         }
 
-        private int _quantidadeTipoItem;
-        public int QuantidadeTipoItem
-        {
-            get => _quantidadeTipoItem;
-            set
-            {
-                _quantidadeTipoItem = value;
-                OnPropertyChanged();
-            }
-        }
-
         private string _nomeItemPesquisado;
         public string NomeItemPesquisado
         {
@@ -199,9 +188,9 @@ namespace AbasteceCRAS.MVVM.ViewModels
                     return;
                 }
 
-                if (ItemAdicao.AdicionarTipoItem(new TipoDeItem(NomeDoTipo, QuantidadeTipoItem)))
+                if (ItemAdicao.AdicionarTipoItem(new TipoDeItem(NomeDoTipo)))
                 {
-                    DadosService.Instance.SalvarHistorico($"Adicionado o tipo {NomeDoTipo} ao item {ItemAdicao.NomeItem} com a quantidade {QuantidadeTipoItem}");
+                    DadosService.Instance.SalvarHistorico($"Adicionado o tipo {NomeDoTipo} ao item {ItemAdicao.NomeItem}");
                 }
                 else
                 {

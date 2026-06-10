@@ -49,6 +49,7 @@ public class Produto: OnPropertyChangedHandler
         DataCadastroItem = DateTime.Now;
         TipoDeItems = new ObservableCollection<TipoDeItem>();
         QuantidadeDeTipos = TipoDeItems.Count;
+        this.IsPerecivel = IsPerecivel;
         
     }
 
@@ -118,7 +119,6 @@ public class Produto: OnPropertyChangedHandler
             return false;
 
         tipoExistente.NomeTipo = tipoAtualizado.NomeTipo;
-        tipoExistente.QuantidadeTipoEstoque = tipoAtualizado.QuantidadeTipoEstoque;
         //Historico.Registrar(user.NomeUsuario, $"Tipo '{tipoExistente.NomeTipo}' atualizado no item '{NomeItem}'");
 
         return true;

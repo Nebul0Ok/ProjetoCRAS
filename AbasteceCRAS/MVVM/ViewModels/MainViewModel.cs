@@ -49,6 +49,8 @@ namespace AbasteceCRAS.MVVM.ViewModels
             {
                 _temNotificacao = value;
                 OnPropertyChanged();
+
+                
             }
         }
 
@@ -74,6 +76,36 @@ namespace AbasteceCRAS.MVVM.ViewModels
             }
         }
 
+        private bool _notificacoesAberta;
+        public bool NotificacoesAberta
+        {
+            get => _notificacoesAberta;
+            set
+            {
+                _notificacoesAberta = value;
+                OnPropertyChanged();
+
+                //***************************************************************
+                //*                                                             *
+                //*      Se ele for verdadeiro, ou seja, se o usuario           *
+                //*  realmente abriu as notificacoes ele transfere todas        *
+                //*  as notificações pendentes                                  *
+                //*                                                             *
+                //***************************************************************
+
+                if (_notificacoesAberta)
+                {
+                    while (DadosService.Instance.Notificacoes.Count > 0)
+                    {
+                        DadosService.Instance.AdicionarNotificacaoQueue();
+                    }
+
+                    AtualizarNotificacoes();
+                }
+            }
+        }
+        
+
         private Visibility _visibilidadeCadastro;
         public Visibility VisibilidadeCadastro
         {
@@ -96,6 +128,7 @@ namespace AbasteceCRAS.MVVM.ViewModels
             }
         }
 
+        public ICommand AlternarNotificacoes { get; }
         public ICommand MenuLateral { get; }
         public ICommand Sair {  get; }
         public ICommand NavegarCadastrarAdmin {  get; }
@@ -135,14 +168,12 @@ namespace AbasteceCRAS.MVVM.ViewModels
             MenuLateral = new RelayCommand(AlterarMenuLateral);
             Sair = new RelayCommand(SairSistema);
 
-            if (SessionService.Instance.UsuarioLogado.Cargo.Equals("administrador"))
-            {
-
-            }
+            AlternarNotificacoes = new RelayCommand(o => NotificacoesAberta = !NotificacoesAberta);
 
             NavegarCadastrarAdmin = new RelayCommand(AcessarCadastroUsuario);
 
-            DadosService.Instance.AdicionarNotificacao("teste", "teste");
+            DadosService.Instance.VerificarValidades();
+            AtualizarNotificacoes();
         }
 
         public void AcessarHome()
@@ -211,7 +242,7 @@ namespace AbasteceCRAS.MVVM.ViewModels
 
         public void AtualizarNotificacoes()
         {
-            TemNotificacao = DadosService.Instance.Notificacoes.Capacity > 0;
+            TemNotificacao = DadosService.Instance.Notificacoes.Count > 0;
         }
 
 

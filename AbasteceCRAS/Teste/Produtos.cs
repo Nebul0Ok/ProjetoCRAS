@@ -11,9 +11,9 @@ public class Produtos
         {
             TipoDeItems = new ObservableCollection<TipoDeItem>
             {
-                new TipoDeItem("Branco 1KG", 50, Armazens.ArmazemMock[0]),
-                new TipoDeItem("Branco 5KG", 20, Armazens.ArmazemMock[1]),
-                new TipoDeItem("Integral 1KG", 15, Armazens.ArmazemMock[2])
+                new TipoDeItem("Branco 1KG", Armazens.ArmazemMock[0]),
+                new TipoDeItem("Branco 5KG", Armazens.ArmazemMock[1]),
+                new TipoDeItem("Integral 1KG", Armazens.ArmazemMock[2])
             }
         },
 
@@ -21,9 +21,9 @@ public class Produtos
         {
             TipoDeItems = new ObservableCollection<TipoDeItem>
             {
-                new TipoDeItem("Carioca 1KG", 40, Armazens.ArmazemMock[4]),
-                new TipoDeItem("Preto 1KG", 35, Armazens.ArmazemMock[1]),
-                new TipoDeItem("Fradinho 1KG", 12, Armazens.ArmazemMock[3])
+                new TipoDeItem("Carioca 1KG",  Armazens.ArmazemMock[4]),
+                new TipoDeItem("Preto 1KG",  Armazens.ArmazemMock[1]),
+                new TipoDeItem("Fradinho 1KG",  Armazens.ArmazemMock[3])
             }
         },
 
@@ -31,9 +31,9 @@ public class Produtos
         {
             TipoDeItems = new ObservableCollection<TipoDeItem>
             {
-                new TipoDeItem("Espaguete 500G", 60, Armazens.ArmazemMock[4]),
-                new TipoDeItem("Parafuso 500G", 45, Armazens.ArmazemMock[2]),
-                new TipoDeItem("Penne 500G", 25, Armazens.ArmazemMock[3])
+                new TipoDeItem("Espaguete 500G", Armazens.ArmazemMock[4]),
+                new TipoDeItem("Parafuso 500G",  Armazens.ArmazemMock[2]),
+                new TipoDeItem("Penne 500G",  Armazens.ArmazemMock[3])
             }
         },
 
@@ -41,8 +41,8 @@ public class Produtos
         {
             TipoDeItems = new ObservableCollection<TipoDeItem>
             {
-                new TipoDeItem("Cristal 1KG", 80, Armazens.ArmazemMock[1]),
-                new TipoDeItem("Refinado 1KG", 35, Armazens.ArmazemMock[0])
+                new TipoDeItem("Cristal 1KG",  Armazens.ArmazemMock[1]),
+                new TipoDeItem("Refinado 1KG",  Armazens.ArmazemMock[0])
             }
         },
 
@@ -50,8 +50,8 @@ public class Produtos
         {
             TipoDeItems = new ObservableCollection<TipoDeItem>
             {
-                new TipoDeItem("Refinado 1KG", 70, Armazens.ArmazemMock[1]),
-                new TipoDeItem("Grosso 1KG", 18, Armazens.ArmazemMock[1])
+                new TipoDeItem("Refinado 1KG",  Armazens.ArmazemMock[1]),
+                new TipoDeItem("Grosso 1KG",  Armazens.ArmazemMock[1])
             }
         },
 
@@ -59,8 +59,8 @@ public class Produtos
         {
             TipoDeItems = new ObservableCollection<TipoDeItem>
             {
-                new TipoDeItem("Soja 900ML", 90, Armazens.ArmazemMock[0]),
-                new TipoDeItem("Canola 900ML", 22, Armazens.ArmazemMock[0])
+                new TipoDeItem("Soja 900ML",  Armazens.ArmazemMock[0]),
+                new TipoDeItem("Canola 900ML",  Armazens.ArmazemMock[0])
             }
         },
 
@@ -68,9 +68,9 @@ public class Produtos
         {
             TipoDeItems = new ObservableCollection<TipoDeItem>
             {
-                new TipoDeItem("Integral 1L", 100, Armazens.ArmazemMock[3]),
-                new TipoDeItem("Desnatado 1L", 40, Armazens.ArmazemMock[3]),
-                new TipoDeItem("Sem Lactose 1L", 15, Armazens.ArmazemMock[4])
+                new TipoDeItem("Integral 1L",  Armazens.ArmazemMock[3]),
+                new TipoDeItem("Desnatado 1L",  Armazens.ArmazemMock[3]),
+                new TipoDeItem("Sem Lactose 1L",  Armazens.ArmazemMock[4])
             }
         },
 
@@ -78,8 +78,8 @@ public class Produtos
         {
             TipoDeItems = new ObservableCollection<TipoDeItem>
             {
-                new TipoDeItem("Tradicional 500G", 65, Armazens.ArmazemMock[1]),
-                new TipoDeItem("Extra Forte 500G", 30, Armazens.ArmazemMock[2])
+                new TipoDeItem("Tradicional 500G",  Armazens.ArmazemMock[1]),
+                new TipoDeItem("Extra Forte 500G",  Armazens.ArmazemMock[2])
             }
         }
     };

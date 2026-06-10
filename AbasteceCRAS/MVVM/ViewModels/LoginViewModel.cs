@@ -2,7 +2,6 @@
 using AbasteceCRAS.MVVM.Models;
 using AbasteceCRAS.MVVM.Views;
 using AbasteceCRAS.Services;
-using AbasteceCRAS.Teste;
 using System.Windows;
 using System.Windows.Input;
 
@@ -52,16 +51,18 @@ public class LoginViewModel: ViewModelBase
     {
         RealizarLogin = new RelayCommand(ExecutarLogin);
 
-        foreach(var estoque in Armazens.ArmazemMock)
-        {
-            DadosService.Instance.ListaDeposito.Add(estoque);
-        }
+        //foreach(var estoque in Armazens.ArmazemMock)
+        //{
+        //    DadosService.Instance.ListaDeposito.Add(estoque);
+        //}
 
-        foreach(var prod in Produtos.prod)
-        {
-            DadosService.Instance.AdicionarItem(prod);
-            DadosService.Instance.SalvarHistoricoSistema($"O {prod.NomeItem} foi adicionado");
-        }
+        //foreach(var prod in Produtos.prod)
+        //{
+        //    DadosService.Instance.AdicionarItem(prod);
+        //    DadosService.Instance.SalvarHistoricoSistema($"O {prod.NomeItem} foi adicionado");
+        //}
+
+        DadosService.Instance.NotificacoesAtuais.Add(new Notificacao("Arroz 5kg estragou","Arroz 5kg estragou no dia 02/06/2026. Recomenda-se remover do estoque."));
 
         EmailFeedback = string.Empty;
         SenhaFeedback = string.Empty;

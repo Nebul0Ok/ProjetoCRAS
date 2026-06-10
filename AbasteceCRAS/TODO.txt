@@ -3,3 +3,15 @@ x 1 - Corrigir o tratamento de dados do login
 x 2 - Adicionar uma hash de senha
 
 x 3 - Corrigir o depósito dos itens para ser uma lista ao invés de apenas um item
+
+4 - Fazer as notificações aparecerem
+
+5 - Estilizar a tela de Itens
+
+6 - Remover a seção de adicionar quantidade para o tipo de item
+
+7 - Inverter o "Tipo" e "Responsável" da tela de Histórico
+
+8 - Fazer o tipo fazer um Wrap de texto
+
+9 - Estilizar o formulário de cadastro de novo administrador

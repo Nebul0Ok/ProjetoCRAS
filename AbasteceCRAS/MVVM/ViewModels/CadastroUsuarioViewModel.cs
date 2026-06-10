@@ -64,7 +64,7 @@ public class CadastroUsuarioViewModel : ViewModelBase
     {
         try
         {
-            if (TextNome.Equals(string.IsNullOrWhiteSpace) || TextEmail.Equals(string.IsNullOrWhiteSpace) || TextSenha.Equals(string.IsNullOrWhiteSpace))
+            if(String.IsNullOrWhiteSpace(TextNome) || String.IsNullOrWhiteSpace(TextEmail) || String.IsNullOrWhiteSpace(TextSenha))
             {
                 MessageBox.Show("Preencha todas as caixas");
                 return;

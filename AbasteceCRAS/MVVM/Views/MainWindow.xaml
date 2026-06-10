@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AbasteceCRAS"
+        xmlns:services="clr-namespace:AbasteceCRAS.Services"
         mc:Ignorable="d"
         Title="AbasteceCRAS" Height="720" Width="1280"
         AllowsTransparency="False"
@@ -47,7 +48,7 @@
 
                     <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right">
                         <Grid>
-                            <Button VerticalAlignment="Center" Width="35" Height="35" Style="{StaticResource BotaoIcone}">
+                            <Button x:Name="BellButton" VerticalAlignment="Center" Width="35" Height="35" Style="{StaticResource BotaoIcone}" Command="{Binding AlternarNotificacoes}">
                                 <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
                                     <Canvas Name="svg37" Width="34" Height="34">
                                         <Canvas.RenderTransform>
@@ -148,16 +149,109 @@
                                      IsHitTestVisible="False"
                                      Visibility="{Binding TemNotificacao, Converter={StaticResource BoolToVisibilityConverter}}"/>
                         </Grid>
-                        
-                        <TextBlock VerticalAlignment="Center"
-                   Text="{Binding UsuarioAtual.Nome}"
-                   Margin="0,0,10,0" Foreground="White"
-                   FontSize="20" FontWeight="Bold"
-                   />
 
-                        
-                        
-                        
+                        <Popup IsOpen="{Binding NotificacoesAberta, Mode=TwoWay}" 
+                               StaysOpen="False" 
+                               PlacementTarget="{Binding ElementName=BellButton}" 
+                               Placement="Bottom" 
+                               AllowsTransparency="True"
+                               PopupAnimation="Fade">
+                            
+                            <Border Background="White" Width="320" MaxHeight="300" CornerRadius="10" BorderBrush="#EAF0F6" BorderThickness="1" Margin="10">
+                                <Border.Effect>
+                                    <DropShadowEffect BlurRadius="12" ShadowDepth="2" Opacity="0.15" Color="Black"/>
+                                </Border.Effect>
+                                <Grid Margin="15">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+
+                                    <TextBlock Grid.Row="0" Text="Notificações" FontSize="16" FontWeight="Bold" Foreground="#111184" Margin="0,0,0,10"/>
+
+                                    <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                                        <Grid>
+                                            <!-- ItemsControl vinculado à lista NotificacoesAtuais -->
+                                            <ItemsControl x:Name="NotificationsItemsControl" ItemsSource="{Binding Source={x:Static services:DadosService.Instance}, Path=NotificacoesAtuais}">
+                                                <ItemsControl.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <!-- Card de notificação com cor lateral e fundo dinâmico de acordo com a severidade -->
+                                                        <Border BorderThickness="4,0,0,0" CornerRadius="4" Background="#FAFAFA" Margin="0,0,0,8" Padding="12,10">
+                                                            <Border.Style>
+                                                                <Style TargetType="Border">
+                                                                    <Setter Property="BorderBrush" Value="#B0BEC5"/>
+                                                                    <Style.Triggers>
+                                                                        <DataTrigger Binding="{Binding Header}" Value="Produto Estragado">
+                                                                            <Setter Property="BorderBrush" Value="#E53935"/>
+                                                                            <!-- Vermelho -->
+                                                                            <Setter Property="Background" Value="#FFEBEE"/>
+                                                                            <!-- Vermelho Claro -->
+                                                                        </DataTrigger>
+                                                                        <DataTrigger Binding="{Binding Header}" Value="Produto Perto de Vencer">
+                                                                            <Setter Property="BorderBrush" Value="#FB8C00"/>
+                                                                            <!-- Laranja -->
+                                                                            <Setter Property="Background" Value="#FFF3E0"/>
+                                                                            <!-- Laranja Claro -->
+                                                                        </DataTrigger>
+                                                                    </Style.Triggers>
+                                                                </Style>
+                                                            </Border.Style>
+                                                            <Grid>
+                                                                <Grid.RowDefinitions>
+                                                                    <RowDefinition Height="Auto"/>
+                                                                    <RowDefinition Height="Auto"/>
+                                                                    <RowDefinition Height="Auto"/>
+                                                                </Grid.RowDefinitions>
+
+                                                                <!-- Título/Tipo da Notificação -->
+                                                                <TextBlock Grid.Row="0" Text="{Binding Header}" FontWeight="Bold" FontSize="13" Foreground="#2D2D2D"/>
+
+                                                                <!-- Mensagem descritiva -->
+                                                                <TextBlock Grid.Row="1" Text="{Binding Body}" FontSize="12" Foreground="#555555" TextWrapping="Wrap" Margin="0,3,0,0"/>
+
+                                                                <!-- Horário em que ocorreu -->
+                                                                <TextBlock Grid.Row="2" Text="{Binding Hora, StringFormat={}{0:dd/MM/yyyy HH:mm}}" FontSize="10" Foreground="#888888" HorizontalAlignment="Right" Margin="0,6,0,0"/>
+                                                            </Grid>
+                                                        </Border>
+                                                    </DataTemplate>
+                                                </ItemsControl.ItemTemplate>
+                                            </ItemsControl>
+
+                                            <!-- Mensagem exibida apenas se não houver notificações -->
+                                            <TextBlock Text="Nenhuma notificação" 
+                                                       Foreground="#9E9E9E" 
+                                                       FontSize="14" 
+                                                       HorizontalAlignment="Center" 
+                                                       VerticalAlignment="Center"
+                                                       Margin="0,30,0,30">
+                                                <TextBlock.Style>
+                                                    <Style TargetType="TextBlock">
+                                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding ElementName=NotificationsItemsControl, Path=HasItems}" Value="False">
+                                                                <Setter Property="Visibility" Value="Visible"/>
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </TextBlock.Style>
+                                            </TextBlock>
+                                        </Grid>
+                                    </ScrollViewer>
+
+
+                                </Grid>
+                            </Border>
+                        </Popup>
+
+                        <TextBlock VerticalAlignment="Center"
+                                   Text="{Binding UsuarioAtual.Nome}"
+                                   Margin="0,0,10,0" Foreground="White"
+                                   FontSize="20" FontWeight="Bold"
+                                   />   
+
+
+
+
                         <Button VerticalAlignment="Center" Width="35" Height="35" Style="{StaticResource BotaoIcone}">
                             <Canvas HorizontalAlignment="Center" VerticalAlignment="Center" Name="svg8" Width="24" Height="24">
                                 <Canvas.RenderTransform>
